@@ -14,6 +14,8 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as DatafetchingImport } from './routes/data_fetching'
+import { Route as hiddenfolderdatafetchingDatafetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data_fetching.react-query'
+import { Route as hiddenfolderdatafetchingDatafetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data_fetching.own-handle'
 
 // Create Virtual Routes
 
@@ -33,6 +35,20 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
+const hiddenfolderdatafetchingDatafetchingReactQueryRoute =
+  hiddenfolderdatafetchingDatafetchingReactQueryImport.update({
+    id: '/(hidden_folder)/(data_fetching)/data_fetching/react-query',
+    path: '/data_fetching/react-query',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdatafetchingDatafetchingOwnHandleRoute =
+  hiddenfolderdatafetchingDatafetchingOwnHandleImport.update({
+    id: '/(hidden_folder)/(data_fetching)/data_fetching/own-handle',
+    path: '/data_fetching/own-handle',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -51,6 +67,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DatafetchingImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(data_fetching)/data_fetching/own-handle': {
+      id: '/(hidden_folder)/(data_fetching)/data_fetching/own-handle'
+      path: '/data_fetching/own-handle'
+      fullPath: '/data_fetching/own-handle'
+      preLoaderRoute: typeof hiddenfolderdatafetchingDatafetchingOwnHandleImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(data_fetching)/data_fetching/react-query': {
+      id: '/(hidden_folder)/(data_fetching)/data_fetching/react-query'
+      path: '/data_fetching/react-query'
+      fullPath: '/data_fetching/react-query'
+      preLoaderRoute: typeof hiddenfolderdatafetchingDatafetchingReactQueryImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -59,36 +89,61 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/data_fetching': typeof DatafetchingRoute
+  '/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
+  '/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/data_fetching': typeof DatafetchingRoute
+  '/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
+  '/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/data_fetching': typeof DatafetchingRoute
+  '/(hidden_folder)/(data_fetching)/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
+  '/(hidden_folder)/(data_fetching)/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/data_fetching'
+  fullPaths:
+    | '/'
+    | '/data_fetching'
+    | '/data_fetching/own-handle'
+    | '/data_fetching/react-query'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/data_fetching'
-  id: '__root__' | '/' | '/data_fetching'
+  to:
+    | '/'
+    | '/data_fetching'
+    | '/data_fetching/own-handle'
+    | '/data_fetching/react-query'
+  id:
+    | '__root__'
+    | '/'
+    | '/data_fetching'
+    | '/(hidden_folder)/(data_fetching)/data_fetching/own-handle'
+    | '/(hidden_folder)/(data_fetching)/data_fetching/react-query'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   DatafetchingRoute: typeof DatafetchingRoute
+  hiddenfolderdatafetchingDatafetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
+  hiddenfolderdatafetchingDatafetchingReactQueryRoute: typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   DatafetchingRoute: DatafetchingRoute,
+  hiddenfolderdatafetchingDatafetchingOwnHandleRoute:
+    hiddenfolderdatafetchingDatafetchingOwnHandleRoute,
+  hiddenfolderdatafetchingDatafetchingReactQueryRoute:
+    hiddenfolderdatafetchingDatafetchingReactQueryRoute,
 }
 
 export const routeTree = rootRoute
@@ -102,7 +157,9 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/data_fetching"
+        "/data_fetching",
+        "/(hidden_folder)/(data_fetching)/data_fetching/own-handle",
+        "/(hidden_folder)/(data_fetching)/data_fetching/react-query"
       ]
     },
     "/": {
@@ -110,6 +167,12 @@ export const routeTree = rootRoute
     },
     "/data_fetching": {
       "filePath": "data_fetching.tsx"
+    },
+    "/(hidden_folder)/(data_fetching)/data_fetching/own-handle": {
+      "filePath": "(hidden_folder)/(data_fetching)/data_fetching.own-handle.tsx"
+    },
+    "/(hidden_folder)/(data_fetching)/data_fetching/react-query": {
+      "filePath": "(hidden_folder)/(data_fetching)/data_fetching.react-query.tsx"
     }
   }
 }

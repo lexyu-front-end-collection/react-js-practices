@@ -50,7 +50,7 @@ function DataFetchOwnHandle() {
     return (
         <div>
             <div className="header-container">
-                <h1 className="mb-4 text-2xl">DataFetchDemo</h1>
+                <h1 className="mb-4 text-2xl">Data Fetch Own Handle Demo</h1>
                 <button onClick={() => setId(id + 1)}>Increase Id ({id})</button>
             </div>
             {isLoading && <div className="loading-placeholder">Loading...</div>}
