@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/mode/ThemeProvider"
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import {
   QueryClient,
@@ -8,6 +9,7 @@ import {
 import { routeTree } from './routeTree.gen'
 
 import './App.css'
+import { SidebarProvider } from "./components/ui/sidebar"
 
 const router = createRouter({
   routeTree,
@@ -26,9 +28,14 @@ function App() {
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <SidebarProvider>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </SidebarProvider>
+      </ThemeProvider>
+
     </>
   )
 }

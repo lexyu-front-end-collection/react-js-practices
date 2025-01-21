@@ -50,23 +50,29 @@ function DataFetchOwnHandle() {
     return (
         <div>
             <div className="header-container">
-                <h1 className="mb-4 text-2xl">Data Fetch Own Handle Demo</h1>
-                <button onClick={() => setId(id + 1)}>Increase Id ({id})</button>
+                <h1 className="m-6 text-2xl">Data Fetch Own Handle Demo</h1>
             </div>
-            {isLoading && <div className="loading-placeholder">Loading...</div>}
-            {!isLoading && comments.length > 0 && (
-                <ul className="mt-24 space-y-4">
-                    {comments.map(comment => (
-                        <li key={comment.id} className="p-4 rounded border shadow">
-                            <div>
-                                <h2>#{comment.id}</h2>
-                                <strong>{comment.name}</strong> <span className="text-gray-600">({comment.email})</span>
-                            </div>
-                            <div className="mt-2">{comment.body}</div>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            <div className="m-8">
+                <button onClick={() => setId(id + 1)}
+                    className="px-4 py-2 rounded bg-blue-700 text-white">
+                    Increase Id ({id})
+                </button>
+                {isLoading && <div className="loading-placeholder">Loading...</div>}
+                {!isLoading && comments.length > 0 && (
+                    <ul className="m-8 space-y-4">
+                        {comments.map(comment => (
+                            <li key={comment.id} className="p-4 rounded border shadow">
+                                <div>
+                                    <h2>#{comment.id}</h2>
+                                    <strong>{comment.name}</strong> <span className="text-gray-600">({comment.email})</span>
+                                </div>
+                                <div className="mt-4">{comment.body}</div>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
             {!isLoading && comments.length === 0 && <div>No comments</div>}
         </div>
     );

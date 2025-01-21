@@ -13,9 +13,15 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as DatafetchingImport } from './routes/data_fetching'
-import { Route as hiddenfolderdatafetchingDatafetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data_fetching.react-query'
-import { Route as hiddenfolderdatafetchingDatafetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data_fetching.own-handle'
+import { Route as hiddenfolderhooksHooksUsestateImport } from './routes/(hidden_folder)/(hooks)/hooks.usestate'
+import { Route as hiddenfolderhooksHooksUseintervalImport } from './routes/(hidden_folder)/(hooks)/hooks.useinterval'
+import { Route as hiddenfolderhooksHooksUseeffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useeffect'
+import { Route as hiddenfolderhooksHooksUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.usecallback'
+import { Route as hiddenfolderhooksHooksIntervalProblem2Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
+import { Route as hiddenfolderhooksHooksIntervalProblem1Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-1'
+import { Route as hiddenfolderhooksHooksBeforeUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.before-usecallback'
+import { Route as hiddenfolderdatafetchingDataFetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.react-query'
+import { Route as hiddenfolderdatafetchingDataFetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.own-handle'
 
 // Create Virtual Routes
 
@@ -23,29 +29,72 @@ const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
 
-const DatafetchingRoute = DatafetchingImport.update({
-  id: '/data_fetching',
-  path: '/data_fetching',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexLazyRoute = IndexLazyImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
-const hiddenfolderdatafetchingDatafetchingReactQueryRoute =
-  hiddenfolderdatafetchingDatafetchingReactQueryImport.update({
-    id: '/(hidden_folder)/(data_fetching)/data_fetching/react-query',
-    path: '/data_fetching/react-query',
+const hiddenfolderhooksHooksUsestateRoute =
+  hiddenfolderhooksHooksUsestateImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usestate',
+    path: '/hooks/usestate',
     getParentRoute: () => rootRoute,
   } as any)
 
-const hiddenfolderdatafetchingDatafetchingOwnHandleRoute =
-  hiddenfolderdatafetchingDatafetchingOwnHandleImport.update({
-    id: '/(hidden_folder)/(data_fetching)/data_fetching/own-handle',
-    path: '/data_fetching/own-handle',
+const hiddenfolderhooksHooksUseintervalRoute =
+  hiddenfolderhooksHooksUseintervalImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useinterval',
+    path: '/hooks/useinterval',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUseeffectRoute =
+  hiddenfolderhooksHooksUseeffectImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useeffect',
+    path: '/hooks/useeffect',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsecallbackRoute =
+  hiddenfolderhooksHooksUsecallbackImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usecallback',
+    path: '/hooks/usecallback',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksIntervalProblem2Route =
+  hiddenfolderhooksHooksIntervalProblem2Import.update({
+    id: '/(hidden_folder)/(hooks)/hooks/interval-problem-2',
+    path: '/hooks/interval-problem-2',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksIntervalProblem1Route =
+  hiddenfolderhooksHooksIntervalProblem1Import.update({
+    id: '/(hidden_folder)/(hooks)/hooks/interval-problem-1',
+    path: '/hooks/interval-problem-1',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksBeforeUsecallbackRoute =
+  hiddenfolderhooksHooksBeforeUsecallbackImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/before-usecallback',
+    path: '/hooks/before-usecallback',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdatafetchingDataFetchingReactQueryRoute =
+  hiddenfolderdatafetchingDataFetchingReactQueryImport.update({
+    id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query',
+    path: '/data-fetching/react-query',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdatafetchingDataFetchingOwnHandleRoute =
+  hiddenfolderdatafetchingDataFetchingOwnHandleImport.update({
+    id: '/(hidden_folder)/(data_fetching)/data-fetching/own-handle',
+    path: '/data-fetching/own-handle',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -60,25 +109,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/data_fetching': {
-      id: '/data_fetching'
-      path: '/data_fetching'
-      fullPath: '/data_fetching'
-      preLoaderRoute: typeof DatafetchingImport
+    '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': {
+      id: '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
+      path: '/data-fetching/own-handle'
+      fullPath: '/data-fetching/own-handle'
+      preLoaderRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleImport
       parentRoute: typeof rootRoute
     }
-    '/(hidden_folder)/(data_fetching)/data_fetching/own-handle': {
-      id: '/(hidden_folder)/(data_fetching)/data_fetching/own-handle'
-      path: '/data_fetching/own-handle'
-      fullPath: '/data_fetching/own-handle'
-      preLoaderRoute: typeof hiddenfolderdatafetchingDatafetchingOwnHandleImport
+    '/(hidden_folder)/(data_fetching)/data-fetching/react-query': {
+      id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
+      path: '/data-fetching/react-query'
+      fullPath: '/data-fetching/react-query'
+      preLoaderRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryImport
       parentRoute: typeof rootRoute
     }
-    '/(hidden_folder)/(data_fetching)/data_fetching/react-query': {
-      id: '/(hidden_folder)/(data_fetching)/data_fetching/react-query'
-      path: '/data_fetching/react-query'
-      fullPath: '/data_fetching/react-query'
-      preLoaderRoute: typeof hiddenfolderdatafetchingDatafetchingReactQueryImport
+    '/(hidden_folder)/(hooks)/hooks/before-usecallback': {
+      id: '/(hidden_folder)/(hooks)/hooks/before-usecallback'
+      path: '/hooks/before-usecallback'
+      fullPath: '/hooks/before-usecallback'
+      preLoaderRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/interval-problem-1': {
+      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
+      path: '/hooks/interval-problem-1'
+      fullPath: '/hooks/interval-problem-1'
+      preLoaderRoute: typeof hiddenfolderhooksHooksIntervalProblem1Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/interval-problem-2': {
+      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
+      path: '/hooks/interval-problem-2'
+      fullPath: '/hooks/interval-problem-2'
+      preLoaderRoute: typeof hiddenfolderhooksHooksIntervalProblem2Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usecallback': {
+      id: '/(hidden_folder)/(hooks)/hooks/usecallback'
+      path: '/hooks/usecallback'
+      fullPath: '/hooks/usecallback'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsecallbackImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useeffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/useeffect'
+      path: '/hooks/useeffect'
+      fullPath: '/hooks/useeffect'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUseeffectImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useinterval': {
+      id: '/(hidden_folder)/(hooks)/hooks/useinterval'
+      path: '/hooks/useinterval'
+      fullPath: '/hooks/useinterval'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUseintervalImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usestate': {
+      id: '/(hidden_folder)/(hooks)/hooks/usestate'
+      path: '/hooks/usestate'
+      fullPath: '/hooks/usestate'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsestateImport
       parentRoute: typeof rootRoute
     }
   }
@@ -88,62 +179,115 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
-  '/data_fetching': typeof DatafetchingRoute
-  '/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
-  '/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
+  '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
+  '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
+  '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
+  '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
+  '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
+  '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
-  '/data_fetching': typeof DatafetchingRoute
-  '/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
-  '/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
+  '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
+  '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
+  '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
+  '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
+  '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
+  '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
-  '/data_fetching': typeof DatafetchingRoute
-  '/(hidden_folder)/(data_fetching)/data_fetching/own-handle': typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
-  '/(hidden_folder)/(data_fetching)/data_fetching/react-query': typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
+  '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
+  '/(hidden_folder)/(data_fetching)/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
+  '/(hidden_folder)/(hooks)/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
+  '/(hidden_folder)/(hooks)/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
+  '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
+  '/(hidden_folder)/(hooks)/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/(hidden_folder)/(hooks)/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/(hidden_folder)/(hooks)/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/(hidden_folder)/(hooks)/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/data_fetching'
-    | '/data_fetching/own-handle'
-    | '/data_fetching/react-query'
+    | '/data-fetching/own-handle'
+    | '/data-fetching/react-query'
+    | '/hooks/before-usecallback'
+    | '/hooks/interval-problem-1'
+    | '/hooks/interval-problem-2'
+    | '/hooks/usecallback'
+    | '/hooks/useeffect'
+    | '/hooks/useinterval'
+    | '/hooks/usestate'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/data_fetching'
-    | '/data_fetching/own-handle'
-    | '/data_fetching/react-query'
+    | '/data-fetching/own-handle'
+    | '/data-fetching/react-query'
+    | '/hooks/before-usecallback'
+    | '/hooks/interval-problem-1'
+    | '/hooks/interval-problem-2'
+    | '/hooks/usecallback'
+    | '/hooks/useeffect'
+    | '/hooks/useinterval'
+    | '/hooks/usestate'
   id:
     | '__root__'
     | '/'
-    | '/data_fetching'
-    | '/(hidden_folder)/(data_fetching)/data_fetching/own-handle'
-    | '/(hidden_folder)/(data_fetching)/data_fetching/react-query'
+    | '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
+    | '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
+    | '/(hidden_folder)/(hooks)/hooks/before-usecallback'
+    | '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
+    | '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
+    | '/(hidden_folder)/(hooks)/hooks/usecallback'
+    | '/(hidden_folder)/(hooks)/hooks/useeffect'
+    | '/(hidden_folder)/(hooks)/hooks/useinterval'
+    | '/(hidden_folder)/(hooks)/hooks/usestate'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
-  DatafetchingRoute: typeof DatafetchingRoute
-  hiddenfolderdatafetchingDatafetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDatafetchingOwnHandleRoute
-  hiddenfolderdatafetchingDatafetchingReactQueryRoute: typeof hiddenfolderdatafetchingDatafetchingReactQueryRoute
+  hiddenfolderdatafetchingDataFetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
+  hiddenfolderdatafetchingDataFetchingReactQueryRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
+  hiddenfolderhooksHooksBeforeUsecallbackRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
+  hiddenfolderhooksHooksIntervalProblem1Route: typeof hiddenfolderhooksHooksIntervalProblem1Route
+  hiddenfolderhooksHooksIntervalProblem2Route: typeof hiddenfolderhooksHooksIntervalProblem2Route
+  hiddenfolderhooksHooksUsecallbackRoute: typeof hiddenfolderhooksHooksUsecallbackRoute
+  hiddenfolderhooksHooksUseeffectRoute: typeof hiddenfolderhooksHooksUseeffectRoute
+  hiddenfolderhooksHooksUseintervalRoute: typeof hiddenfolderhooksHooksUseintervalRoute
+  hiddenfolderhooksHooksUsestateRoute: typeof hiddenfolderhooksHooksUsestateRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
-  DatafetchingRoute: DatafetchingRoute,
-  hiddenfolderdatafetchingDatafetchingOwnHandleRoute:
-    hiddenfolderdatafetchingDatafetchingOwnHandleRoute,
-  hiddenfolderdatafetchingDatafetchingReactQueryRoute:
-    hiddenfolderdatafetchingDatafetchingReactQueryRoute,
+  hiddenfolderdatafetchingDataFetchingOwnHandleRoute:
+    hiddenfolderdatafetchingDataFetchingOwnHandleRoute,
+  hiddenfolderdatafetchingDataFetchingReactQueryRoute:
+    hiddenfolderdatafetchingDataFetchingReactQueryRoute,
+  hiddenfolderhooksHooksBeforeUsecallbackRoute:
+    hiddenfolderhooksHooksBeforeUsecallbackRoute,
+  hiddenfolderhooksHooksIntervalProblem1Route:
+    hiddenfolderhooksHooksIntervalProblem1Route,
+  hiddenfolderhooksHooksIntervalProblem2Route:
+    hiddenfolderhooksHooksIntervalProblem2Route,
+  hiddenfolderhooksHooksUsecallbackRoute:
+    hiddenfolderhooksHooksUsecallbackRoute,
+  hiddenfolderhooksHooksUseeffectRoute: hiddenfolderhooksHooksUseeffectRoute,
+  hiddenfolderhooksHooksUseintervalRoute:
+    hiddenfolderhooksHooksUseintervalRoute,
+  hiddenfolderhooksHooksUsestateRoute: hiddenfolderhooksHooksUsestateRoute,
 }
 
 export const routeTree = rootRoute
@@ -157,22 +301,46 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/data_fetching",
-        "/(hidden_folder)/(data_fetching)/data_fetching/own-handle",
-        "/(hidden_folder)/(data_fetching)/data_fetching/react-query"
+        "/(hidden_folder)/(data_fetching)/data-fetching/own-handle",
+        "/(hidden_folder)/(data_fetching)/data-fetching/react-query",
+        "/(hidden_folder)/(hooks)/hooks/before-usecallback",
+        "/(hidden_folder)/(hooks)/hooks/interval-problem-1",
+        "/(hidden_folder)/(hooks)/hooks/interval-problem-2",
+        "/(hidden_folder)/(hooks)/hooks/usecallback",
+        "/(hidden_folder)/(hooks)/hooks/useeffect",
+        "/(hidden_folder)/(hooks)/hooks/useinterval",
+        "/(hidden_folder)/(hooks)/hooks/usestate"
       ]
     },
     "/": {
       "filePath": "index.lazy.tsx"
     },
-    "/data_fetching": {
-      "filePath": "data_fetching.tsx"
+    "/(hidden_folder)/(data_fetching)/data-fetching/own-handle": {
+      "filePath": "(hidden_folder)/(data_fetching)/data-fetching.own-handle.tsx"
     },
-    "/(hidden_folder)/(data_fetching)/data_fetching/own-handle": {
-      "filePath": "(hidden_folder)/(data_fetching)/data_fetching.own-handle.tsx"
+    "/(hidden_folder)/(data_fetching)/data-fetching/react-query": {
+      "filePath": "(hidden_folder)/(data_fetching)/data-fetching.react-query.tsx"
     },
-    "/(hidden_folder)/(data_fetching)/data_fetching/react-query": {
-      "filePath": "(hidden_folder)/(data_fetching)/data_fetching.react-query.tsx"
+    "/(hidden_folder)/(hooks)/hooks/before-usecallback": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.before-usecallback.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/interval-problem-1": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.interval-problem-1.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/interval-problem-2": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.interval-problem-2.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usecallback": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usecallback.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useeffect": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useeffect.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useinterval": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useinterval.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usestate": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usestate.tsx"
     }
   }
 }

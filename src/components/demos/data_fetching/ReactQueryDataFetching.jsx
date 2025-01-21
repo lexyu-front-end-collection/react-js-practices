@@ -29,19 +29,25 @@ function ReactQueryDataFetching() {
         <div>
             <div className="header-container">
                 <h1 className="text-2xl">React Query Data Fecth Demo</h1>
-                <h1 className="text-lg">id : {id}</h1>
-                <button className="mx-2"
-                    onClick={() => setId(Math.max(0, id - 1))}
-                    disabled={id <= 0}>Decrease Id</button>
-                <button className="mx-2"
-                    onClick={() => setId(id + 1)}>Increase Id</button>
             </div>
-            <div className="mt-36">
+            <div className="mt-5">
+                <h1 className="text-lg">id : {id}</h1>
+                <button className="mt-4 px-4 py-2 rounded bg-blue-700 text-white"
+                    onClick={() => setId(Math.max(0, id - 1))}
+                    disabled={id <= 0}>
+                    Decrease Id
+                </button>
+                <button className="ml-6 px-4 py-2 rounded bg-blue-700 text-white"
+                    onClick={() => setId(id + 1)}>
+                    Increase Id
+                </button>
+            </div>
+            <div className="mt-10">
                 {isLoading && <div className="loading-placeholder">Loading...</div>}
                 {isPending && <div className="loading-placeholder">Loading more data...</div>}
                 {isFetched && <div className="text-green-500">Data fetched successfully!</div>}
                 {!isLoading && comments.length > 0 && (
-                    <ul className="mt-24 space-y-4">
+                    <ul className="mt-10 space-y-4">
                         {comments.map(comment => (
                             <li key={comment.id} className="p-4 rounded border shadow">
                                 <div>
@@ -53,7 +59,7 @@ function ReactQueryDataFetching() {
                         ))}
                     </ul>
                 )}
-                {!isLoading && comments.length === 0 && <div>No comments</div>}
+                {!isLoading && comments.length === 0 && <div className="mt-4">No comments</div>}
             </div>
         </div>
     );
