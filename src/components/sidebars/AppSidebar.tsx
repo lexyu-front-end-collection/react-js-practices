@@ -21,9 +21,9 @@ export function AppSidebar() {
         if (!route.children) {
             return (
                 <SidebarMenuItem key={route.path}>
-                    <SidebarMenuButton asChild tooltip={route.title}>
-                        <Link to={route.path} className="w-full flex items-center">
-                            {route.icon && <route.icon className="mr-2 h-4 w-4" />}
+                    <SidebarMenuButton size="lg" asChild tooltip={route.title}>
+                        <Link to={route.path} className="flex items-center w-full">
+                            {route.icon && <route.icon className="mr-2 w-4 h-4" />}
                             {route.title}
                         </Link>
                     </SidebarMenuButton>
@@ -35,8 +35,8 @@ export function AppSidebar() {
             <Collapsible key={route.title} asChild className="group/collapsible">
                 <SidebarMenuItem >
                     <CollapsibleTrigger asChild>
-                        <SidebarMenuButton>
-                            {route.icon && <route.icon className="mr-2 h-4 w-4" />}
+                        <SidebarMenuButton size="lg">
+                            {route.icon && <route.icon className="mr-2 w-4 h-4" />}
                             <span>{route.title}</span>
                             <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
@@ -56,8 +56,8 @@ export function AppSidebar() {
             <SidebarHeader>
                 <p className="text-xl">React All Practices</p>
             </SidebarHeader>
-            <SidebarContent>
-                <SidebarGroup>
+            <SidebarContent className='overflow-y-auto'>
+                <SidebarGroup className=''>
                     <SidebarGroupLabel>Menu</SidebarGroupLabel>
                     <SidebarMenu>
                         {routes.map(renderMenuItem)}
