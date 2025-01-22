@@ -13,9 +13,25 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as hiddenfoldertoysToysTodoAppImport } from './routes/(hidden_folder)/(toys)/toys.todo-app'
+import { Route as hiddenfoldertoysToysStopwatchImport } from './routes/(hidden_folder)/(toys)/toys.stopwatch'
+import { Route as hiddenfoldertoysToysColorPickerImport } from './routes/(hidden_folder)/(toys)/toys.color-picker'
+import { Route as hiddenfoldertoysToysClockImport } from './routes/(hidden_folder)/(toys)/toys.clock'
+import { Route as hiddenfolderhooksHooksWithoutusesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore'
+import { Route as hiddenfolderhooksHooksUsetransitionImport } from './routes/(hidden_folder)/(hooks)/hooks.usetransition'
+import { Route as hiddenfolderhooksHooksUsesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.usesyncexternalstore'
 import { Route as hiddenfolderhooksHooksUsestateImport } from './routes/(hidden_folder)/(hooks)/hooks.usestate'
+import { Route as hiddenfolderhooksHooksUserefImport } from './routes/(hidden_folder)/(hooks)/hooks.useref'
+import { Route as hiddenfolderhooksHooksUsereducerImport } from './routes/(hidden_folder)/(hooks)/hooks.usereducer'
+import { Route as hiddenfolderhooksHooksUsememoImport } from './routes/(hidden_folder)/(hooks)/hooks.usememo'
+import { Route as hiddenfolderhooksHooksUselayouteffectImport } from './routes/(hidden_folder)/(hooks)/hooks.uselayouteffect'
 import { Route as hiddenfolderhooksHooksUseintervalImport } from './routes/(hidden_folder)/(hooks)/hooks.useinterval'
+import { Route as hiddenfolderhooksHooksUseinsertioneffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useinsertioneffect'
+import { Route as hiddenfolderhooksHooksUseimperativehandleImport } from './routes/(hidden_folder)/(hooks)/hooks.useimperativehandle'
+import { Route as hiddenfolderhooksHooksUseidImport } from './routes/(hidden_folder)/(hooks)/hooks.useid'
 import { Route as hiddenfolderhooksHooksUseeffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useeffect'
+import { Route as hiddenfolderhooksHooksUsedeferredvalueImport } from './routes/(hidden_folder)/(hooks)/hooks.usedeferredvalue'
+import { Route as hiddenfolderhooksHooksUsecontextImport } from './routes/(hidden_folder)/(hooks)/hooks.usecontext'
 import { Route as hiddenfolderhooksHooksUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.usecallback'
 import { Route as hiddenfolderhooksHooksIntervalProblem2Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
 import { Route as hiddenfolderhooksHooksIntervalProblem1Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-1'
@@ -35,10 +51,86 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
+const hiddenfoldertoysToysTodoAppRoute =
+  hiddenfoldertoysToysTodoAppImport.update({
+    id: '/(hidden_folder)/(toys)/toys/todo-app',
+    path: '/toys/todo-app',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfoldertoysToysStopwatchRoute =
+  hiddenfoldertoysToysStopwatchImport.update({
+    id: '/(hidden_folder)/(toys)/toys/stopwatch',
+    path: '/toys/stopwatch',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfoldertoysToysColorPickerRoute =
+  hiddenfoldertoysToysColorPickerImport.update({
+    id: '/(hidden_folder)/(toys)/toys/color-picker',
+    path: '/toys/color-picker',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfoldertoysToysClockRoute = hiddenfoldertoysToysClockImport.update({
+  id: '/(hidden_folder)/(toys)/toys/clock',
+  path: '/toys/clock',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute =
+  hiddenfolderhooksHooksWithoutusesyncexternalstoreImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore',
+    path: '/hooks/withoutusesyncexternalstore',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsetransitionRoute =
+  hiddenfolderhooksHooksUsetransitionImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usetransition',
+    path: '/hooks/usetransition',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsesyncexternalstoreRoute =
+  hiddenfolderhooksHooksUsesyncexternalstoreImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore',
+    path: '/hooks/usesyncexternalstore',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 const hiddenfolderhooksHooksUsestateRoute =
   hiddenfolderhooksHooksUsestateImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usestate',
     path: '/hooks/usestate',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUserefRoute =
+  hiddenfolderhooksHooksUserefImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useref',
+    path: '/hooks/useref',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsereducerRoute =
+  hiddenfolderhooksHooksUsereducerImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usereducer',
+    path: '/hooks/usereducer',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsememoRoute =
+  hiddenfolderhooksHooksUsememoImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usememo',
+    path: '/hooks/usememo',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUselayouteffectRoute =
+  hiddenfolderhooksHooksUselayouteffectImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/uselayouteffect',
+    path: '/hooks/uselayouteffect',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -49,10 +141,45 @@ const hiddenfolderhooksHooksUseintervalRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const hiddenfolderhooksHooksUseinsertioneffectRoute =
+  hiddenfolderhooksHooksUseinsertioneffectImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useinsertioneffect',
+    path: '/hooks/useinsertioneffect',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUseimperativehandleRoute =
+  hiddenfolderhooksHooksUseimperativehandleImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useimperativehandle',
+    path: '/hooks/useimperativehandle',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUseidRoute =
+  hiddenfolderhooksHooksUseidImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/useid',
+    path: '/hooks/useid',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 const hiddenfolderhooksHooksUseeffectRoute =
   hiddenfolderhooksHooksUseeffectImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useeffect',
     path: '/hooks/useeffect',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsedeferredvalueRoute =
+  hiddenfolderhooksHooksUsedeferredvalueImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue',
+    path: '/hooks/usedeferredvalue',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsecontextRoute =
+  hiddenfolderhooksHooksUsecontextImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usecontext',
+    path: '/hooks/usecontext',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -151,11 +278,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfolderhooksHooksUsecallbackImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(hooks)/hooks/usecontext': {
+      id: '/(hidden_folder)/(hooks)/hooks/usecontext'
+      path: '/hooks/usecontext'
+      fullPath: '/hooks/usecontext'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsecontextImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': {
+      id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
+      path: '/hooks/usedeferredvalue'
+      fullPath: '/hooks/usedeferredvalue'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsedeferredvalueImport
+      parentRoute: typeof rootRoute
+    }
     '/(hidden_folder)/(hooks)/hooks/useeffect': {
       id: '/(hidden_folder)/(hooks)/hooks/useeffect'
       path: '/hooks/useeffect'
       fullPath: '/hooks/useeffect'
       preLoaderRoute: typeof hiddenfolderhooksHooksUseeffectImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useid': {
+      id: '/(hidden_folder)/(hooks)/hooks/useid'
+      path: '/hooks/useid'
+      fullPath: '/hooks/useid'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUseidImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useimperativehandle': {
+      id: '/(hidden_folder)/(hooks)/hooks/useimperativehandle'
+      path: '/hooks/useimperativehandle'
+      fullPath: '/hooks/useimperativehandle'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUseimperativehandleImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/useinsertioneffect'
+      path: '/hooks/useinsertioneffect'
+      fullPath: '/hooks/useinsertioneffect'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUseinsertioneffectImport
       parentRoute: typeof rootRoute
     }
     '/(hidden_folder)/(hooks)/hooks/useinterval': {
@@ -165,11 +327,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfolderhooksHooksUseintervalImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(hooks)/hooks/uselayouteffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/uselayouteffect'
+      path: '/hooks/uselayouteffect'
+      fullPath: '/hooks/uselayouteffect'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUselayouteffectImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usememo': {
+      id: '/(hidden_folder)/(hooks)/hooks/usememo'
+      path: '/hooks/usememo'
+      fullPath: '/hooks/usememo'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsememoImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usereducer': {
+      id: '/(hidden_folder)/(hooks)/hooks/usereducer'
+      path: '/hooks/usereducer'
+      fullPath: '/hooks/usereducer'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsereducerImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/useref': {
+      id: '/(hidden_folder)/(hooks)/hooks/useref'
+      path: '/hooks/useref'
+      fullPath: '/hooks/useref'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUserefImport
+      parentRoute: typeof rootRoute
+    }
     '/(hidden_folder)/(hooks)/hooks/usestate': {
       id: '/(hidden_folder)/(hooks)/hooks/usestate'
       path: '/hooks/usestate'
       fullPath: '/hooks/usestate'
       preLoaderRoute: typeof hiddenfolderhooksHooksUsestateImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': {
+      id: '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore'
+      path: '/hooks/usesyncexternalstore'
+      fullPath: '/hooks/usesyncexternalstore'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/usetransition': {
+      id: '/(hidden_folder)/(hooks)/hooks/usetransition'
+      path: '/hooks/usetransition'
+      fullPath: '/hooks/usetransition'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsetransitionImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': {
+      id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore'
+      path: '/hooks/withoutusesyncexternalstore'
+      fullPath: '/hooks/withoutusesyncexternalstore'
+      preLoaderRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(toys)/toys/clock': {
+      id: '/(hidden_folder)/(toys)/toys/clock'
+      path: '/toys/clock'
+      fullPath: '/toys/clock'
+      preLoaderRoute: typeof hiddenfoldertoysToysClockImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(toys)/toys/color-picker': {
+      id: '/(hidden_folder)/(toys)/toys/color-picker'
+      path: '/toys/color-picker'
+      fullPath: '/toys/color-picker'
+      preLoaderRoute: typeof hiddenfoldertoysToysColorPickerImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(toys)/toys/stopwatch': {
+      id: '/(hidden_folder)/(toys)/toys/stopwatch'
+      path: '/toys/stopwatch'
+      fullPath: '/toys/stopwatch'
+      preLoaderRoute: typeof hiddenfoldertoysToysStopwatchImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(toys)/toys/todo-app': {
+      id: '/(hidden_folder)/(toys)/toys/todo-app'
+      path: '/toys/todo-app'
+      fullPath: '/toys/todo-app'
+      preLoaderRoute: typeof hiddenfoldertoysToysTodoAppImport
       parentRoute: typeof rootRoute
     }
   }
@@ -185,9 +424,25 @@ export interface FileRoutesByFullPath {
   '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
+  '/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
+  '/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
   '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
+  '/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
+  '/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
+  '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
+  '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
+  '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/toys/clock': typeof hiddenfoldertoysToysClockRoute
+  '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
+  '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
+  '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
 }
 
 export interface FileRoutesByTo {
@@ -198,9 +453,25 @@ export interface FileRoutesByTo {
   '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
+  '/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
+  '/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
   '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
+  '/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
+  '/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
+  '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
+  '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
+  '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/toys/clock': typeof hiddenfoldertoysToysClockRoute
+  '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
+  '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
+  '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
 }
 
 export interface FileRoutesById {
@@ -212,9 +483,25 @@ export interface FileRoutesById {
   '/(hidden_folder)/(hooks)/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/(hidden_folder)/(hooks)/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
+  '/(hidden_folder)/(hooks)/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/(hidden_folder)/(hooks)/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
+  '/(hidden_folder)/(hooks)/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
+  '/(hidden_folder)/(hooks)/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
+  '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
   '/(hidden_folder)/(hooks)/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
+  '/(hidden_folder)/(hooks)/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
+  '/(hidden_folder)/(hooks)/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
+  '/(hidden_folder)/(hooks)/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
+  '/(hidden_folder)/(hooks)/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/(hidden_folder)/(hooks)/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
+  '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/(hidden_folder)/(hooks)/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
+  '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/(hidden_folder)/(toys)/toys/clock': typeof hiddenfoldertoysToysClockRoute
+  '/(hidden_folder)/(toys)/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
+  '/(hidden_folder)/(toys)/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
+  '/(hidden_folder)/(toys)/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
 }
 
 export interface FileRouteTypes {
@@ -227,9 +514,25 @@ export interface FileRouteTypes {
     | '/hooks/interval-problem-1'
     | '/hooks/interval-problem-2'
     | '/hooks/usecallback'
+    | '/hooks/usecontext'
+    | '/hooks/usedeferredvalue'
     | '/hooks/useeffect'
+    | '/hooks/useid'
+    | '/hooks/useimperativehandle'
+    | '/hooks/useinsertioneffect'
     | '/hooks/useinterval'
+    | '/hooks/uselayouteffect'
+    | '/hooks/usememo'
+    | '/hooks/usereducer'
+    | '/hooks/useref'
     | '/hooks/usestate'
+    | '/hooks/usesyncexternalstore'
+    | '/hooks/usetransition'
+    | '/hooks/withoutusesyncexternalstore'
+    | '/toys/clock'
+    | '/toys/color-picker'
+    | '/toys/stopwatch'
+    | '/toys/todo-app'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -239,9 +542,25 @@ export interface FileRouteTypes {
     | '/hooks/interval-problem-1'
     | '/hooks/interval-problem-2'
     | '/hooks/usecallback'
+    | '/hooks/usecontext'
+    | '/hooks/usedeferredvalue'
     | '/hooks/useeffect'
+    | '/hooks/useid'
+    | '/hooks/useimperativehandle'
+    | '/hooks/useinsertioneffect'
     | '/hooks/useinterval'
+    | '/hooks/uselayouteffect'
+    | '/hooks/usememo'
+    | '/hooks/usereducer'
+    | '/hooks/useref'
     | '/hooks/usestate'
+    | '/hooks/usesyncexternalstore'
+    | '/hooks/usetransition'
+    | '/hooks/withoutusesyncexternalstore'
+    | '/toys/clock'
+    | '/toys/color-picker'
+    | '/toys/stopwatch'
+    | '/toys/todo-app'
   id:
     | '__root__'
     | '/'
@@ -251,9 +570,25 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
     | '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
     | '/(hidden_folder)/(hooks)/hooks/usecallback'
+    | '/(hidden_folder)/(hooks)/hooks/usecontext'
+    | '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
     | '/(hidden_folder)/(hooks)/hooks/useeffect'
+    | '/(hidden_folder)/(hooks)/hooks/useid'
+    | '/(hidden_folder)/(hooks)/hooks/useimperativehandle'
+    | '/(hidden_folder)/(hooks)/hooks/useinsertioneffect'
     | '/(hidden_folder)/(hooks)/hooks/useinterval'
+    | '/(hidden_folder)/(hooks)/hooks/uselayouteffect'
+    | '/(hidden_folder)/(hooks)/hooks/usememo'
+    | '/(hidden_folder)/(hooks)/hooks/usereducer'
+    | '/(hidden_folder)/(hooks)/hooks/useref'
     | '/(hidden_folder)/(hooks)/hooks/usestate'
+    | '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore'
+    | '/(hidden_folder)/(hooks)/hooks/usetransition'
+    | '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore'
+    | '/(hidden_folder)/(toys)/toys/clock'
+    | '/(hidden_folder)/(toys)/toys/color-picker'
+    | '/(hidden_folder)/(toys)/toys/stopwatch'
+    | '/(hidden_folder)/(toys)/toys/todo-app'
   fileRoutesById: FileRoutesById
 }
 
@@ -265,9 +600,25 @@ export interface RootRouteChildren {
   hiddenfolderhooksHooksIntervalProblem1Route: typeof hiddenfolderhooksHooksIntervalProblem1Route
   hiddenfolderhooksHooksIntervalProblem2Route: typeof hiddenfolderhooksHooksIntervalProblem2Route
   hiddenfolderhooksHooksUsecallbackRoute: typeof hiddenfolderhooksHooksUsecallbackRoute
+  hiddenfolderhooksHooksUsecontextRoute: typeof hiddenfolderhooksHooksUsecontextRoute
+  hiddenfolderhooksHooksUsedeferredvalueRoute: typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   hiddenfolderhooksHooksUseeffectRoute: typeof hiddenfolderhooksHooksUseeffectRoute
+  hiddenfolderhooksHooksUseidRoute: typeof hiddenfolderhooksHooksUseidRoute
+  hiddenfolderhooksHooksUseimperativehandleRoute: typeof hiddenfolderhooksHooksUseimperativehandleRoute
+  hiddenfolderhooksHooksUseinsertioneffectRoute: typeof hiddenfolderhooksHooksUseinsertioneffectRoute
   hiddenfolderhooksHooksUseintervalRoute: typeof hiddenfolderhooksHooksUseintervalRoute
+  hiddenfolderhooksHooksUselayouteffectRoute: typeof hiddenfolderhooksHooksUselayouteffectRoute
+  hiddenfolderhooksHooksUsememoRoute: typeof hiddenfolderhooksHooksUsememoRoute
+  hiddenfolderhooksHooksUsereducerRoute: typeof hiddenfolderhooksHooksUsereducerRoute
+  hiddenfolderhooksHooksUserefRoute: typeof hiddenfolderhooksHooksUserefRoute
   hiddenfolderhooksHooksUsestateRoute: typeof hiddenfolderhooksHooksUsestateRoute
+  hiddenfolderhooksHooksUsesyncexternalstoreRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  hiddenfolderhooksHooksUsetransitionRoute: typeof hiddenfolderhooksHooksUsetransitionRoute
+  hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  hiddenfoldertoysToysClockRoute: typeof hiddenfoldertoysToysClockRoute
+  hiddenfoldertoysToysColorPickerRoute: typeof hiddenfoldertoysToysColorPickerRoute
+  hiddenfoldertoysToysStopwatchRoute: typeof hiddenfoldertoysToysStopwatchRoute
+  hiddenfoldertoysToysTodoAppRoute: typeof hiddenfoldertoysToysTodoAppRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -284,10 +635,33 @@ const rootRouteChildren: RootRouteChildren = {
     hiddenfolderhooksHooksIntervalProblem2Route,
   hiddenfolderhooksHooksUsecallbackRoute:
     hiddenfolderhooksHooksUsecallbackRoute,
+  hiddenfolderhooksHooksUsecontextRoute: hiddenfolderhooksHooksUsecontextRoute,
+  hiddenfolderhooksHooksUsedeferredvalueRoute:
+    hiddenfolderhooksHooksUsedeferredvalueRoute,
   hiddenfolderhooksHooksUseeffectRoute: hiddenfolderhooksHooksUseeffectRoute,
+  hiddenfolderhooksHooksUseidRoute: hiddenfolderhooksHooksUseidRoute,
+  hiddenfolderhooksHooksUseimperativehandleRoute:
+    hiddenfolderhooksHooksUseimperativehandleRoute,
+  hiddenfolderhooksHooksUseinsertioneffectRoute:
+    hiddenfolderhooksHooksUseinsertioneffectRoute,
   hiddenfolderhooksHooksUseintervalRoute:
     hiddenfolderhooksHooksUseintervalRoute,
+  hiddenfolderhooksHooksUselayouteffectRoute:
+    hiddenfolderhooksHooksUselayouteffectRoute,
+  hiddenfolderhooksHooksUsememoRoute: hiddenfolderhooksHooksUsememoRoute,
+  hiddenfolderhooksHooksUsereducerRoute: hiddenfolderhooksHooksUsereducerRoute,
+  hiddenfolderhooksHooksUserefRoute: hiddenfolderhooksHooksUserefRoute,
   hiddenfolderhooksHooksUsestateRoute: hiddenfolderhooksHooksUsestateRoute,
+  hiddenfolderhooksHooksUsesyncexternalstoreRoute:
+    hiddenfolderhooksHooksUsesyncexternalstoreRoute,
+  hiddenfolderhooksHooksUsetransitionRoute:
+    hiddenfolderhooksHooksUsetransitionRoute,
+  hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute:
+    hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute,
+  hiddenfoldertoysToysClockRoute: hiddenfoldertoysToysClockRoute,
+  hiddenfoldertoysToysColorPickerRoute: hiddenfoldertoysToysColorPickerRoute,
+  hiddenfoldertoysToysStopwatchRoute: hiddenfoldertoysToysStopwatchRoute,
+  hiddenfoldertoysToysTodoAppRoute: hiddenfoldertoysToysTodoAppRoute,
 }
 
 export const routeTree = rootRoute
@@ -307,9 +681,25 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(hooks)/hooks/interval-problem-1",
         "/(hidden_folder)/(hooks)/hooks/interval-problem-2",
         "/(hidden_folder)/(hooks)/hooks/usecallback",
+        "/(hidden_folder)/(hooks)/hooks/usecontext",
+        "/(hidden_folder)/(hooks)/hooks/usedeferredvalue",
         "/(hidden_folder)/(hooks)/hooks/useeffect",
+        "/(hidden_folder)/(hooks)/hooks/useid",
+        "/(hidden_folder)/(hooks)/hooks/useimperativehandle",
+        "/(hidden_folder)/(hooks)/hooks/useinsertioneffect",
         "/(hidden_folder)/(hooks)/hooks/useinterval",
-        "/(hidden_folder)/(hooks)/hooks/usestate"
+        "/(hidden_folder)/(hooks)/hooks/uselayouteffect",
+        "/(hidden_folder)/(hooks)/hooks/usememo",
+        "/(hidden_folder)/(hooks)/hooks/usereducer",
+        "/(hidden_folder)/(hooks)/hooks/useref",
+        "/(hidden_folder)/(hooks)/hooks/usestate",
+        "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore",
+        "/(hidden_folder)/(hooks)/hooks/usetransition",
+        "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore",
+        "/(hidden_folder)/(toys)/toys/clock",
+        "/(hidden_folder)/(toys)/toys/color-picker",
+        "/(hidden_folder)/(toys)/toys/stopwatch",
+        "/(hidden_folder)/(toys)/toys/todo-app"
       ]
     },
     "/": {
@@ -333,14 +723,62 @@ export const routeTree = rootRoute
     "/(hidden_folder)/(hooks)/hooks/usecallback": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usecallback.tsx"
     },
+    "/(hidden_folder)/(hooks)/hooks/usecontext": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usecontext.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usedeferredvalue": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usedeferredvalue.tsx"
+    },
     "/(hidden_folder)/(hooks)/hooks/useeffect": {
       "filePath": "(hidden_folder)/(hooks)/hooks.useeffect.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useid": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useid.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useimperativehandle": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useimperativehandle.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useinsertioneffect": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useinsertioneffect.tsx"
     },
     "/(hidden_folder)/(hooks)/hooks/useinterval": {
       "filePath": "(hidden_folder)/(hooks)/hooks.useinterval.tsx"
     },
+    "/(hidden_folder)/(hooks)/hooks/uselayouteffect": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.uselayouteffect.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usememo": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usememo.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usereducer": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usereducer.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/useref": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.useref.tsx"
+    },
     "/(hidden_folder)/(hooks)/hooks/usestate": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usestate.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usesyncexternalstore.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/usetransition": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usetransition.tsx"
+    },
+    "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore.tsx"
+    },
+    "/(hidden_folder)/(toys)/toys/clock": {
+      "filePath": "(hidden_folder)/(toys)/toys.clock.tsx"
+    },
+    "/(hidden_folder)/(toys)/toys/color-picker": {
+      "filePath": "(hidden_folder)/(toys)/toys.color-picker.tsx"
+    },
+    "/(hidden_folder)/(toys)/toys/stopwatch": {
+      "filePath": "(hidden_folder)/(toys)/toys.stopwatch.tsx"
+    },
+    "/(hidden_folder)/(toys)/toys/todo-app": {
+      "filePath": "(hidden_folder)/(toys)/toys.todo-app.tsx"
     }
   }
 }

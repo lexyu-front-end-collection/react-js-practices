@@ -11,6 +11,23 @@ export const routes: RouteConfig[] = [
         path: "/",
     },
     {
+        title: "Basic",
+        children: [
+            {
+                title: "None1",
+                path: "/none1",
+            },
+            {
+                title: "None2",
+                path: "/none2",
+            },
+            {
+                title: "None3",
+                path: "/none3",
+            },
+        ]
+    },
+    {
         title: "Data Fetching",
         children: [
             {
@@ -51,12 +68,20 @@ export const routes: RouteConfig[] = [
                 path: "/hooks/useid",
             },
             {
+                title: "useRef",
+                path: "/hooks/useref",
+            },
+            {
                 title: "useReducer",
                 path: "/hooks/usereducer",
             },
             {
-                title: "useRef",
-                path: "/hooks/useref",
+                title: "useContext",
+                path: "/hooks/usecontext",
+            },
+            {
+                title: "useDeferredValue",
+                path: "/hooks/usedeferredvalue",
             },
             {
                 title: "useTransition",
@@ -76,7 +101,7 @@ export const routes: RouteConfig[] = [
             },
             {
                 title: "Before useSyncExternalStore (useState + useEffect)",
-                path: "/hooks/beforeusesyncexternalstore",
+                path: "/hooks/withoutusesyncexternalstore",
             },
             {
                 title: "useSyncExternalStore + useEffect",
@@ -102,11 +127,32 @@ export const routes: RouteConfig[] = [
         ]
     },
     {
+        title: "Framer Motion",
+        children: [
+            {
+                title: "Backlog",
+                path: "/backlog",
+            }
+        ]
+    },
+    {
         title: "Toys",
         children: [
             {
-                title: "TODOs",
-                path: "/toys/todos",
+                title: "TODO App",
+                path: "/toys/todo-app",
+            },
+            {
+                title: "Stopwatch",
+                path: "/toys/stopwatch",
+            },
+            {
+                title: "Clock",
+                path: "/toys/clock",
+            },
+            {
+                title: "Cloor Picker",
+                path: "/toys/color-picker",
             }
         ]
     },

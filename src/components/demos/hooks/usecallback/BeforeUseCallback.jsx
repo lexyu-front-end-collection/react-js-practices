@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { shuffle } from '@/hooks/utils.js'
+import { shuffle } from '@/utils/shuffle.js'
 import Search from '@/components/demos/hooks/usecallback/Search'
 
 const allUsers = [

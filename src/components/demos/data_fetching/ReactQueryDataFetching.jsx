@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useComments } from "@/hooks/useComment";
+import { useComments } from "@/hooks/custom/useComment";
 
 /**
  * React Query Demo

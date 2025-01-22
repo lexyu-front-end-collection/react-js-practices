@@ -10,6 +10,7 @@ export default defineConfig({
     TanStackRouterVite(),
     tsconfigPaths(),
   ],
+  base: "./",
   server: {
     hmr: {
       protocol: 'ws',

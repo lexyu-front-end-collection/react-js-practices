@@ -28,6 +28,7 @@ export const Route = createRootRoute({
                     <Outlet />
                     <TanStackRouterDevtools />
                 </div>
+                <p className="text-center mb-2">&copy; {new Date().getFullYear()} TLexYuW </p>
             </SidebarInset>
         </>
     ),
