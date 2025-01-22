@@ -38,6 +38,10 @@ import { Route as hiddenfolderhooksHooksIntervalProblem1Import } from './routes/
 import { Route as hiddenfolderhooksHooksBeforeUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.before-usecallback'
 import { Route as hiddenfolderdatafetchingDataFetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.react-query'
 import { Route as hiddenfolderdatafetchingDataFetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.own-handle'
+import { Route as hiddenfolderbasicBasicPropsChildrenImport } from './routes/(hidden_folder)/(basic)/basic.props-children'
+import { Route as hiddenfolderbasicBasicPortalImport } from './routes/(hidden_folder)/(basic)/basic.portal'
+import { Route as hiddenfolderbasicBasicListOfDataImport } from './routes/(hidden_folder)/(basic)/basic.list-of-data'
+import { Route as hiddenfolderbasicBasicConditionalRenderingImport } from './routes/(hidden_folder)/(basic)/basic.conditional-rendering'
 
 // Create Virtual Routes
 
@@ -225,6 +229,34 @@ const hiddenfolderdatafetchingDataFetchingOwnHandleRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const hiddenfolderbasicBasicPropsChildrenRoute =
+  hiddenfolderbasicBasicPropsChildrenImport.update({
+    id: '/(hidden_folder)/(basic)/basic/props-children',
+    path: '/basic/props-children',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderbasicBasicPortalRoute =
+  hiddenfolderbasicBasicPortalImport.update({
+    id: '/(hidden_folder)/(basic)/basic/portal',
+    path: '/basic/portal',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderbasicBasicListOfDataRoute =
+  hiddenfolderbasicBasicListOfDataImport.update({
+    id: '/(hidden_folder)/(basic)/basic/list-of-data',
+    path: '/basic/list-of-data',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderbasicBasicConditionalRenderingRoute =
+  hiddenfolderbasicBasicConditionalRenderingImport.update({
+    id: '/(hidden_folder)/(basic)/basic/conditional-rendering',
+    path: '/basic/conditional-rendering',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -234,6 +266,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(basic)/basic/conditional-rendering': {
+      id: '/(hidden_folder)/(basic)/basic/conditional-rendering'
+      path: '/basic/conditional-rendering'
+      fullPath: '/basic/conditional-rendering'
+      preLoaderRoute: typeof hiddenfolderbasicBasicConditionalRenderingImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(basic)/basic/list-of-data': {
+      id: '/(hidden_folder)/(basic)/basic/list-of-data'
+      path: '/basic/list-of-data'
+      fullPath: '/basic/list-of-data'
+      preLoaderRoute: typeof hiddenfolderbasicBasicListOfDataImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(basic)/basic/portal': {
+      id: '/(hidden_folder)/(basic)/basic/portal'
+      path: '/basic/portal'
+      fullPath: '/basic/portal'
+      preLoaderRoute: typeof hiddenfolderbasicBasicPortalImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(basic)/basic/props-children': {
+      id: '/(hidden_folder)/(basic)/basic/props-children'
+      path: '/basic/props-children'
+      fullPath: '/basic/props-children'
+      preLoaderRoute: typeof hiddenfolderbasicBasicPropsChildrenImport
       parentRoute: typeof rootRoute
     }
     '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': {
@@ -418,6 +478,10 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
+  '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
+  '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
+  '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
   '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
@@ -447,6 +511,10 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
+  '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
+  '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
+  '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
   '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
@@ -477,6 +545,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
+  '/(hidden_folder)/(basic)/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
+  '/(hidden_folder)/(basic)/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
+  '/(hidden_folder)/(basic)/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
+  '/(hidden_folder)/(basic)/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/(hidden_folder)/(data_fetching)/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
   '/(hidden_folder)/(hooks)/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
@@ -508,6 +580,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/basic/conditional-rendering'
+    | '/basic/list-of-data'
+    | '/basic/portal'
+    | '/basic/props-children'
     | '/data-fetching/own-handle'
     | '/data-fetching/react-query'
     | '/hooks/before-usecallback'
@@ -536,6 +612,10 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/basic/conditional-rendering'
+    | '/basic/list-of-data'
+    | '/basic/portal'
+    | '/basic/props-children'
     | '/data-fetching/own-handle'
     | '/data-fetching/react-query'
     | '/hooks/before-usecallback'
@@ -564,6 +644,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(hidden_folder)/(basic)/basic/conditional-rendering'
+    | '/(hidden_folder)/(basic)/basic/list-of-data'
+    | '/(hidden_folder)/(basic)/basic/portal'
+    | '/(hidden_folder)/(basic)/basic/props-children'
     | '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
     | '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
     | '/(hidden_folder)/(hooks)/hooks/before-usecallback'
@@ -594,6 +678,10 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  hiddenfolderbasicBasicConditionalRenderingRoute: typeof hiddenfolderbasicBasicConditionalRenderingRoute
+  hiddenfolderbasicBasicListOfDataRoute: typeof hiddenfolderbasicBasicListOfDataRoute
+  hiddenfolderbasicBasicPortalRoute: typeof hiddenfolderbasicBasicPortalRoute
+  hiddenfolderbasicBasicPropsChildrenRoute: typeof hiddenfolderbasicBasicPropsChildrenRoute
   hiddenfolderdatafetchingDataFetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   hiddenfolderdatafetchingDataFetchingReactQueryRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
   hiddenfolderhooksHooksBeforeUsecallbackRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
@@ -623,6 +711,12 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  hiddenfolderbasicBasicConditionalRenderingRoute:
+    hiddenfolderbasicBasicConditionalRenderingRoute,
+  hiddenfolderbasicBasicListOfDataRoute: hiddenfolderbasicBasicListOfDataRoute,
+  hiddenfolderbasicBasicPortalRoute: hiddenfolderbasicBasicPortalRoute,
+  hiddenfolderbasicBasicPropsChildrenRoute:
+    hiddenfolderbasicBasicPropsChildrenRoute,
   hiddenfolderdatafetchingDataFetchingOwnHandleRoute:
     hiddenfolderdatafetchingDataFetchingOwnHandleRoute,
   hiddenfolderdatafetchingDataFetchingReactQueryRoute:
@@ -675,6 +769,10 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(hidden_folder)/(basic)/basic/conditional-rendering",
+        "/(hidden_folder)/(basic)/basic/list-of-data",
+        "/(hidden_folder)/(basic)/basic/portal",
+        "/(hidden_folder)/(basic)/basic/props-children",
         "/(hidden_folder)/(data_fetching)/data-fetching/own-handle",
         "/(hidden_folder)/(data_fetching)/data-fetching/react-query",
         "/(hidden_folder)/(hooks)/hooks/before-usecallback",
@@ -704,6 +802,18 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.lazy.tsx"
+    },
+    "/(hidden_folder)/(basic)/basic/conditional-rendering": {
+      "filePath": "(hidden_folder)/(basic)/basic.conditional-rendering.tsx"
+    },
+    "/(hidden_folder)/(basic)/basic/list-of-data": {
+      "filePath": "(hidden_folder)/(basic)/basic.list-of-data.tsx"
+    },
+    "/(hidden_folder)/(basic)/basic/portal": {
+      "filePath": "(hidden_folder)/(basic)/basic.portal.tsx"
+    },
+    "/(hidden_folder)/(basic)/basic/props-children": {
+      "filePath": "(hidden_folder)/(basic)/basic.props-children.tsx"
     },
     "/(hidden_folder)/(data_fetching)/data-fetching/own-handle": {
       "filePath": "(hidden_folder)/(data_fetching)/data-fetching.own-handle.tsx"
