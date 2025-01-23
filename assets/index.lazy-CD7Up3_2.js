@@ -1,1 +1,0 @@
-import{c as t,j as e}from"./index-CdLU7-KM.js";const n=t("/")({component:s});function s(){return e.jsx("div",{className:"h-full p-4 flex items-center justify-center",children:e.jsx("h3",{className:"text-3xl text-blue-500",children:"Welcome Home !!"})})}export{n as Route};
