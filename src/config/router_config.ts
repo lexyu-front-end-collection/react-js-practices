@@ -14,16 +14,20 @@ export const routes: RouteConfig[] = [
         title: "Basic",
         children: [
             {
-                title: "None1",
-                path: "/none1",
+                title: "List of Data",
+                path: "/basic/list-of-data",
             },
             {
-                title: "None2",
-                path: "/none2",
+                title: "Props Children",
+                path: "/basic/props-children",
             },
             {
-                title: "None3",
-                path: "/none3",
+                title: "Conditional Rendering",
+                path: "/basic/portal",
+            },
+            {
+                title: "Portal",
+                path: "/basic/portal",
             },
         ]
     },
@@ -132,6 +136,37 @@ export const routes: RouteConfig[] = [
             {
                 title: "Backlog",
                 path: "/backlog",
+            }
+        ]
+    },
+    {
+        title: "D3.js",
+        children: [
+            {
+                title: "Backlog 2",
+                path: "/backlog2",
+            }
+        ]
+    },
+    {
+        title: "Three.js",
+        children: [
+            {
+                title: "Backlog 3",
+                path: "/backlog3",
+            }
+        ]
+    },
+    {
+        title: "Libraries",
+        children: [
+            {
+                title: "DnD",
+                path: "/libs/dnd",
+            },
+            {
+                title: "cva && twMerge",
+                path: "/libs/cva-tw-merge",
             }
         ]
     },
