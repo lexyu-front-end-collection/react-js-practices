@@ -12,6 +12,8 @@
     "allowJs": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "paths": {
       "@/*": [
         "./src/*"
