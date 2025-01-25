@@ -1,3 +1,4 @@
+// @ts-ignore
 function throttle<T extends (...args: any[]) => any>(
 	cb: T,
 	delay = 1000

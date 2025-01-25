@@ -14,6 +14,7 @@ import { SidebarProvider } from "./components/ui/sidebar"
 const router = createRouter({
   routeTree,
   defaultNotFoundComponent: () => <div>Gloabal Not Found Here!</div>,
+  basepath: "/react-js-practices/",
 })
 
 declare module '@tanstack/react-router' {
