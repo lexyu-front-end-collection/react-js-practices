@@ -10,7 +10,7 @@ export default defineConfig({
     TanStackRouterVite(),
     tsconfigPaths(),
   ],
-  base: "./",
+  base: "/react-js-practices/",
   server: {
     hmr: {
       protocol: 'ws',

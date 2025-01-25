@@ -8,7 +8,7 @@ export type RouteConfig = {
 export const routes: RouteConfig[] = [
     {
         title: "Home",
-        path: "/",
+        path: "/react-js-practices/",
     },
     {
         title: "Basic",
