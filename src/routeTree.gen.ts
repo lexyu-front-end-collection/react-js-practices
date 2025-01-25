@@ -17,8 +17,12 @@ import { Route as hiddenfoldertoysToysTodoAppImport } from './routes/(hidden_fol
 import { Route as hiddenfoldertoysToysStopwatchImport } from './routes/(hidden_folder)/(toys)/toys.stopwatch'
 import { Route as hiddenfoldertoysToysColorPickerImport } from './routes/(hidden_folder)/(toys)/toys.color-picker'
 import { Route as hiddenfoldertoysToysClockImport } from './routes/(hidden_folder)/(toys)/toys.clock'
+import { Route as hiddenfolderlibrariesLibsZustandImport } from './routes/(hidden_folder)/(libraries)/libs.zustand'
+import { Route as hiddenfolderlibrariesLibsDndImport } from './routes/(hidden_folder)/(libraries)/libs.dnd'
+import { Route as hiddenfolderlibrariesLibsCvaTwmergeImport } from './routes/(hidden_folder)/(libraries)/libs.cva-twmerge'
 import { Route as hiddenfolderhooksHooksWithoutusesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore'
 import { Route as hiddenfolderhooksHooksUsetransitionImport } from './routes/(hidden_folder)/(hooks)/hooks.usetransition'
+import { Route as hiddenfolderhooksHooksUsethrottleImport } from './routes/(hidden_folder)/(hooks)/hooks.usethrottle'
 import { Route as hiddenfolderhooksHooksUsesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.usesyncexternalstore'
 import { Route as hiddenfolderhooksHooksUsestateImport } from './routes/(hidden_folder)/(hooks)/hooks.usestate'
 import { Route as hiddenfolderhooksHooksUserefImport } from './routes/(hidden_folder)/(hooks)/hooks.useref'
@@ -31,6 +35,7 @@ import { Route as hiddenfolderhooksHooksUseimperativehandleImport } from './rout
 import { Route as hiddenfolderhooksHooksUseidImport } from './routes/(hidden_folder)/(hooks)/hooks.useid'
 import { Route as hiddenfolderhooksHooksUseeffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useeffect'
 import { Route as hiddenfolderhooksHooksUsedeferredvalueImport } from './routes/(hidden_folder)/(hooks)/hooks.usedeferredvalue'
+import { Route as hiddenfolderhooksHooksUsedebounceImport } from './routes/(hidden_folder)/(hooks)/hooks.usedebounce'
 import { Route as hiddenfolderhooksHooksUsecontextImport } from './routes/(hidden_folder)/(hooks)/hooks.usecontext'
 import { Route as hiddenfolderhooksHooksUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.usecallback'
 import { Route as hiddenfolderhooksHooksIntervalProblem2Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
@@ -82,6 +87,27 @@ const hiddenfoldertoysToysClockRoute = hiddenfoldertoysToysClockImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const hiddenfolderlibrariesLibsZustandRoute =
+  hiddenfolderlibrariesLibsZustandImport.update({
+    id: '/(hidden_folder)/(libraries)/libs/zustand',
+    path: '/libs/zustand',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderlibrariesLibsDndRoute =
+  hiddenfolderlibrariesLibsDndImport.update({
+    id: '/(hidden_folder)/(libraries)/libs/dnd',
+    path: '/libs/dnd',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderlibrariesLibsCvaTwmergeRoute =
+  hiddenfolderlibrariesLibsCvaTwmergeImport.update({
+    id: '/(hidden_folder)/(libraries)/libs/cva-twmerge',
+    path: '/libs/cva-twmerge',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 const hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute =
   hiddenfolderhooksHooksWithoutusesyncexternalstoreImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore',
@@ -93,6 +119,13 @@ const hiddenfolderhooksHooksUsetransitionRoute =
   hiddenfolderhooksHooksUsetransitionImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usetransition',
     path: '/hooks/usetransition',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsethrottleRoute =
+  hiddenfolderhooksHooksUsethrottleImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usethrottle',
+    path: '/hooks/usethrottle',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -177,6 +210,13 @@ const hiddenfolderhooksHooksUsedeferredvalueRoute =
   hiddenfolderhooksHooksUsedeferredvalueImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue',
     path: '/hooks/usedeferredvalue',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderhooksHooksUsedebounceRoute =
+  hiddenfolderhooksHooksUsedebounceImport.update({
+    id: '/(hidden_folder)/(hooks)/hooks/usedebounce',
+    path: '/hooks/usedebounce',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -345,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfolderhooksHooksUsecontextImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(hooks)/hooks/usedebounce': {
+      id: '/(hidden_folder)/(hooks)/hooks/usedebounce'
+      path: '/hooks/usedebounce'
+      fullPath: '/hooks/usedebounce'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsedebounceImport
+      parentRoute: typeof rootRoute
+    }
     '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': {
       id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
       path: '/hooks/usedeferredvalue'
@@ -429,6 +476,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(hooks)/hooks/usethrottle': {
+      id: '/(hidden_folder)/(hooks)/hooks/usethrottle'
+      path: '/hooks/usethrottle'
+      fullPath: '/hooks/usethrottle'
+      preLoaderRoute: typeof hiddenfolderhooksHooksUsethrottleImport
+      parentRoute: typeof rootRoute
+    }
     '/(hidden_folder)/(hooks)/hooks/usetransition': {
       id: '/(hidden_folder)/(hooks)/hooks/usetransition'
       path: '/hooks/usetransition'
@@ -441,6 +495,27 @@ declare module '@tanstack/react-router' {
       path: '/hooks/withoutusesyncexternalstore'
       fullPath: '/hooks/withoutusesyncexternalstore'
       preLoaderRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(libraries)/libs/cva-twmerge': {
+      id: '/(hidden_folder)/(libraries)/libs/cva-twmerge'
+      path: '/libs/cva-twmerge'
+      fullPath: '/libs/cva-twmerge'
+      preLoaderRoute: typeof hiddenfolderlibrariesLibsCvaTwmergeImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(libraries)/libs/dnd': {
+      id: '/(hidden_folder)/(libraries)/libs/dnd'
+      path: '/libs/dnd'
+      fullPath: '/libs/dnd'
+      preLoaderRoute: typeof hiddenfolderlibrariesLibsDndImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(libraries)/libs/zustand': {
+      id: '/(hidden_folder)/(libraries)/libs/zustand'
+      path: '/libs/zustand'
+      fullPath: '/libs/zustand'
+      preLoaderRoute: typeof hiddenfolderlibrariesLibsZustandImport
       parentRoute: typeof rootRoute
     }
     '/(hidden_folder)/(toys)/toys/clock': {
@@ -489,6 +564,7 @@ export interface FileRoutesByFullPath {
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
   '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
   '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
   '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
@@ -501,8 +577,12 @@ export interface FileRoutesByFullPath {
   '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
   '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
   '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
   '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
+  '/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
+  '/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
   '/toys/clock': typeof hiddenfoldertoysToysClockRoute
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
@@ -522,6 +602,7 @@ export interface FileRoutesByTo {
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
   '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
   '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
   '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
@@ -534,8 +615,12 @@ export interface FileRoutesByTo {
   '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
   '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
   '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
   '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
+  '/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
+  '/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
   '/toys/clock': typeof hiddenfoldertoysToysClockRoute
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
@@ -556,6 +641,7 @@ export interface FileRoutesById {
   '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
   '/(hidden_folder)/(hooks)/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
   '/(hidden_folder)/(hooks)/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
+  '/(hidden_folder)/(hooks)/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
   '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   '/(hidden_folder)/(hooks)/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
   '/(hidden_folder)/(hooks)/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
@@ -568,8 +654,12 @@ export interface FileRoutesById {
   '/(hidden_folder)/(hooks)/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
   '/(hidden_folder)/(hooks)/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
   '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  '/(hidden_folder)/(hooks)/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
   '/(hidden_folder)/(hooks)/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
   '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  '/(hidden_folder)/(libraries)/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
+  '/(hidden_folder)/(libraries)/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
+  '/(hidden_folder)/(libraries)/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
   '/(hidden_folder)/(toys)/toys/clock': typeof hiddenfoldertoysToysClockRoute
   '/(hidden_folder)/(toys)/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/(hidden_folder)/(toys)/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
@@ -591,6 +681,7 @@ export interface FileRouteTypes {
     | '/hooks/interval-problem-2'
     | '/hooks/usecallback'
     | '/hooks/usecontext'
+    | '/hooks/usedebounce'
     | '/hooks/usedeferredvalue'
     | '/hooks/useeffect'
     | '/hooks/useid'
@@ -603,8 +694,12 @@ export interface FileRouteTypes {
     | '/hooks/useref'
     | '/hooks/usestate'
     | '/hooks/usesyncexternalstore'
+    | '/hooks/usethrottle'
     | '/hooks/usetransition'
     | '/hooks/withoutusesyncexternalstore'
+    | '/libs/cva-twmerge'
+    | '/libs/dnd'
+    | '/libs/zustand'
     | '/toys/clock'
     | '/toys/color-picker'
     | '/toys/stopwatch'
@@ -623,6 +718,7 @@ export interface FileRouteTypes {
     | '/hooks/interval-problem-2'
     | '/hooks/usecallback'
     | '/hooks/usecontext'
+    | '/hooks/usedebounce'
     | '/hooks/usedeferredvalue'
     | '/hooks/useeffect'
     | '/hooks/useid'
@@ -635,8 +731,12 @@ export interface FileRouteTypes {
     | '/hooks/useref'
     | '/hooks/usestate'
     | '/hooks/usesyncexternalstore'
+    | '/hooks/usethrottle'
     | '/hooks/usetransition'
     | '/hooks/withoutusesyncexternalstore'
+    | '/libs/cva-twmerge'
+    | '/libs/dnd'
+    | '/libs/zustand'
     | '/toys/clock'
     | '/toys/color-picker'
     | '/toys/stopwatch'
@@ -655,6 +755,7 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
     | '/(hidden_folder)/(hooks)/hooks/usecallback'
     | '/(hidden_folder)/(hooks)/hooks/usecontext'
+    | '/(hidden_folder)/(hooks)/hooks/usedebounce'
     | '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
     | '/(hidden_folder)/(hooks)/hooks/useeffect'
     | '/(hidden_folder)/(hooks)/hooks/useid'
@@ -667,8 +768,12 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(hooks)/hooks/useref'
     | '/(hidden_folder)/(hooks)/hooks/usestate'
     | '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore'
+    | '/(hidden_folder)/(hooks)/hooks/usethrottle'
     | '/(hidden_folder)/(hooks)/hooks/usetransition'
     | '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore'
+    | '/(hidden_folder)/(libraries)/libs/cva-twmerge'
+    | '/(hidden_folder)/(libraries)/libs/dnd'
+    | '/(hidden_folder)/(libraries)/libs/zustand'
     | '/(hidden_folder)/(toys)/toys/clock'
     | '/(hidden_folder)/(toys)/toys/color-picker'
     | '/(hidden_folder)/(toys)/toys/stopwatch'
@@ -689,6 +794,7 @@ export interface RootRouteChildren {
   hiddenfolderhooksHooksIntervalProblem2Route: typeof hiddenfolderhooksHooksIntervalProblem2Route
   hiddenfolderhooksHooksUsecallbackRoute: typeof hiddenfolderhooksHooksUsecallbackRoute
   hiddenfolderhooksHooksUsecontextRoute: typeof hiddenfolderhooksHooksUsecontextRoute
+  hiddenfolderhooksHooksUsedebounceRoute: typeof hiddenfolderhooksHooksUsedebounceRoute
   hiddenfolderhooksHooksUsedeferredvalueRoute: typeof hiddenfolderhooksHooksUsedeferredvalueRoute
   hiddenfolderhooksHooksUseeffectRoute: typeof hiddenfolderhooksHooksUseeffectRoute
   hiddenfolderhooksHooksUseidRoute: typeof hiddenfolderhooksHooksUseidRoute
@@ -701,8 +807,12 @@ export interface RootRouteChildren {
   hiddenfolderhooksHooksUserefRoute: typeof hiddenfolderhooksHooksUserefRoute
   hiddenfolderhooksHooksUsestateRoute: typeof hiddenfolderhooksHooksUsestateRoute
   hiddenfolderhooksHooksUsesyncexternalstoreRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
+  hiddenfolderhooksHooksUsethrottleRoute: typeof hiddenfolderhooksHooksUsethrottleRoute
   hiddenfolderhooksHooksUsetransitionRoute: typeof hiddenfolderhooksHooksUsetransitionRoute
   hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
+  hiddenfolderlibrariesLibsCvaTwmergeRoute: typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
+  hiddenfolderlibrariesLibsDndRoute: typeof hiddenfolderlibrariesLibsDndRoute
+  hiddenfolderlibrariesLibsZustandRoute: typeof hiddenfolderlibrariesLibsZustandRoute
   hiddenfoldertoysToysClockRoute: typeof hiddenfoldertoysToysClockRoute
   hiddenfoldertoysToysColorPickerRoute: typeof hiddenfoldertoysToysColorPickerRoute
   hiddenfoldertoysToysStopwatchRoute: typeof hiddenfoldertoysToysStopwatchRoute
@@ -730,6 +840,8 @@ const rootRouteChildren: RootRouteChildren = {
   hiddenfolderhooksHooksUsecallbackRoute:
     hiddenfolderhooksHooksUsecallbackRoute,
   hiddenfolderhooksHooksUsecontextRoute: hiddenfolderhooksHooksUsecontextRoute,
+  hiddenfolderhooksHooksUsedebounceRoute:
+    hiddenfolderhooksHooksUsedebounceRoute,
   hiddenfolderhooksHooksUsedeferredvalueRoute:
     hiddenfolderhooksHooksUsedeferredvalueRoute,
   hiddenfolderhooksHooksUseeffectRoute: hiddenfolderhooksHooksUseeffectRoute,
@@ -748,10 +860,16 @@ const rootRouteChildren: RootRouteChildren = {
   hiddenfolderhooksHooksUsestateRoute: hiddenfolderhooksHooksUsestateRoute,
   hiddenfolderhooksHooksUsesyncexternalstoreRoute:
     hiddenfolderhooksHooksUsesyncexternalstoreRoute,
+  hiddenfolderhooksHooksUsethrottleRoute:
+    hiddenfolderhooksHooksUsethrottleRoute,
   hiddenfolderhooksHooksUsetransitionRoute:
     hiddenfolderhooksHooksUsetransitionRoute,
   hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute:
     hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute,
+  hiddenfolderlibrariesLibsCvaTwmergeRoute:
+    hiddenfolderlibrariesLibsCvaTwmergeRoute,
+  hiddenfolderlibrariesLibsDndRoute: hiddenfolderlibrariesLibsDndRoute,
+  hiddenfolderlibrariesLibsZustandRoute: hiddenfolderlibrariesLibsZustandRoute,
   hiddenfoldertoysToysClockRoute: hiddenfoldertoysToysClockRoute,
   hiddenfoldertoysToysColorPickerRoute: hiddenfoldertoysToysColorPickerRoute,
   hiddenfoldertoysToysStopwatchRoute: hiddenfoldertoysToysStopwatchRoute,
@@ -780,6 +898,7 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(hooks)/hooks/interval-problem-2",
         "/(hidden_folder)/(hooks)/hooks/usecallback",
         "/(hidden_folder)/(hooks)/hooks/usecontext",
+        "/(hidden_folder)/(hooks)/hooks/usedebounce",
         "/(hidden_folder)/(hooks)/hooks/usedeferredvalue",
         "/(hidden_folder)/(hooks)/hooks/useeffect",
         "/(hidden_folder)/(hooks)/hooks/useid",
@@ -792,8 +911,12 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(hooks)/hooks/useref",
         "/(hidden_folder)/(hooks)/hooks/usestate",
         "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore",
+        "/(hidden_folder)/(hooks)/hooks/usethrottle",
         "/(hidden_folder)/(hooks)/hooks/usetransition",
         "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore",
+        "/(hidden_folder)/(libraries)/libs/cva-twmerge",
+        "/(hidden_folder)/(libraries)/libs/dnd",
+        "/(hidden_folder)/(libraries)/libs/zustand",
         "/(hidden_folder)/(toys)/toys/clock",
         "/(hidden_folder)/(toys)/toys/color-picker",
         "/(hidden_folder)/(toys)/toys/stopwatch",
@@ -836,6 +959,9 @@ export const routeTree = rootRoute
     "/(hidden_folder)/(hooks)/hooks/usecontext": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usecontext.tsx"
     },
+    "/(hidden_folder)/(hooks)/hooks/usedebounce": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usedebounce.tsx"
+    },
     "/(hidden_folder)/(hooks)/hooks/usedeferredvalue": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usedeferredvalue.tsx"
     },
@@ -872,11 +998,23 @@ export const routeTree = rootRoute
     "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usesyncexternalstore.tsx"
     },
+    "/(hidden_folder)/(hooks)/hooks/usethrottle": {
+      "filePath": "(hidden_folder)/(hooks)/hooks.usethrottle.tsx"
+    },
     "/(hidden_folder)/(hooks)/hooks/usetransition": {
       "filePath": "(hidden_folder)/(hooks)/hooks.usetransition.tsx"
     },
     "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore": {
       "filePath": "(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore.tsx"
+    },
+    "/(hidden_folder)/(libraries)/libs/cva-twmerge": {
+      "filePath": "(hidden_folder)/(libraries)/libs.cva-twmerge.tsx"
+    },
+    "/(hidden_folder)/(libraries)/libs/dnd": {
+      "filePath": "(hidden_folder)/(libraries)/libs.dnd.tsx"
+    },
+    "/(hidden_folder)/(libraries)/libs/zustand": {
+      "filePath": "(hidden_folder)/(libraries)/libs.zustand.tsx"
     },
     "/(hidden_folder)/(toys)/toys/clock": {
       "filePath": "(hidden_folder)/(toys)/toys.clock.tsx"

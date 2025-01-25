@@ -35,7 +35,6 @@ function App() {
           </QueryClientProvider>
         </SidebarProvider>
       </ThemeProvider>
-
     </>
   )
 }

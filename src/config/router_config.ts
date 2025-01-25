@@ -23,7 +23,7 @@ export const routes: RouteConfig[] = [
             },
             {
                 title: "Conditional Rendering",
-                path: "/basic/portal",
+                path: "/basic/conditional-rendering",
             },
             {
                 title: "Portal",
@@ -128,6 +128,14 @@ export const routes: RouteConfig[] = [
                 title: "useInterval",
                 path: "/hooks/useinterval",
             },
+            {
+                title: "useDebounce",
+                path: "/hooks/usedebounce",
+            },
+            {
+                title: "useThrottle",
+                path: "/hooks/usethrottle",
+            },
         ]
     },
     {
@@ -166,7 +174,11 @@ export const routes: RouteConfig[] = [
             },
             {
                 title: "cva && twMerge",
-                path: "/libs/cva-tw-merge",
+                path: "/libs/cva-twmerge",
+            },
+            {
+                title: "zustand",
+                path: "/libs/zustand",
             }
         ]
     },

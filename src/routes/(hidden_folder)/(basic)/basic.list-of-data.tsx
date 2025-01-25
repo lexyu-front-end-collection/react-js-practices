@@ -1,11 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
+import ListOfData from '@/components/basic/ListOfData'
 
 export const Route = createFileRoute(
   '/(hidden_folder)/(basic)/basic/list-of-data',
 )({
-  component: RouteComponent,
+  component: ListOfData,
 })
-
-function RouteComponent() {
-  return <div>Hello "/(hidden_folder)/(basic)/basic/list-of-data"!</div>
-}
