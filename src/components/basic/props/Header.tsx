@@ -6,9 +6,9 @@ export default function Header() {
 					<div className="flex items-center">
 						<h1 className="text-xl font-bold text-black">Logo</h1>
 						<div className="ml-10 flex space-x-4">
-							<a href="/" className="text-gray-700 hover:text-gray-900">Home</a>
-							<a href="/about" className="text-gray-700 hover:text-gray-900">About</a>
-							<a href="/contact" className="text-gray-700 hover:text-gray-900">Contact</a>
+							<a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
+							<a href="#" className="text-gray-700 hover:text-gray-900">About</a>
+							<a href="#" className="text-gray-700 hover:text-gray-900">Contact</a>
 						</div>
 					</div>
 					<div>

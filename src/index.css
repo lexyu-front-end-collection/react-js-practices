@@ -143,7 +143,6 @@
     --color-theme-700: var(--color-theme-light-700);
     --color-theme-800: var(--color-theme-light-800);
     --color-theme-900: var(--color-theme-light-900);
-    color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -158,7 +157,6 @@
       --color-theme-700: var(--color-theme-dark-700);
       --color-theme-800: var(--color-theme-dark-800);
       --color-theme-900: var(--color-theme-dark-900);
-      color-scheme: dark;
     }
   }
 }

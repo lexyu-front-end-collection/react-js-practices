@@ -7,8 +7,8 @@ function Debounce() {
 	const [calls, setCalls] = useState(0);
 
 	const debouncedValue = useDebounce(name, 750);
-	const { data, error, isError } = useCharacters(debouncedValue, setCalls);
-	console.log(data, error, isError);
+	const { data, error, isError } = useCharacters({ name: debouncedValue }, setCalls);
+	console.log("debounce : ", data, error, isError);
 
 
 	return (

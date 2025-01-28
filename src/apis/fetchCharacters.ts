@@ -1,16 +1,18 @@
-import { Character } from "@/types/debounce_throttle";
+import { QueryParams, RickAndMortyResponse } from "@/types/debounce_throttle";
 
-function qs(params: Record<string, string>) {
-	return Object.keys(params)
-		.map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-		.join('&');
+function qs(params: Partial<Record<keyof QueryParams, string | number>>) {
+	const validParams = Object.entries(params)
+		.filter(([_, value]) => value !== undefined && value !== '')
+		.reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
+
+	return new URLSearchParams(validParams).toString();
 }
 
 export async function fetchCharacters(
-	name: string,
+	params: QueryParams,
 	setCalls?: React.Dispatch<React.SetStateAction<number>>
-): Promise<{ results: Character[] }> {
-	const response = await fetch(`https://rickandmortyapi.com/api/character?${qs({ name })}`);
+): Promise<RickAndMortyResponse> {
+	const response = await fetch(`https://rickandmortyapi.com/api/character?${qs(params)}`);
 	if (setCalls) setCalls(prev => prev + 1);
 
 	if (!response.ok) {
@@ -18,7 +20,7 @@ export async function fetchCharacters(
 		throw new Error(`Error: ${response.status} ${JSON.stringify(errorBody)}`);
 	}
 
-	const data = await response.json();
+	const data: RickAndMortyResponse = await response.json();
 	return data;
 }
 

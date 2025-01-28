@@ -1,3 +1,10 @@
+export interface Info {
+	count: number;
+	pages: number;
+	next: string | null;
+	prev: string | null;
+}
+
 export interface Character {
 	id: number;
 	name: string;
@@ -16,4 +23,15 @@ export interface Character {
 export interface Location {
 	name: string;
 	url: string;
+}
+
+export interface RickAndMortyResponse {
+	info: Info;
+	results: Character[];
+}
+
+
+export interface QueryParams {
+	name?: string;
+	page?: number;
 }

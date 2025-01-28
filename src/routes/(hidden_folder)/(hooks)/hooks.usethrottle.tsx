@@ -1,11 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
+import Throttle from '@/components/demos/custom_hooks/throttle/Throttle'
 
 export const Route = createFileRoute(
   '/(hidden_folder)/(hooks)/hooks/usethrottle',
 )({
-  component: RouteComponent,
+  component: Throttle,
 })
-
-function RouteComponent() {
-  return <div>Hello "/(hidden_folder)/(hooks)/hooks/throttle"!</div>
-}
