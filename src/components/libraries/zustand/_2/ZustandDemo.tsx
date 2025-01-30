@@ -4,35 +4,45 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Cart from "@/components/libraries/zustand/_2/Cart";
 import User from "@/components/libraries/zustand/_2/User";
 import { useStore } from "@/store/useStore";
+import { PRODUCTS_DATA } from "@/data/carts";
 
 
 function ZustandDemo() {
-	const showChangeQtyButtons = Math.random() < 0.5;
-	const store = useStore()
+	// const showChangeQtyButtons = Math.random() < 0.5;
+
+	const addProduct = useStore(state => state.add);
+	const cartProducts = useStore(state => state.cartProducts);
 
 	return (
 		<>
-			<div className="my-8">
-				<h2 className="text-2xl font-bold">Store State:</h2>
-				<pre>{JSON.stringify(store, null, 2)}</pre>
-			</div>
 			<div className="flex justify-between">
 				<User />
 				<Cart />
 			</div>
 			<h2 className="my-8 text-2xl font-bold">Products:</h2>
 			<div className="space-y-2">
-				<Card>
-					<CardHeader>Header</CardHeader>
-					<CardContent>Content</CardContent>
-					<CardFooter>
-						{showChangeQtyButtons ? <ChangeQtyButtons /> : (
-							<Button variant={"default"} className="ml-auto">
-								Add to Cart
-							</Button>
-						)}
-					</CardFooter>
-				</Card>
+				{
+					PRODUCTS_DATA.map((product) => (
+						<Card key={product.id}>
+							<CardHeader className="text-2xl font-bold">{product.title}</CardHeader>
+							<CardContent className="text-xl">${product.price}</CardContent>
+							<CardFooter>
+								{
+									cartProducts.find((item) => item.id === product.id) ? (
+										<ChangeQtyButtons productId={product.id}></ChangeQtyButtons>
+									) : (
+										<Button variant={"default"} className="ml-auto"
+											onClick={() => addProduct(product)}>
+											Add to Cart
+										</Button>
+									)
+
+								}
+							</CardFooter>
+						</Card>
+					))
+				}
+
 			</div>
 		</>
 	)

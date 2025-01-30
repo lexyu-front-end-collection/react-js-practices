@@ -5,8 +5,6 @@ import { immer } from 'zustand/middleware/immer'
 import { createUserSlice } from "@/store/user-slice"
 import { createCartSlice } from "@/store/cart-slice"
 
-// ----------------------------------------------->
-
 export const useStore = create<StoreSlices>()(
 	devtools(
 		persist(

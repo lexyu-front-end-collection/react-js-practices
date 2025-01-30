@@ -14,7 +14,9 @@ function RouteComponent() {
 		<div>
 			<Counter />
 			<hr className='my-8' />
-			<ZustandDemo />
+			<div className='w-1/2 mx-auto'>
+				<ZustandDemo />
+			</div>
 			<hr className='my-8' />
 			<TicTacToe />
 		</div>
