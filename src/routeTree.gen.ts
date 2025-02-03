@@ -47,6 +47,11 @@ import { Route as hiddenfolderbasicBasicPropsChildrenImport } from './routes/(hi
 import { Route as hiddenfolderbasicBasicPortalImport } from './routes/(hidden_folder)/(basic)/basic.portal'
 import { Route as hiddenfolderbasicBasicListOfDataImport } from './routes/(hidden_folder)/(basic)/basic.list-of-data'
 import { Route as hiddenfolderbasicBasicConditionalRenderingImport } from './routes/(hidden_folder)/(basic)/basic.conditional-rendering'
+import { Route as hiddenfolderanimationM01Import } from './routes/(hidden_folder)/(animation)/mh.01'
+import { Route as hiddenfolderanimationFmg01Import } from './routes/(hidden_folder)/(animation)/mh.02'
+import { Route as hiddenfolderanimationFm03Import } from './routes/(hidden_folder)/(animation)/mg.01'
+import { Route as hiddenfolderanimationFm02Import } from './routes/(hidden_folder)/(animation)/mt.01'
+import { Route as hiddenfolderanimationFm01Import } from './routes/(hidden_folder)/(animation)/m.01'
 
 // Create Virtual Routes
 
@@ -297,6 +302,38 @@ const hiddenfolderbasicBasicConditionalRenderingRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const hiddenfolderanimationM01Route = hiddenfolderanimationM01Import.update({
+  id: '/(hidden_folder)/(animation)/m/01',
+  path: '/m/01',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const hiddenfolderanimationFmg01Route = hiddenfolderanimationFmg01Import.update(
+  {
+    id: '/(hidden_folder)/(animation)/fmg/01',
+    path: '/fmg/01',
+    getParentRoute: () => rootRoute,
+  } as any,
+)
+
+const hiddenfolderanimationFm03Route = hiddenfolderanimationFm03Import.update({
+  id: '/(hidden_folder)/(animation)/fm/03',
+  path: '/fm/03',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const hiddenfolderanimationFm02Route = hiddenfolderanimationFm02Import.update({
+  id: '/(hidden_folder)/(animation)/fm/02',
+  path: '/fm/02',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const hiddenfolderanimationFm01Route = hiddenfolderanimationFm01Import.update({
+  id: '/(hidden_folder)/(animation)/fm/01',
+  path: '/fm/01',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -306,6 +343,41 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(animation)/fm/01': {
+      id: '/(hidden_folder)/(animation)/fm/01'
+      path: '/fm/01'
+      fullPath: '/fm/01'
+      preLoaderRoute: typeof hiddenfolderanimationFm01Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(animation)/fm/02': {
+      id: '/(hidden_folder)/(animation)/fm/02'
+      path: '/fm/02'
+      fullPath: '/fm/02'
+      preLoaderRoute: typeof hiddenfolderanimationFm02Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(animation)/fm/03': {
+      id: '/(hidden_folder)/(animation)/fm/03'
+      path: '/fm/03'
+      fullPath: '/fm/03'
+      preLoaderRoute: typeof hiddenfolderanimationFm03Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(animation)/fmg/01': {
+      id: '/(hidden_folder)/(animation)/fmg/01'
+      path: '/fmg/01'
+      fullPath: '/fmg/01'
+      preLoaderRoute: typeof hiddenfolderanimationFmg01Import
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(animation)/m/01': {
+      id: '/(hidden_folder)/(animation)/m/01'
+      path: '/m/01'
+      fullPath: '/m/01'
+      preLoaderRoute: typeof hiddenfolderanimationM01Import
       parentRoute: typeof rootRoute
     }
     '/(hidden_folder)/(basic)/basic/conditional-rendering': {
@@ -553,6 +625,11 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/fm/01': typeof hiddenfolderanimationFm01Route
+  '/fm/02': typeof hiddenfolderanimationFm02Route
+  '/fm/03': typeof hiddenfolderanimationFm03Route
+  '/fmg/01': typeof hiddenfolderanimationFmg01Route
+  '/m/01': typeof hiddenfolderanimationM01Route
   '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
   '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
   '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
@@ -591,6 +668,11 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/fm/01': typeof hiddenfolderanimationFm01Route
+  '/fm/02': typeof hiddenfolderanimationFm02Route
+  '/fm/03': typeof hiddenfolderanimationFm03Route
+  '/fmg/01': typeof hiddenfolderanimationFmg01Route
+  '/m/01': typeof hiddenfolderanimationM01Route
   '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
   '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
   '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
@@ -630,6 +712,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
+  '/(hidden_folder)/(animation)/fm/01': typeof hiddenfolderanimationFm01Route
+  '/(hidden_folder)/(animation)/fm/02': typeof hiddenfolderanimationFm02Route
+  '/(hidden_folder)/(animation)/fm/03': typeof hiddenfolderanimationFm03Route
+  '/(hidden_folder)/(animation)/fmg/01': typeof hiddenfolderanimationFmg01Route
+  '/(hidden_folder)/(animation)/m/01': typeof hiddenfolderanimationM01Route
   '/(hidden_folder)/(basic)/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
   '/(hidden_folder)/(basic)/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
   '/(hidden_folder)/(basic)/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
@@ -670,6 +757,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/fm/01'
+    | '/fm/02'
+    | '/fm/03'
+    | '/fmg/01'
+    | '/m/01'
     | '/basic/conditional-rendering'
     | '/basic/list-of-data'
     | '/basic/portal'
@@ -707,6 +799,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/fm/01'
+    | '/fm/02'
+    | '/fm/03'
+    | '/fmg/01'
+    | '/m/01'
     | '/basic/conditional-rendering'
     | '/basic/list-of-data'
     | '/basic/portal'
@@ -744,6 +841,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/(hidden_folder)/(animation)/fm/01'
+    | '/(hidden_folder)/(animation)/fm/02'
+    | '/(hidden_folder)/(animation)/fm/03'
+    | '/(hidden_folder)/(animation)/fmg/01'
+    | '/(hidden_folder)/(animation)/m/01'
     | '/(hidden_folder)/(basic)/basic/conditional-rendering'
     | '/(hidden_folder)/(basic)/basic/list-of-data'
     | '/(hidden_folder)/(basic)/basic/portal'
@@ -783,6 +885,11 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  hiddenfolderanimationFm01Route: typeof hiddenfolderanimationFm01Route
+  hiddenfolderanimationFm02Route: typeof hiddenfolderanimationFm02Route
+  hiddenfolderanimationFm03Route: typeof hiddenfolderanimationFm03Route
+  hiddenfolderanimationFmg01Route: typeof hiddenfolderanimationFmg01Route
+  hiddenfolderanimationM01Route: typeof hiddenfolderanimationM01Route
   hiddenfolderbasicBasicConditionalRenderingRoute: typeof hiddenfolderbasicBasicConditionalRenderingRoute
   hiddenfolderbasicBasicListOfDataRoute: typeof hiddenfolderbasicBasicListOfDataRoute
   hiddenfolderbasicBasicPortalRoute: typeof hiddenfolderbasicBasicPortalRoute
@@ -821,6 +928,11 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  hiddenfolderanimationFm01Route: hiddenfolderanimationFm01Route,
+  hiddenfolderanimationFm02Route: hiddenfolderanimationFm02Route,
+  hiddenfolderanimationFm03Route: hiddenfolderanimationFm03Route,
+  hiddenfolderanimationFmg01Route: hiddenfolderanimationFmg01Route,
+  hiddenfolderanimationM01Route: hiddenfolderanimationM01Route,
   hiddenfolderbasicBasicConditionalRenderingRoute:
     hiddenfolderbasicBasicConditionalRenderingRoute,
   hiddenfolderbasicBasicListOfDataRoute: hiddenfolderbasicBasicListOfDataRoute,
@@ -887,6 +999,11 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/(hidden_folder)/(animation)/fm/01",
+        "/(hidden_folder)/(animation)/fm/02",
+        "/(hidden_folder)/(animation)/fm/03",
+        "/(hidden_folder)/(animation)/fmg/01",
+        "/(hidden_folder)/(animation)/m/01",
         "/(hidden_folder)/(basic)/basic/conditional-rendering",
         "/(hidden_folder)/(basic)/basic/list-of-data",
         "/(hidden_folder)/(basic)/basic/portal",
@@ -925,6 +1042,21 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.lazy.tsx"
+    },
+    "/(hidden_folder)/(animation)/fm/01": {
+      "filePath": "(hidden_folder)/(animation)/fm.01.tsx"
+    },
+    "/(hidden_folder)/(animation)/fm/02": {
+      "filePath": "(hidden_folder)/(animation)/fm.02.tsx"
+    },
+    "/(hidden_folder)/(animation)/fm/03": {
+      "filePath": "(hidden_folder)/(animation)/fm.03.tsx"
+    },
+    "/(hidden_folder)/(animation)/fmg/01": {
+      "filePath": "(hidden_folder)/(animation)/fmg.01.tsx"
+    },
+    "/(hidden_folder)/(animation)/m/01": {
+      "filePath": "(hidden_folder)/(animation)/m.01.tsx"
     },
     "/(hidden_folder)/(basic)/basic/conditional-rendering": {
       "filePath": "(hidden_folder)/(basic)/basic.conditional-rendering.tsx"

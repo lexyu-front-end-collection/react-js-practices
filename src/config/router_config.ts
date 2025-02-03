@@ -139,11 +139,36 @@ export const routes: RouteConfig[] = [
         ]
     },
     {
-        title: "Framer Motion",
+        title: "Motion",
         children: [
             {
-                title: "Backlog",
-                path: "/backlog",
+                title: "01 - Basic",
+                path: "/fm/01",
+            },
+            {
+                title: "02 - Transformations",
+                path: "/fm/02",
+            },
+            {
+                title: "03 - Transitions",
+                path: "/fm/03",
+            },
+            {
+                title: "04 - Gestures - 01",
+                path: "/fmg/01",
+            },
+            {
+                title: "04 - Gestures - 02",
+                path: "/fmg/02",
+            }
+        ]
+    },
+    {
+        title: "Motion - Hooks",
+        children: [
+            {
+                title: "Rotate",
+                path: "/m/01",
             }
         ]
     },
