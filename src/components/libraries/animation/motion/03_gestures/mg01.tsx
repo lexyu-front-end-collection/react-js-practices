@@ -7,7 +7,7 @@ const box = {
     borderRadius: 5,
 }
 
-function FMG01() {
+function MG01() {
     return (
         <div className="flex h-1/3 items-center justify-center">
             <motion.button
@@ -20,4 +20,4 @@ function FMG01() {
     )
 }
 
-export default FMG01
+export default MG01

@@ -143,24 +143,16 @@ export const routes: RouteConfig[] = [
         children: [
             {
                 title: "01 - Basic",
-                path: "/fm/01",
+                path: "/m/01",
             },
             {
                 title: "02 - Transformations",
-                path: "/fm/02",
+                path: "/mt/01",
             },
             {
-                title: "03 - Transitions",
-                path: "/fm/03",
+                title: "03 - Gestures - 01",
+                path: "/mg/01",
             },
-            {
-                title: "04 - Gestures - 01",
-                path: "/fmg/01",
-            },
-            {
-                title: "04 - Gestures - 02",
-                path: "/fmg/02",
-            }
         ]
     },
     {
@@ -168,7 +160,11 @@ export const routes: RouteConfig[] = [
         children: [
             {
                 title: "Rotate",
-                path: "/m/01",
+                path: "/mh/01",
+            },
+            {
+                title: "Transition",
+                path: "/mh/02",
             }
         ]
     },

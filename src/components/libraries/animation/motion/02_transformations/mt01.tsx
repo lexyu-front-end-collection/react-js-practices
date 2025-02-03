@@ -7,7 +7,7 @@ const box = {
     backgroundColor: "yellowgreen",
 }
 
-function FM02() {
+function MT01() {
     return (
         <div>
             <motion.div
@@ -23,4 +23,4 @@ function FM02() {
     )
 }
 
-export default FM02
+export default MT01
