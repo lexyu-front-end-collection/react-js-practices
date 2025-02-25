@@ -204,6 +204,19 @@ export const routes: RouteConfig[] = [
         ]
     },
     {
+        title: "Demos",
+        children: [
+            {
+                title: "Verify Email Page",
+                path: "/demos/verify-page",
+            },
+            {
+                title: "Verify Result Page",
+                path: "/demos/result-page",
+            }
+        ]
+    },
+    {
         title: "Toys",
         children: [
             {

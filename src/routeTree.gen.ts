@@ -41,8 +41,6 @@ import { Route as hiddenfolderhooksHooksUsecallbackImport } from './routes/(hidd
 import { Route as hiddenfolderhooksHooksIntervalProblem2Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
 import { Route as hiddenfolderhooksHooksIntervalProblem1Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-1'
 import { Route as hiddenfolderhooksHooksBeforeUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.before-usecallback'
-import { Route as hiddenfolderdemosverifyemailVerifypageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/verify_page'
-import { Route as hiddenfolderdemosverifyemailVerifybtnImport } from './routes/(hidden_folder)/(demos)/(verify_email)/verify_btn'
 import { Route as hiddenfolderdatafetchingDataFetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.react-query'
 import { Route as hiddenfolderdatafetchingDataFetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.own-handle'
 import { Route as hiddenfolderbasicBasicPropsChildrenImport } from './routes/(hidden_folder)/(basic)/basic.props-children'
@@ -54,6 +52,8 @@ import { Route as hiddenfolderanimationMh02Import } from './routes/(hidden_folde
 import { Route as hiddenfolderanimationMh01Import } from './routes/(hidden_folder)/(animation)/mh.01'
 import { Route as hiddenfolderanimationMg01Import } from './routes/(hidden_folder)/(animation)/mg.01'
 import { Route as hiddenfolderanimationM01Import } from './routes/(hidden_folder)/(animation)/m.01'
+import { Route as hiddenfolderdemosverifyemailDemosVerifyPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.verify-page'
+import { Route as hiddenfolderdemosverifyemailDemosResultPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.result-page'
 
 // Create Virtual Routes
 
@@ -262,20 +262,6 @@ const hiddenfolderhooksHooksBeforeUsecallbackRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
-const hiddenfolderdemosverifyemailVerifypageRoute =
-  hiddenfolderdemosverifyemailVerifypageImport.update({
-    id: '/(hidden_folder)/(demos)/(verify_email)/verify_page',
-    path: '/verify_page',
-    getParentRoute: () => rootRoute,
-  } as any)
-
-const hiddenfolderdemosverifyemailVerifybtnRoute =
-  hiddenfolderdemosverifyemailVerifybtnImport.update({
-    id: '/(hidden_folder)/(demos)/(verify_email)/verify_btn',
-    path: '/verify_btn',
-    getParentRoute: () => rootRoute,
-  } as any)
-
 const hiddenfolderdatafetchingDataFetchingReactQueryRoute =
   hiddenfolderdatafetchingDataFetchingReactQueryImport.update({
     id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query',
@@ -347,6 +333,20 @@ const hiddenfolderanimationM01Route = hiddenfolderanimationM01Import.update({
   path: '/m/01',
   getParentRoute: () => rootRoute,
 } as any)
+
+const hiddenfolderdemosverifyemailDemosVerifyPageRoute =
+  hiddenfolderdemosverifyemailDemosVerifyPageImport.update({
+    id: '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page',
+    path: '/demos/verify-page',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdemosverifyemailDemosResultPageRoute =
+  hiddenfolderdemosverifyemailDemosResultPageImport.update({
+    id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page',
+    path: '/demos/result-page',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -434,20 +434,6 @@ declare module '@tanstack/react-router' {
       path: '/data-fetching/react-query'
       fullPath: '/data-fetching/react-query'
       preLoaderRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(verify_email)/verify_btn': {
-      id: '/(hidden_folder)/(demos)/(verify_email)/verify_btn'
-      path: '/verify_btn'
-      fullPath: '/verify_btn'
-      preLoaderRoute: typeof hiddenfolderdemosverifyemailVerifybtnImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(verify_email)/verify_page': {
-      id: '/(hidden_folder)/(demos)/(verify_email)/verify_page'
-      path: '/verify_page'
-      fullPath: '/verify_page'
-      preLoaderRoute: typeof hiddenfolderdemosverifyemailVerifypageImport
       parentRoute: typeof rootRoute
     }
     '/(hidden_folder)/(hooks)/hooks/before-usecallback': {
@@ -646,6 +632,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfoldertoysToysTodoAppImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': {
+      id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
+      path: '/demos/result-page'
+      fullPath: '/demos/result-page'
+      preLoaderRoute: typeof hiddenfolderdemosverifyemailDemosResultPageImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': {
+      id: '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page'
+      path: '/demos/verify-page'
+      fullPath: '/demos/verify-page'
+      preLoaderRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -664,8 +664,6 @@ export interface FileRoutesByFullPath {
   '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/verify_btn': typeof hiddenfolderdemosverifyemailVerifybtnRoute
-  '/verify_page': typeof hiddenfolderdemosverifyemailVerifypageRoute
   '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
   '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
@@ -694,6 +692,8 @@ export interface FileRoutesByFullPath {
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
+  '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
 }
 
 export interface FileRoutesByTo {
@@ -709,8 +709,6 @@ export interface FileRoutesByTo {
   '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/verify_btn': typeof hiddenfolderdemosverifyemailVerifybtnRoute
-  '/verify_page': typeof hiddenfolderdemosverifyemailVerifypageRoute
   '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
   '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
@@ -739,6 +737,8 @@ export interface FileRoutesByTo {
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
+  '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
 }
 
 export interface FileRoutesById {
@@ -755,8 +755,6 @@ export interface FileRoutesById {
   '/(hidden_folder)/(basic)/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
   '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   '/(hidden_folder)/(data_fetching)/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/(hidden_folder)/(demos)/(verify_email)/verify_btn': typeof hiddenfolderdemosverifyemailVerifybtnRoute
-  '/(hidden_folder)/(demos)/(verify_email)/verify_page': typeof hiddenfolderdemosverifyemailVerifypageRoute
   '/(hidden_folder)/(hooks)/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
   '/(hidden_folder)/(hooks)/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
   '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
@@ -785,6 +783,8 @@ export interface FileRoutesById {
   '/(hidden_folder)/(toys)/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/(hidden_folder)/(toys)/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/(hidden_folder)/(toys)/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
+  '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
 }
 
 export interface FileRouteTypes {
@@ -802,8 +802,6 @@ export interface FileRouteTypes {
     | '/basic/props-children'
     | '/data-fetching/own-handle'
     | '/data-fetching/react-query'
-    | '/verify_btn'
-    | '/verify_page'
     | '/hooks/before-usecallback'
     | '/hooks/interval-problem-1'
     | '/hooks/interval-problem-2'
@@ -832,6 +830,8 @@ export interface FileRouteTypes {
     | '/toys/color-picker'
     | '/toys/stopwatch'
     | '/toys/todo-app'
+    | '/demos/result-page'
+    | '/demos/verify-page'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -846,8 +846,6 @@ export interface FileRouteTypes {
     | '/basic/props-children'
     | '/data-fetching/own-handle'
     | '/data-fetching/react-query'
-    | '/verify_btn'
-    | '/verify_page'
     | '/hooks/before-usecallback'
     | '/hooks/interval-problem-1'
     | '/hooks/interval-problem-2'
@@ -876,6 +874,8 @@ export interface FileRouteTypes {
     | '/toys/color-picker'
     | '/toys/stopwatch'
     | '/toys/todo-app'
+    | '/demos/result-page'
+    | '/demos/verify-page'
   id:
     | '__root__'
     | '/'
@@ -890,8 +890,6 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(basic)/basic/props-children'
     | '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
     | '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
-    | '/(hidden_folder)/(demos)/(verify_email)/verify_btn'
-    | '/(hidden_folder)/(demos)/(verify_email)/verify_page'
     | '/(hidden_folder)/(hooks)/hooks/before-usecallback'
     | '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
     | '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
@@ -920,6 +918,8 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(toys)/toys/color-picker'
     | '/(hidden_folder)/(toys)/toys/stopwatch'
     | '/(hidden_folder)/(toys)/toys/todo-app'
+    | '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
+    | '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page'
   fileRoutesById: FileRoutesById
 }
 
@@ -936,8 +936,6 @@ export interface RootRouteChildren {
   hiddenfolderbasicBasicPropsChildrenRoute: typeof hiddenfolderbasicBasicPropsChildrenRoute
   hiddenfolderdatafetchingDataFetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
   hiddenfolderdatafetchingDataFetchingReactQueryRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  hiddenfolderdemosverifyemailVerifybtnRoute: typeof hiddenfolderdemosverifyemailVerifybtnRoute
-  hiddenfolderdemosverifyemailVerifypageRoute: typeof hiddenfolderdemosverifyemailVerifypageRoute
   hiddenfolderhooksHooksBeforeUsecallbackRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
   hiddenfolderhooksHooksIntervalProblem1Route: typeof hiddenfolderhooksHooksIntervalProblem1Route
   hiddenfolderhooksHooksIntervalProblem2Route: typeof hiddenfolderhooksHooksIntervalProblem2Route
@@ -966,6 +964,8 @@ export interface RootRouteChildren {
   hiddenfoldertoysToysColorPickerRoute: typeof hiddenfoldertoysToysColorPickerRoute
   hiddenfoldertoysToysStopwatchRoute: typeof hiddenfoldertoysToysStopwatchRoute
   hiddenfoldertoysToysTodoAppRoute: typeof hiddenfoldertoysToysTodoAppRoute
+  hiddenfolderdemosverifyemailDemosResultPageRoute: typeof hiddenfolderdemosverifyemailDemosResultPageRoute
+  hiddenfolderdemosverifyemailDemosVerifyPageRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -985,10 +985,6 @@ const rootRouteChildren: RootRouteChildren = {
     hiddenfolderdatafetchingDataFetchingOwnHandleRoute,
   hiddenfolderdatafetchingDataFetchingReactQueryRoute:
     hiddenfolderdatafetchingDataFetchingReactQueryRoute,
-  hiddenfolderdemosverifyemailVerifybtnRoute:
-    hiddenfolderdemosverifyemailVerifybtnRoute,
-  hiddenfolderdemosverifyemailVerifypageRoute:
-    hiddenfolderdemosverifyemailVerifypageRoute,
   hiddenfolderhooksHooksBeforeUsecallbackRoute:
     hiddenfolderhooksHooksBeforeUsecallbackRoute,
   hiddenfolderhooksHooksIntervalProblem1Route:
@@ -1032,6 +1028,10 @@ const rootRouteChildren: RootRouteChildren = {
   hiddenfoldertoysToysColorPickerRoute: hiddenfoldertoysToysColorPickerRoute,
   hiddenfoldertoysToysStopwatchRoute: hiddenfoldertoysToysStopwatchRoute,
   hiddenfoldertoysToysTodoAppRoute: hiddenfoldertoysToysTodoAppRoute,
+  hiddenfolderdemosverifyemailDemosResultPageRoute:
+    hiddenfolderdemosverifyemailDemosResultPageRoute,
+  hiddenfolderdemosverifyemailDemosVerifyPageRoute:
+    hiddenfolderdemosverifyemailDemosVerifyPageRoute,
 }
 
 export const routeTree = rootRoute
@@ -1056,8 +1056,6 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(basic)/basic/props-children",
         "/(hidden_folder)/(data_fetching)/data-fetching/own-handle",
         "/(hidden_folder)/(data_fetching)/data-fetching/react-query",
-        "/(hidden_folder)/(demos)/(verify_email)/verify_btn",
-        "/(hidden_folder)/(demos)/(verify_email)/verify_page",
         "/(hidden_folder)/(hooks)/hooks/before-usecallback",
         "/(hidden_folder)/(hooks)/hooks/interval-problem-1",
         "/(hidden_folder)/(hooks)/hooks/interval-problem-2",
@@ -1085,7 +1083,9 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(toys)/toys/clock",
         "/(hidden_folder)/(toys)/toys/color-picker",
         "/(hidden_folder)/(toys)/toys/stopwatch",
-        "/(hidden_folder)/(toys)/toys/todo-app"
+        "/(hidden_folder)/(toys)/toys/todo-app",
+        "/(hidden_folder)/(demos)/(verify_email)/demos/result-page",
+        "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page"
       ]
     },
     "/": {
@@ -1123,12 +1123,6 @@ export const routeTree = rootRoute
     },
     "/(hidden_folder)/(data_fetching)/data-fetching/react-query": {
       "filePath": "(hidden_folder)/(data_fetching)/data-fetching.react-query.tsx"
-    },
-    "/(hidden_folder)/(demos)/(verify_email)/verify_btn": {
-      "filePath": "(hidden_folder)/(demos)/(verify_email)/verify_btn.tsx"
-    },
-    "/(hidden_folder)/(demos)/(verify_email)/verify_page": {
-      "filePath": "(hidden_folder)/(demos)/(verify_email)/verify_page.tsx"
     },
     "/(hidden_folder)/(hooks)/hooks/before-usecallback": {
       "filePath": "(hidden_folder)/(hooks)/hooks.before-usecallback.tsx"
@@ -1213,6 +1207,12 @@ export const routeTree = rootRoute
     },
     "/(hidden_folder)/(toys)/toys/todo-app": {
       "filePath": "(hidden_folder)/(toys)/toys.todo-app.tsx"
+    },
+    "/(hidden_folder)/(demos)/(verify_email)/demos/result-page": {
+      "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.result-page.tsx"
+    },
+    "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page": {
+      "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.verify-page.tsx"
     }
   }
 }
