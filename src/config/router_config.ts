@@ -213,7 +213,23 @@ export const routes: RouteConfig[] = [
             {
                 title: "Verify Result Page",
                 path: "/demos/result-page",
-            }
+            },
+            {
+                title: "Markdown",
+                path: "/demos/markdown",
+            },
+            {
+                title: "Copywriting Render HTML",
+                path: "/demos/copywriting/render",
+            },
+            {
+                title: "Toast UI Editor",
+                path: "/demos/toast",
+            },
+            {
+                title: "Editor JS",
+                path: "/demos/editorjs",
+            },
         ]
     },
     {

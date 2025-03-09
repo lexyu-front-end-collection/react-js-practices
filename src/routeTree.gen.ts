@@ -54,6 +54,9 @@ import { Route as hiddenfolderanimationMg01Import } from './routes/(hidden_folde
 import { Route as hiddenfolderanimationM01Import } from './routes/(hidden_folder)/(animation)/m.01'
 import { Route as hiddenfolderdemosverifyemailDemosVerifyPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.verify-page'
 import { Route as hiddenfolderdemosverifyemailDemosResultPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.result-page'
+import { Route as hiddenfolderdemostoastDemosToastImport } from './routes/(hidden_folder)/(demos)/(toast)/demos.toast'
+import { Route as hiddenfolderdemosmarkdownDemosMarkdownImport } from './routes/(hidden_folder)/(demos)/(markdown)/demos.markdown'
+import { Route as hiddenfolderdemoscopywritingDemosCopywritingRenderImport } from './routes/(hidden_folder)/(demos)/(copywriting)/demos.copywriting.render'
 
 // Create Virtual Routes
 
@@ -348,6 +351,27 @@ const hiddenfolderdemosverifyemailDemosResultPageRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const hiddenfolderdemostoastDemosToastRoute =
+  hiddenfolderdemostoastDemosToastImport.update({
+    id: '/(hidden_folder)/(demos)/(toast)/demos/toast',
+    path: '/demos/toast',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdemosmarkdownDemosMarkdownRoute =
+  hiddenfolderdemosmarkdownDemosMarkdownImport.update({
+    id: '/(hidden_folder)/(demos)/(markdown)/demos/markdown',
+    path: '/demos/markdown',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const hiddenfolderdemoscopywritingDemosCopywritingRenderRoute =
+  hiddenfolderdemoscopywritingDemosCopywritingRenderImport.update({
+    id: '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render',
+    path: '/demos/copywriting/render',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -632,6 +656,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof hiddenfoldertoysToysTodoAppImport
       parentRoute: typeof rootRoute
     }
+    '/(hidden_folder)/(demos)/(markdown)/demos/markdown': {
+      id: '/(hidden_folder)/(demos)/(markdown)/demos/markdown'
+      path: '/demos/markdown'
+      fullPath: '/demos/markdown'
+      preLoaderRoute: typeof hiddenfolderdemosmarkdownDemosMarkdownImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(demos)/(toast)/demos/toast': {
+      id: '/(hidden_folder)/(demos)/(toast)/demos/toast'
+      path: '/demos/toast'
+      fullPath: '/demos/toast'
+      preLoaderRoute: typeof hiddenfolderdemostoastDemosToastImport
+      parentRoute: typeof rootRoute
+    }
     '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': {
       id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
       path: '/demos/result-page'
@@ -644,6 +682,13 @@ declare module '@tanstack/react-router' {
       path: '/demos/verify-page'
       fullPath: '/demos/verify-page'
       preLoaderRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageImport
+      parentRoute: typeof rootRoute
+    }
+    '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': {
+      id: '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render'
+      path: '/demos/copywriting/render'
+      fullPath: '/demos/copywriting/render'
+      preLoaderRoute: typeof hiddenfolderdemoscopywritingDemosCopywritingRenderImport
       parentRoute: typeof rootRoute
     }
   }
@@ -692,8 +737,11 @@ export interface FileRoutesByFullPath {
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
+  '/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
   '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
   '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
+  '/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
 }
 
 export interface FileRoutesByTo {
@@ -737,8 +785,11 @@ export interface FileRoutesByTo {
   '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
+  '/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
   '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
   '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
+  '/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
 }
 
 export interface FileRoutesById {
@@ -783,8 +834,11 @@ export interface FileRoutesById {
   '/(hidden_folder)/(toys)/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
   '/(hidden_folder)/(toys)/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
   '/(hidden_folder)/(toys)/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
+  '/(hidden_folder)/(demos)/(markdown)/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
+  '/(hidden_folder)/(demos)/(toast)/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
   '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
   '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
+  '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
 }
 
 export interface FileRouteTypes {
@@ -830,8 +884,11 @@ export interface FileRouteTypes {
     | '/toys/color-picker'
     | '/toys/stopwatch'
     | '/toys/todo-app'
+    | '/demos/markdown'
+    | '/demos/toast'
     | '/demos/result-page'
     | '/demos/verify-page'
+    | '/demos/copywriting/render'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -874,8 +931,11 @@ export interface FileRouteTypes {
     | '/toys/color-picker'
     | '/toys/stopwatch'
     | '/toys/todo-app'
+    | '/demos/markdown'
+    | '/demos/toast'
     | '/demos/result-page'
     | '/demos/verify-page'
+    | '/demos/copywriting/render'
   id:
     | '__root__'
     | '/'
@@ -918,8 +978,11 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(toys)/toys/color-picker'
     | '/(hidden_folder)/(toys)/toys/stopwatch'
     | '/(hidden_folder)/(toys)/toys/todo-app'
+    | '/(hidden_folder)/(demos)/(markdown)/demos/markdown'
+    | '/(hidden_folder)/(demos)/(toast)/demos/toast'
     | '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
     | '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page'
+    | '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render'
   fileRoutesById: FileRoutesById
 }
 
@@ -964,8 +1027,11 @@ export interface RootRouteChildren {
   hiddenfoldertoysToysColorPickerRoute: typeof hiddenfoldertoysToysColorPickerRoute
   hiddenfoldertoysToysStopwatchRoute: typeof hiddenfoldertoysToysStopwatchRoute
   hiddenfoldertoysToysTodoAppRoute: typeof hiddenfoldertoysToysTodoAppRoute
+  hiddenfolderdemosmarkdownDemosMarkdownRoute: typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
+  hiddenfolderdemostoastDemosToastRoute: typeof hiddenfolderdemostoastDemosToastRoute
   hiddenfolderdemosverifyemailDemosResultPageRoute: typeof hiddenfolderdemosverifyemailDemosResultPageRoute
   hiddenfolderdemosverifyemailDemosVerifyPageRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
+  hiddenfolderdemoscopywritingDemosCopywritingRenderRoute: typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -1028,10 +1094,15 @@ const rootRouteChildren: RootRouteChildren = {
   hiddenfoldertoysToysColorPickerRoute: hiddenfoldertoysToysColorPickerRoute,
   hiddenfoldertoysToysStopwatchRoute: hiddenfoldertoysToysStopwatchRoute,
   hiddenfoldertoysToysTodoAppRoute: hiddenfoldertoysToysTodoAppRoute,
+  hiddenfolderdemosmarkdownDemosMarkdownRoute:
+    hiddenfolderdemosmarkdownDemosMarkdownRoute,
+  hiddenfolderdemostoastDemosToastRoute: hiddenfolderdemostoastDemosToastRoute,
   hiddenfolderdemosverifyemailDemosResultPageRoute:
     hiddenfolderdemosverifyemailDemosResultPageRoute,
   hiddenfolderdemosverifyemailDemosVerifyPageRoute:
     hiddenfolderdemosverifyemailDemosVerifyPageRoute,
+  hiddenfolderdemoscopywritingDemosCopywritingRenderRoute:
+    hiddenfolderdemoscopywritingDemosCopywritingRenderRoute,
 }
 
 export const routeTree = rootRoute
@@ -1084,8 +1155,11 @@ export const routeTree = rootRoute
         "/(hidden_folder)/(toys)/toys/color-picker",
         "/(hidden_folder)/(toys)/toys/stopwatch",
         "/(hidden_folder)/(toys)/toys/todo-app",
+        "/(hidden_folder)/(demos)/(markdown)/demos/markdown",
+        "/(hidden_folder)/(demos)/(toast)/demos/toast",
         "/(hidden_folder)/(demos)/(verify_email)/demos/result-page",
-        "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page"
+        "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page",
+        "/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render"
       ]
     },
     "/": {
@@ -1208,11 +1282,20 @@ export const routeTree = rootRoute
     "/(hidden_folder)/(toys)/toys/todo-app": {
       "filePath": "(hidden_folder)/(toys)/toys.todo-app.tsx"
     },
+    "/(hidden_folder)/(demos)/(markdown)/demos/markdown": {
+      "filePath": "(hidden_folder)/(demos)/(markdown)/demos.markdown.tsx"
+    },
+    "/(hidden_folder)/(demos)/(toast)/demos/toast": {
+      "filePath": "(hidden_folder)/(demos)/(toast)/demos.toast.tsx"
+    },
     "/(hidden_folder)/(demos)/(verify_email)/demos/result-page": {
       "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.result-page.tsx"
     },
     "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page": {
       "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.verify-page.tsx"
+    },
+    "/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render": {
+      "filePath": "(hidden_folder)/(demos)/(copywriting)/demos.copywriting.render.tsx"
     }
   }
 }
