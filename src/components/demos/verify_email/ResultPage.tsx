@@ -7,8 +7,8 @@ enum Status {
 }
 
 function ResultPage() {
-    const [status, setStatus] = useState<Status>(Status.Verifying)
-    const [message, setMessage] = useState("")
+    // const [status, setStatus] = useState<Status>(Status.Verifying)
+    // const [message, setMessage] = useState("")
 
     return (
         <div className=''>

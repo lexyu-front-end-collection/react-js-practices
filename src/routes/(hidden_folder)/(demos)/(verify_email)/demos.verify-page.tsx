@@ -1,4 +1,4 @@
-import VerifyEmailBtn from '@/components/demos/verify_email/verifyPage'
+import VerifyEmailBtn from '@/components/demos/verify_email/VerifyPage'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute(
