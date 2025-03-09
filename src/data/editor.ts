@@ -5,6 +5,7 @@ import { PageElement } from "@/types/editor/elements";
  * @param pageUuid 頁面UUID
  * @returns Promise<PageElement[]> 頁面元素陣列
  */
+// @ts-ignore 
 export const editorMockData = async (pageUuid: string): Promise<PageElement[]> => {
     try {
         // 實際應用中，解除以下註釋並刪除模擬數據

@@ -1,5 +1,6 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 
+// @ts-ignore 
 enum Status {
     Verifying = 'verifying',
     Success = 'success',

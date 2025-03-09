@@ -12,7 +12,8 @@ import { editorMockData } from "@/data/editor";
  * 頁面編輯器主組件
  */
 const Copywriting: React.FC = () => {
-    // 狀態管理
+    // 狀態管理 
+    // @ts-ignore 
     const [pageUuid, setPageUuid] = useState<string>("page-uuid-123");
     const [elements, setElements] = useState<PageElement[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);

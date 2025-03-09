@@ -57,6 +57,7 @@ export const savePageContent = async (pageUuid: string, elements: PageElement[])
  * @param elements 頁面元素陣列
  * @returns Promise<void>
  */
+// @ts-ignore
 export const updateElementsOrder = async (pageUuid: string, elements: PageElement[]): Promise<void> => {
     try {
         const orderPayload = elements.map(element => ({

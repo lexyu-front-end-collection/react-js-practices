@@ -151,6 +151,7 @@ const SortableItem: React.FC<SortableItemProps> = ({
                             ) : (
                                 <ReactMarkdown remarkPlugins={[remarkGfm]}
                                     components={{
+                                        // @ts-ignore 
                                         p: ({ node, children }) => {
                                             return <p style={{ whiteSpace: 'pre-line' }}>{children}</p>
                                         }
