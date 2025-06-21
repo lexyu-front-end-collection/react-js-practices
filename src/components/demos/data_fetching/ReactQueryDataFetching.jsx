@@ -15,41 +15,38 @@ function ReactQueryDataFetching() {
         isFetched,
         isLoading,
     } = useComments(id);
-
-    if (isLoading) {
-        return <div className="loading-placeholder">Loading...</div>;
-    }
-
-    if (isError) {
-        return <h1 className="text-red-500">Something went wrong: {error.message}</h1>; // 顯示錯誤訊息
-    }
-
-
     return (
         <div>
             <div className="header-container">
-                <h1 className="text-2xl">React Query Data Fecth Demo</h1>
+                <h1 className="text-2xl">React Query Data Fetch Demo</h1>
             </div>
+
+            {isError && (
+                <h1 className="text-red-500">Something went wrong: {error.message}</h1>
+            )}
+
             <div className="mt-5">
                 <h1 className="text-lg">id : {id}</h1>
-                <button className="mt-4 px-4 py-2 rounded bg-blue-700 text-white"
+                <button className="px-4 py-2 mt-4 text-white bg-blue-700 rounded"
                     onClick={() => setId(Math.max(0, id - 1))}
                     disabled={id <= 0}>
                     Decrease Id
                 </button>
-                <button className="ml-6 px-4 py-2 rounded bg-blue-700 text-white"
+                <button className="px-4 py-2 ml-6 text-white bg-blue-700 rounded"
                     onClick={() => setId(id + 1)}>
                     Increase Id
                 </button>
             </div>
+
             <div className="mt-10">
                 {isLoading && <div className="loading-placeholder">Loading...</div>}
                 {isPending && <div className="loading-placeholder">Loading more data...</div>}
                 {isFetched && <div className="text-green-500">Data fetched successfully!</div>}
+
                 {!isLoading && comments.length > 0 && (
                     <ul className="mt-10 space-y-4">
                         {comments.map(comment => (
-                            <li key={comment.id} className="p-4 rounded border shadow">
+                            <li key={comment.id} className="p-4 border rounded shadow">
                                 <div>
                                     <h2>#{comment.id}</h2>
                                     <strong>{comment.name}</strong> <span className="text-gray-600">({comment.email})</span>

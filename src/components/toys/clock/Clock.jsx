@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Clock() {
     const [time, setTime] = useState(new Date());
@@ -22,7 +22,7 @@ function Clock() {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center min-h-screen w-screen p-0 bg-center bg-no-repeat bg-cover bg-fixed backdrop-blur" style={{ backgroundImage: "url(../../../assets/background.jpg)" }}>
+        <div className="flex flex-col items-center justify-center w-screen min-h-screen p-0 bg-fixed bg-center bg-no-repeat bg-cover backdrop-blur" style={{ backgroundImage: "url(../../../assets/background.jpg)" }}>
             <div className="text-white text-6xl font-bold font-mono text-center [text-shadow:3px_3px_5px_hsla(0,3%,38%,0.78)]">
                 <span>{time.toLocaleTimeString()}</span>
             </div>
