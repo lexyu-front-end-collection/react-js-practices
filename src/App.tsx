@@ -9,12 +9,11 @@ import {
 import { routeTree } from './routeTree.gen'
 
 import './App.css'
-import { SidebarProvider } from "./components/ui/sidebar"
 
 const router = createRouter({
   routeTree,
   defaultNotFoundComponent: () => <div>Gloabal Not Found Here!</div>,
-  basepath: "/react-js-practices/",
+  basepath: "/react-js-practices",
 })
 
 declare module '@tanstack/react-router' {
@@ -30,12 +29,10 @@ function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <SidebarProvider>
-          <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
-          </QueryClientProvider>
-        </SidebarProvider>
-      </ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </ThemeProvider >
     </>
   )
 }

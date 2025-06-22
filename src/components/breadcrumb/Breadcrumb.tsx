@@ -1,5 +1,5 @@
 import { useLocation, Link } from '@tanstack/react-router'
-import { routes, type RouteConfig } from '@/config/router_config'
+import { routes, type SidebarRoute, ROUTE_PATHS } from '@/constants/routes'
 import {
     Breadcrumb,
     BreadcrumbItem,
@@ -14,188 +14,135 @@ export function SimpleBreadcrumb() {
     const location = useLocation()
     const currentPath = location.pathname
 
-    if (isHomePage(currentPath)) {
-        return renderHomeBreadcrumb()
-    }
-
-    const breadcrumbPath = buildBreadcrumbPath(currentPath)
-
-    if (breadcrumbPath.length === 0) {
-        return renderUnknownPage()
-    }
-
-    return renderBreadcrumb(breadcrumbPath)
-}
-
-// ================ 輔助函數 ================
-
-function isHomePage(path: string): boolean {
-    return path === '/react-js-practices/' || path === '/'
-}
-
-function normalizePath(path: string): string {
-    return path.startsWith('/react-js-practices/')
-        ? path.replace('/react-js-practices', '')
-        : path
-}
-
-function buildBreadcrumbPath(currentPath: string): RouteConfig[] {
-    const normalizedPath = normalizePath(currentPath)
-    const foundPath = findRouteInConfig(normalizedPath)
-
-    // 確保路徑開頭有 Home
-    return ensureHomeAtStart(foundPath)
-}
-
-function findRouteInConfig(targetPath: string): RouteConfig[] {
-    function search(routeList: RouteConfig[], ancestors: RouteConfig[] = []): RouteConfig[] | null {
-        for (const route of routeList) {
-            const currentPath = [...ancestors, route]
-
-            if (route.path === targetPath) {
-                return currentPath
-            }
-
-            if (route.children) {
-                const found = search(route.children, currentPath)
-                if (found) return found
-            }
-        }
-        return null
-    }
-
-    return search(routes) || []
-}
-
-function ensureHomeAtStart(routePath: RouteConfig[]): RouteConfig[] {
-    if (routePath.length === 0) return []
-
-    const homeRoute = routes.find(r => r.path === '/react-js-practices/')
-    const firstRoute = routePath[0]
-
-    // 如果第一個不是 Home，在前面加上 Home
-    if (firstRoute.path !== '/react-js-practices/' && homeRoute) {
-        return [homeRoute, ...routePath]
-    }
-
-    return routePath
-}
-
-function isHomeRoute(route: RouteConfig): boolean {
-    return route.path === '/react-js-practices/'
-}
-
-function hasPath(route: RouteConfig): boolean {
-    return !!route.path
-}
-
-// ================ Utils ================
-
-function renderHomeBreadcrumb() {
-    return (
-        <Breadcrumb>
-            <BreadcrumbList>
-                <BreadcrumbItem>
-                    <BreadcrumbPage className="flex items-center gap-1">
-                        <Home className="w-4 h-4" />
-                        Home
-                    </BreadcrumbPage>
-                </BreadcrumbItem>
-            </BreadcrumbList>
-        </Breadcrumb>
-    )
-}
-
-/**
- * 沒找到路由時顯示 Unknown Page
- */
-function renderUnknownPage() {
-    return (
-        <Breadcrumb>
-            <BreadcrumbList>
-                <BreadcrumbItem>
-                    <BreadcrumbLink asChild>
-                        <Link to="/" className="flex items-center gap-1">
+    // 首頁
+    if (currentPath === ROUTE_PATHS.HOME || currentPath === '/') {
+        return (
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem>
+                        <BreadcrumbPage className="flex items-center gap-1">
                             <Home className="w-4 h-4" />
                             Home
-                        </Link>
-                    </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                    <BreadcrumbPage>Unknown Page</BreadcrumbPage>
-                </BreadcrumbItem>
-            </BreadcrumbList>
-        </Breadcrumb>
-    )
-}
+                        </BreadcrumbPage>
+                    </BreadcrumbItem>
+                </BreadcrumbList>
+            </Breadcrumb>
+        )
+    }
 
-function renderBreadcrumb(breadcrumbPath: RouteConfig[]) {
+    // 建立麵包屑路徑
+    const breadcrumbPath = buildBreadcrumbPath(currentPath)
+
+    // 找不到路由
+    if (breadcrumbPath.length === 0) {
+        return (
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem>
+                        <BreadcrumbLink asChild>
+                            <Link to="/" className="flex items-center gap-1">
+                                <Home className="w-4 h-4" />
+                                Home
+                            </Link>
+                        </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                        <BreadcrumbPage>Unknown Page</BreadcrumbPage>
+                    </BreadcrumbItem>
+                </BreadcrumbList>
+            </Breadcrumb>
+        )
+    }
+
     return (
         <Breadcrumb>
             <BreadcrumbList>
-                {breadcrumbPath.flatMap((route, index) =>
-                    renderBreadcrumbItem(route, index, breadcrumbPath.length)
-                )}
+                {breadcrumbPath.map((route, index) => (
+                    <BreadcrumbItemWithSeparator
+                        key={route.path || `${route.title}-${index}`}
+                        route={route}
+                        isFirst={index === 0}
+                        isLast={index === breadcrumbPath.length - 1}
+                    />
+                ))}
             </BreadcrumbList>
         </Breadcrumb>
     )
 }
 
-function renderBreadcrumbItem(route: RouteConfig, index: number, totalLength: number) {
-    const isLast = index === totalLength - 1
-    const isFirst = index === 0
-    const items = []
+function BreadcrumbItemWithSeparator({
+    route,
+    isFirst,
+    isLast
+}: {
+    route: SidebarRoute
+    isFirst: boolean
+    isLast: boolean
+}) {
+    const isHome = route.path === ROUTE_PATHS.HOME
+    const linkTo = isHome ? "/" : route.path!
 
-    // 添加分隔符（第一個項目除外）
-    if (!isFirst) {
-        items.push(<BreadcrumbSeparator key={`separator-${index}`} />)
+    return (
+        <>
+            {!isFirst && <BreadcrumbSeparator />}
+            <BreadcrumbItem>
+                {isLast ? (
+                    <BreadcrumbPage className="flex items-center gap-1">
+                        {isHome && <Home className="w-4 h-4" />}
+                        {route.title}
+                    </BreadcrumbPage>
+                ) : route.path ? (
+                    <BreadcrumbLink asChild>
+                        <Link to={linkTo} className="flex items-center gap-1">
+                            {isHome && <Home className="w-4 h-4" />}
+                            {route.title}
+                        </Link>
+                    </BreadcrumbLink>
+                ) : (
+                    <BreadcrumbPage className="flex items-center gap-1 text-muted-foreground">
+                        {route.title}
+                    </BreadcrumbPage>
+                )}
+            </BreadcrumbItem>
+        </>
+    )
+}
+
+function buildBreadcrumbPath(currentPath: string): SidebarRoute[] {
+    // 正規化路徑
+    const normalizedPath = currentPath.startsWith('/react-js-practices/')
+        ? currentPath.replace('/react-js-practices', '')
+        : currentPath
+
+    // 尋找路由
+    const foundPath = findRoute(normalizedPath, routes)
+    if (!foundPath) return []
+
+    // 確保 Home 在開頭
+    const homeRoute = routes.find(r => r.path === ROUTE_PATHS.HOME)
+    if (foundPath[0]?.path !== ROUTE_PATHS.HOME && homeRoute) {
+        return [homeRoute, ...foundPath]
     }
 
-    // 添加 breadcrumb 項目
-    if (isLast) {
-        items.push(renderCurrentPage(route, index))
-    } else if (hasPath(route)) {
-        items.push(renderClickableItem(route, index))
-    } else {
-        items.push(renderCategoryItem(route, index))
+    return foundPath
+}
+
+function findRoute(targetPath: string, routeList: SidebarRoute[], ancestors: SidebarRoute[] = []): SidebarRoute[] | null {
+    for (const route of routeList) {
+        const currentPath = [...ancestors, route]
+
+        // 找到目標路由
+        if (route.path === targetPath) {
+            return currentPath
+        }
+
+        // 遞迴搜尋子路由
+        if (route.children) {
+            const found = findRoute(targetPath, route.children, currentPath)
+            if (found) return found
+        }
     }
 
-    return items
-}
-
-function renderCurrentPage(route: RouteConfig, index: number) {
-    return (
-        <BreadcrumbItem key={route.path || `${route.title}-${index}`}>
-            <BreadcrumbPage className="flex items-center gap-1">
-                {isHomeRoute(route) && <Home className="w-4 h-4" />}
-                {route.title}
-            </BreadcrumbPage>
-        </BreadcrumbItem>
-    )
-}
-
-function renderClickableItem(route: RouteConfig, index: number) {
-    const linkTo = isHomeRoute(route) ? "/" : route.path!
-
-    return (
-        <BreadcrumbItem key={route.path || `${route.title}-${index}`}>
-            <BreadcrumbLink asChild>
-                <Link to={linkTo} className="flex items-center gap-1">
-                    {isHomeRoute(route) && <Home className="w-4 h-4" />}
-                    {route.title}
-                </Link>
-            </BreadcrumbLink>
-        </BreadcrumbItem>
-    )
-}
-
-function renderCategoryItem(route: RouteConfig, index: number) {
-    return (
-        <BreadcrumbItem key={`${route.title}-${index}`}>
-            <BreadcrumbPage className="flex items-center gap-1 text-muted-foreground">
-                {route.title}
-            </BreadcrumbPage>
-        </BreadcrumbItem>
-    )
+    return null
 }
