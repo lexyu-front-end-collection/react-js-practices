@@ -10,837 +10,466 @@
 
 import { createFileRoute } from '@tanstack/react-router'
 
-// Import Routes
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as hidden_foldertoysToysTodoAppRouteImport } from './routes/(hidden_folder)/(toys)/toys.todo-app'
+import { Route as hidden_foldertoysToysStopwatchRouteImport } from './routes/(hidden_folder)/(toys)/toys.stopwatch'
+import { Route as hidden_foldertoysToysColorPickerRouteImport } from './routes/(hidden_folder)/(toys)/toys.color-picker'
+import { Route as hidden_foldertoysToysClockRouteImport } from './routes/(hidden_folder)/(toys)/toys.clock'
+import { Route as hidden_folderlibrariesLibsZustandRouteImport } from './routes/(hidden_folder)/(libraries)/libs.zustand'
+import { Route as hidden_folderlibrariesLibsDndRouteImport } from './routes/(hidden_folder)/(libraries)/libs.dnd'
+import { Route as hidden_folderlibrariesLibsCvaTwmergeRouteImport } from './routes/(hidden_folder)/(libraries)/libs.cva-twmerge'
+import { Route as hidden_folderhooksHooksWithoutusesyncexternalstoreRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore'
+import { Route as hidden_folderhooksHooksUsetransitionRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usetransition'
+import { Route as hidden_folderhooksHooksUsethrottleRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usethrottle'
+import { Route as hidden_folderhooksHooksUsesyncexternalstoreRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usesyncexternalstore'
+import { Route as hidden_folderhooksHooksUsestateRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usestate'
+import { Route as hidden_folderhooksHooksUserefRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useref'
+import { Route as hidden_folderhooksHooksUsereducerRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usereducer'
+import { Route as hidden_folderhooksHooksUsememoRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usememo'
+import { Route as hidden_folderhooksHooksUselayouteffectRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.uselayouteffect'
+import { Route as hidden_folderhooksHooksUseintervalRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useinterval'
+import { Route as hidden_folderhooksHooksUseinsertioneffectRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useinsertioneffect'
+import { Route as hidden_folderhooksHooksUseimperativehandleRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useimperativehandle'
+import { Route as hidden_folderhooksHooksUseidRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useid'
+import { Route as hidden_folderhooksHooksUseeffectRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.useeffect'
+import { Route as hidden_folderhooksHooksUsedeferredvalueRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usedeferredvalue'
+import { Route as hidden_folderhooksHooksUsedebounceRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usedebounce'
+import { Route as hidden_folderhooksHooksUsecontextRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usecontext'
+import { Route as hidden_folderhooksHooksUsecallbackRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.usecallback'
+import { Route as hidden_folderhooksHooksIntervalProblem2RouteImport } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
+import { Route as hidden_folderhooksHooksIntervalProblem1RouteImport } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-1'
+import { Route as hidden_folderhooksHooksBeforeUsecallbackRouteImport } from './routes/(hidden_folder)/(hooks)/hooks.before-usecallback'
+import { Route as hidden_folderdata_fetchingDataFetchingReactQueryRouteImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.react-query'
+import { Route as hidden_folderdata_fetchingDataFetchingOwnHandleRouteImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.own-handle'
+import { Route as hidden_folderbasicBasicPropsChildrenRouteImport } from './routes/(hidden_folder)/(basic)/basic.props-children'
+import { Route as hidden_folderbasicBasicPortalRouteImport } from './routes/(hidden_folder)/(basic)/basic.portal'
+import { Route as hidden_folderbasicBasicListOfDataRouteImport } from './routes/(hidden_folder)/(basic)/basic.list-of-data'
+import { Route as hidden_folderbasicBasicConditionalRenderingRouteImport } from './routes/(hidden_folder)/(basic)/basic.conditional-rendering'
+import { Route as hidden_folderanimationMt01RouteImport } from './routes/(hidden_folder)/(animation)/mt.01'
+import { Route as hidden_folderanimationMh02RouteImport } from './routes/(hidden_folder)/(animation)/mh.02'
+import { Route as hidden_folderanimationMh01RouteImport } from './routes/(hidden_folder)/(animation)/mh.01'
+import { Route as hidden_folderanimationMg01RouteImport } from './routes/(hidden_folder)/(animation)/mg.01'
+import { Route as hidden_folderanimationM01RouteImport } from './routes/(hidden_folder)/(animation)/m.01'
+import { Route as hidden_folderdemosverify_emailDemosVerifyPageRouteImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.verify-page'
+import { Route as hidden_folderdemosverify_emailDemosResultPageRouteImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.result-page'
+import { Route as hidden_folderdemostoastDemosToastRouteImport } from './routes/(hidden_folder)/(demos)/(toast)/demos.toast'
+import { Route as hidden_folderdemosmarkdownDemosMarkdownRouteImport } from './routes/(hidden_folder)/(demos)/(markdown)/demos.markdown'
+import { Route as hidden_folderdemoscopywritingDemosCopywritingRenderRouteImport } from './routes/(hidden_folder)/(demos)/(copywriting)/demos.copywriting.render'
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as hiddenfoldertoysToysTodoAppImport } from './routes/(hidden_folder)/(toys)/toys.todo-app'
-import { Route as hiddenfoldertoysToysStopwatchImport } from './routes/(hidden_folder)/(toys)/toys.stopwatch'
-import { Route as hiddenfoldertoysToysColorPickerImport } from './routes/(hidden_folder)/(toys)/toys.color-picker'
-import { Route as hiddenfoldertoysToysClockImport } from './routes/(hidden_folder)/(toys)/toys.clock'
-import { Route as hiddenfolderlibrariesLibsZustandImport } from './routes/(hidden_folder)/(libraries)/libs.zustand'
-import { Route as hiddenfolderlibrariesLibsDndImport } from './routes/(hidden_folder)/(libraries)/libs.dnd'
-import { Route as hiddenfolderlibrariesLibsCvaTwmergeImport } from './routes/(hidden_folder)/(libraries)/libs.cva-twmerge'
-import { Route as hiddenfolderhooksHooksWithoutusesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore'
-import { Route as hiddenfolderhooksHooksUsetransitionImport } from './routes/(hidden_folder)/(hooks)/hooks.usetransition'
-import { Route as hiddenfolderhooksHooksUsethrottleImport } from './routes/(hidden_folder)/(hooks)/hooks.usethrottle'
-import { Route as hiddenfolderhooksHooksUsesyncexternalstoreImport } from './routes/(hidden_folder)/(hooks)/hooks.usesyncexternalstore'
-import { Route as hiddenfolderhooksHooksUsestateImport } from './routes/(hidden_folder)/(hooks)/hooks.usestate'
-import { Route as hiddenfolderhooksHooksUserefImport } from './routes/(hidden_folder)/(hooks)/hooks.useref'
-import { Route as hiddenfolderhooksHooksUsereducerImport } from './routes/(hidden_folder)/(hooks)/hooks.usereducer'
-import { Route as hiddenfolderhooksHooksUsememoImport } from './routes/(hidden_folder)/(hooks)/hooks.usememo'
-import { Route as hiddenfolderhooksHooksUselayouteffectImport } from './routes/(hidden_folder)/(hooks)/hooks.uselayouteffect'
-import { Route as hiddenfolderhooksHooksUseintervalImport } from './routes/(hidden_folder)/(hooks)/hooks.useinterval'
-import { Route as hiddenfolderhooksHooksUseinsertioneffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useinsertioneffect'
-import { Route as hiddenfolderhooksHooksUseimperativehandleImport } from './routes/(hidden_folder)/(hooks)/hooks.useimperativehandle'
-import { Route as hiddenfolderhooksHooksUseidImport } from './routes/(hidden_folder)/(hooks)/hooks.useid'
-import { Route as hiddenfolderhooksHooksUseeffectImport } from './routes/(hidden_folder)/(hooks)/hooks.useeffect'
-import { Route as hiddenfolderhooksHooksUsedeferredvalueImport } from './routes/(hidden_folder)/(hooks)/hooks.usedeferredvalue'
-import { Route as hiddenfolderhooksHooksUsedebounceImport } from './routes/(hidden_folder)/(hooks)/hooks.usedebounce'
-import { Route as hiddenfolderhooksHooksUsecontextImport } from './routes/(hidden_folder)/(hooks)/hooks.usecontext'
-import { Route as hiddenfolderhooksHooksUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.usecallback'
-import { Route as hiddenfolderhooksHooksIntervalProblem2Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-2'
-import { Route as hiddenfolderhooksHooksIntervalProblem1Import } from './routes/(hidden_folder)/(hooks)/hooks.interval-problem-1'
-import { Route as hiddenfolderhooksHooksBeforeUsecallbackImport } from './routes/(hidden_folder)/(hooks)/hooks.before-usecallback'
-import { Route as hiddenfolderdatafetchingDataFetchingReactQueryImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.react-query'
-import { Route as hiddenfolderdatafetchingDataFetchingOwnHandleImport } from './routes/(hidden_folder)/(data_fetching)/data-fetching.own-handle'
-import { Route as hiddenfolderbasicBasicPropsChildrenImport } from './routes/(hidden_folder)/(basic)/basic.props-children'
-import { Route as hiddenfolderbasicBasicPortalImport } from './routes/(hidden_folder)/(basic)/basic.portal'
-import { Route as hiddenfolderbasicBasicListOfDataImport } from './routes/(hidden_folder)/(basic)/basic.list-of-data'
-import { Route as hiddenfolderbasicBasicConditionalRenderingImport } from './routes/(hidden_folder)/(basic)/basic.conditional-rendering'
-import { Route as hiddenfolderanimationMt01Import } from './routes/(hidden_folder)/(animation)/mt.01'
-import { Route as hiddenfolderanimationMh02Import } from './routes/(hidden_folder)/(animation)/mh.02'
-import { Route as hiddenfolderanimationMh01Import } from './routes/(hidden_folder)/(animation)/mh.01'
-import { Route as hiddenfolderanimationMg01Import } from './routes/(hidden_folder)/(animation)/mg.01'
-import { Route as hiddenfolderanimationM01Import } from './routes/(hidden_folder)/(animation)/m.01'
-import { Route as hiddenfolderdemosverifyemailDemosVerifyPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.verify-page'
-import { Route as hiddenfolderdemosverifyemailDemosResultPageImport } from './routes/(hidden_folder)/(demos)/(verify_email)/demos.result-page'
-import { Route as hiddenfolderdemostoastDemosToastImport } from './routes/(hidden_folder)/(demos)/(toast)/demos.toast'
-import { Route as hiddenfolderdemosmarkdownDemosMarkdownImport } from './routes/(hidden_folder)/(demos)/(markdown)/demos.markdown'
-import { Route as hiddenfolderdemoscopywritingDemosCopywritingRenderImport } from './routes/(hidden_folder)/(demos)/(copywriting)/demos.copywriting.render'
+const IndexLazyRouteImport = createFileRoute('/')()
 
-// Create Virtual Routes
-
-const IndexLazyImport = createFileRoute('/')()
-
-// Create/Update Routes
-
-const IndexLazyRoute = IndexLazyImport.update({
+const IndexLazyRoute = IndexLazyRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
-
-const hiddenfoldertoysToysTodoAppRoute =
-  hiddenfoldertoysToysTodoAppImport.update({
+const hidden_foldertoysToysTodoAppRoute =
+  hidden_foldertoysToysTodoAppRouteImport.update({
     id: '/(hidden_folder)/(toys)/toys/todo-app',
     path: '/toys/todo-app',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfoldertoysToysStopwatchRoute =
-  hiddenfoldertoysToysStopwatchImport.update({
+const hidden_foldertoysToysStopwatchRoute =
+  hidden_foldertoysToysStopwatchRouteImport.update({
     id: '/(hidden_folder)/(toys)/toys/stopwatch',
     path: '/toys/stopwatch',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfoldertoysToysColorPickerRoute =
-  hiddenfoldertoysToysColorPickerImport.update({
+const hidden_foldertoysToysColorPickerRoute =
+  hidden_foldertoysToysColorPickerRouteImport.update({
     id: '/(hidden_folder)/(toys)/toys/color-picker',
     path: '/toys/color-picker',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfoldertoysToysClockRoute = hiddenfoldertoysToysClockImport.update({
-  id: '/(hidden_folder)/(toys)/toys/clock',
-  path: '/toys/clock',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderlibrariesLibsZustandRoute =
-  hiddenfolderlibrariesLibsZustandImport.update({
+const hidden_foldertoysToysClockRoute =
+  hidden_foldertoysToysClockRouteImport.update({
+    id: '/(hidden_folder)/(toys)/toys/clock',
+    path: '/toys/clock',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderlibrariesLibsZustandRoute =
+  hidden_folderlibrariesLibsZustandRouteImport.update({
     id: '/(hidden_folder)/(libraries)/libs/zustand',
     path: '/libs/zustand',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderlibrariesLibsDndRoute =
-  hiddenfolderlibrariesLibsDndImport.update({
+const hidden_folderlibrariesLibsDndRoute =
+  hidden_folderlibrariesLibsDndRouteImport.update({
     id: '/(hidden_folder)/(libraries)/libs/dnd',
     path: '/libs/dnd',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderlibrariesLibsCvaTwmergeRoute =
-  hiddenfolderlibrariesLibsCvaTwmergeImport.update({
+const hidden_folderlibrariesLibsCvaTwmergeRoute =
+  hidden_folderlibrariesLibsCvaTwmergeRouteImport.update({
     id: '/(hidden_folder)/(libraries)/libs/cva-twmerge',
     path: '/libs/cva-twmerge',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute =
-  hiddenfolderhooksHooksWithoutusesyncexternalstoreImport.update({
+const hidden_folderhooksHooksWithoutusesyncexternalstoreRoute =
+  hidden_folderhooksHooksWithoutusesyncexternalstoreRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore',
     path: '/hooks/withoutusesyncexternalstore',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsetransitionRoute =
-  hiddenfolderhooksHooksUsetransitionImport.update({
+const hidden_folderhooksHooksUsetransitionRoute =
+  hidden_folderhooksHooksUsetransitionRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usetransition',
     path: '/hooks/usetransition',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsethrottleRoute =
-  hiddenfolderhooksHooksUsethrottleImport.update({
+const hidden_folderhooksHooksUsethrottleRoute =
+  hidden_folderhooksHooksUsethrottleRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usethrottle',
     path: '/hooks/usethrottle',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsesyncexternalstoreRoute =
-  hiddenfolderhooksHooksUsesyncexternalstoreImport.update({
+const hidden_folderhooksHooksUsesyncexternalstoreRoute =
+  hidden_folderhooksHooksUsesyncexternalstoreRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore',
     path: '/hooks/usesyncexternalstore',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsestateRoute =
-  hiddenfolderhooksHooksUsestateImport.update({
+const hidden_folderhooksHooksUsestateRoute =
+  hidden_folderhooksHooksUsestateRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usestate',
     path: '/hooks/usestate',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUserefRoute =
-  hiddenfolderhooksHooksUserefImport.update({
+const hidden_folderhooksHooksUserefRoute =
+  hidden_folderhooksHooksUserefRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useref',
     path: '/hooks/useref',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsereducerRoute =
-  hiddenfolderhooksHooksUsereducerImport.update({
+const hidden_folderhooksHooksUsereducerRoute =
+  hidden_folderhooksHooksUsereducerRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usereducer',
     path: '/hooks/usereducer',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsememoRoute =
-  hiddenfolderhooksHooksUsememoImport.update({
+const hidden_folderhooksHooksUsememoRoute =
+  hidden_folderhooksHooksUsememoRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usememo',
     path: '/hooks/usememo',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUselayouteffectRoute =
-  hiddenfolderhooksHooksUselayouteffectImport.update({
+const hidden_folderhooksHooksUselayouteffectRoute =
+  hidden_folderhooksHooksUselayouteffectRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/uselayouteffect',
     path: '/hooks/uselayouteffect',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUseintervalRoute =
-  hiddenfolderhooksHooksUseintervalImport.update({
+const hidden_folderhooksHooksUseintervalRoute =
+  hidden_folderhooksHooksUseintervalRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useinterval',
     path: '/hooks/useinterval',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUseinsertioneffectRoute =
-  hiddenfolderhooksHooksUseinsertioneffectImport.update({
+const hidden_folderhooksHooksUseinsertioneffectRoute =
+  hidden_folderhooksHooksUseinsertioneffectRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useinsertioneffect',
     path: '/hooks/useinsertioneffect',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUseimperativehandleRoute =
-  hiddenfolderhooksHooksUseimperativehandleImport.update({
+const hidden_folderhooksHooksUseimperativehandleRoute =
+  hidden_folderhooksHooksUseimperativehandleRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useimperativehandle',
     path: '/hooks/useimperativehandle',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUseidRoute =
-  hiddenfolderhooksHooksUseidImport.update({
+const hidden_folderhooksHooksUseidRoute =
+  hidden_folderhooksHooksUseidRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useid',
     path: '/hooks/useid',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUseeffectRoute =
-  hiddenfolderhooksHooksUseeffectImport.update({
+const hidden_folderhooksHooksUseeffectRoute =
+  hidden_folderhooksHooksUseeffectRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/useeffect',
     path: '/hooks/useeffect',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsedeferredvalueRoute =
-  hiddenfolderhooksHooksUsedeferredvalueImport.update({
+const hidden_folderhooksHooksUsedeferredvalueRoute =
+  hidden_folderhooksHooksUsedeferredvalueRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue',
     path: '/hooks/usedeferredvalue',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsedebounceRoute =
-  hiddenfolderhooksHooksUsedebounceImport.update({
+const hidden_folderhooksHooksUsedebounceRoute =
+  hidden_folderhooksHooksUsedebounceRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usedebounce',
     path: '/hooks/usedebounce',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsecontextRoute =
-  hiddenfolderhooksHooksUsecontextImport.update({
+const hidden_folderhooksHooksUsecontextRoute =
+  hidden_folderhooksHooksUsecontextRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usecontext',
     path: '/hooks/usecontext',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksUsecallbackRoute =
-  hiddenfolderhooksHooksUsecallbackImport.update({
+const hidden_folderhooksHooksUsecallbackRoute =
+  hidden_folderhooksHooksUsecallbackRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/usecallback',
     path: '/hooks/usecallback',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksIntervalProblem2Route =
-  hiddenfolderhooksHooksIntervalProblem2Import.update({
+const hidden_folderhooksHooksIntervalProblem2Route =
+  hidden_folderhooksHooksIntervalProblem2RouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/interval-problem-2',
     path: '/hooks/interval-problem-2',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksIntervalProblem1Route =
-  hiddenfolderhooksHooksIntervalProblem1Import.update({
+const hidden_folderhooksHooksIntervalProblem1Route =
+  hidden_folderhooksHooksIntervalProblem1RouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/interval-problem-1',
     path: '/hooks/interval-problem-1',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderhooksHooksBeforeUsecallbackRoute =
-  hiddenfolderhooksHooksBeforeUsecallbackImport.update({
+const hidden_folderhooksHooksBeforeUsecallbackRoute =
+  hidden_folderhooksHooksBeforeUsecallbackRouteImport.update({
     id: '/(hidden_folder)/(hooks)/hooks/before-usecallback',
     path: '/hooks/before-usecallback',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdatafetchingDataFetchingReactQueryRoute =
-  hiddenfolderdatafetchingDataFetchingReactQueryImport.update({
+const hidden_folderdata_fetchingDataFetchingReactQueryRoute =
+  hidden_folderdata_fetchingDataFetchingReactQueryRouteImport.update({
     id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query',
     path: '/data-fetching/react-query',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdatafetchingDataFetchingOwnHandleRoute =
-  hiddenfolderdatafetchingDataFetchingOwnHandleImport.update({
+const hidden_folderdata_fetchingDataFetchingOwnHandleRoute =
+  hidden_folderdata_fetchingDataFetchingOwnHandleRouteImport.update({
     id: '/(hidden_folder)/(data_fetching)/data-fetching/own-handle',
     path: '/data-fetching/own-handle',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderbasicBasicPropsChildrenRoute =
-  hiddenfolderbasicBasicPropsChildrenImport.update({
+const hidden_folderbasicBasicPropsChildrenRoute =
+  hidden_folderbasicBasicPropsChildrenRouteImport.update({
     id: '/(hidden_folder)/(basic)/basic/props-children',
     path: '/basic/props-children',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderbasicBasicPortalRoute =
-  hiddenfolderbasicBasicPortalImport.update({
+const hidden_folderbasicBasicPortalRoute =
+  hidden_folderbasicBasicPortalRouteImport.update({
     id: '/(hidden_folder)/(basic)/basic/portal',
     path: '/basic/portal',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderbasicBasicListOfDataRoute =
-  hiddenfolderbasicBasicListOfDataImport.update({
+const hidden_folderbasicBasicListOfDataRoute =
+  hidden_folderbasicBasicListOfDataRouteImport.update({
     id: '/(hidden_folder)/(basic)/basic/list-of-data',
     path: '/basic/list-of-data',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderbasicBasicConditionalRenderingRoute =
-  hiddenfolderbasicBasicConditionalRenderingImport.update({
+const hidden_folderbasicBasicConditionalRenderingRoute =
+  hidden_folderbasicBasicConditionalRenderingRouteImport.update({
     id: '/(hidden_folder)/(basic)/basic/conditional-rendering',
     path: '/basic/conditional-rendering',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderanimationMt01Route = hiddenfolderanimationMt01Import.update({
-  id: '/(hidden_folder)/(animation)/mt/01',
-  path: '/mt/01',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderanimationMh02Route = hiddenfolderanimationMh02Import.update({
-  id: '/(hidden_folder)/(animation)/mh/02',
-  path: '/mh/02',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderanimationMh01Route = hiddenfolderanimationMh01Import.update({
-  id: '/(hidden_folder)/(animation)/mh/01',
-  path: '/mh/01',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderanimationMg01Route = hiddenfolderanimationMg01Import.update({
-  id: '/(hidden_folder)/(animation)/mg/01',
-  path: '/mg/01',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderanimationM01Route = hiddenfolderanimationM01Import.update({
-  id: '/(hidden_folder)/(animation)/m/01',
-  path: '/m/01',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const hiddenfolderdemosverifyemailDemosVerifyPageRoute =
-  hiddenfolderdemosverifyemailDemosVerifyPageImport.update({
+const hidden_folderanimationMt01Route =
+  hidden_folderanimationMt01RouteImport.update({
+    id: '/(hidden_folder)/(animation)/mt/01',
+    path: '/mt/01',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderanimationMh02Route =
+  hidden_folderanimationMh02RouteImport.update({
+    id: '/(hidden_folder)/(animation)/mh/02',
+    path: '/mh/02',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderanimationMh01Route =
+  hidden_folderanimationMh01RouteImport.update({
+    id: '/(hidden_folder)/(animation)/mh/01',
+    path: '/mh/01',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderanimationMg01Route =
+  hidden_folderanimationMg01RouteImport.update({
+    id: '/(hidden_folder)/(animation)/mg/01',
+    path: '/mg/01',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderanimationM01Route =
+  hidden_folderanimationM01RouteImport.update({
+    id: '/(hidden_folder)/(animation)/m/01',
+    path: '/m/01',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const hidden_folderdemosverify_emailDemosVerifyPageRoute =
+  hidden_folderdemosverify_emailDemosVerifyPageRouteImport.update({
     id: '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page',
     path: '/demos/verify-page',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdemosverifyemailDemosResultPageRoute =
-  hiddenfolderdemosverifyemailDemosResultPageImport.update({
+const hidden_folderdemosverify_emailDemosResultPageRoute =
+  hidden_folderdemosverify_emailDemosResultPageRouteImport.update({
     id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page',
     path: '/demos/result-page',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdemostoastDemosToastRoute =
-  hiddenfolderdemostoastDemosToastImport.update({
+const hidden_folderdemostoastDemosToastRoute =
+  hidden_folderdemostoastDemosToastRouteImport.update({
     id: '/(hidden_folder)/(demos)/(toast)/demos/toast',
     path: '/demos/toast',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdemosmarkdownDemosMarkdownRoute =
-  hiddenfolderdemosmarkdownDemosMarkdownImport.update({
+const hidden_folderdemosmarkdownDemosMarkdownRoute =
+  hidden_folderdemosmarkdownDemosMarkdownRouteImport.update({
     id: '/(hidden_folder)/(demos)/(markdown)/demos/markdown',
     path: '/demos/markdown',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-const hiddenfolderdemoscopywritingDemosCopywritingRenderRoute =
-  hiddenfolderdemoscopywritingDemosCopywritingRenderImport.update({
+const hidden_folderdemoscopywritingDemosCopywritingRenderRoute =
+  hidden_folderdemoscopywritingDemosCopywritingRenderRouteImport.update({
     id: '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render',
     path: '/demos/copywriting/render',
-    getParentRoute: () => rootRoute,
+    getParentRoute: () => rootRouteImport,
   } as any)
-
-// Populate the FileRoutesByPath interface
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(animation)/m/01': {
-      id: '/(hidden_folder)/(animation)/m/01'
-      path: '/m/01'
-      fullPath: '/m/01'
-      preLoaderRoute: typeof hiddenfolderanimationM01Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(animation)/mg/01': {
-      id: '/(hidden_folder)/(animation)/mg/01'
-      path: '/mg/01'
-      fullPath: '/mg/01'
-      preLoaderRoute: typeof hiddenfolderanimationMg01Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(animation)/mh/01': {
-      id: '/(hidden_folder)/(animation)/mh/01'
-      path: '/mh/01'
-      fullPath: '/mh/01'
-      preLoaderRoute: typeof hiddenfolderanimationMh01Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(animation)/mh/02': {
-      id: '/(hidden_folder)/(animation)/mh/02'
-      path: '/mh/02'
-      fullPath: '/mh/02'
-      preLoaderRoute: typeof hiddenfolderanimationMh02Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(animation)/mt/01': {
-      id: '/(hidden_folder)/(animation)/mt/01'
-      path: '/mt/01'
-      fullPath: '/mt/01'
-      preLoaderRoute: typeof hiddenfolderanimationMt01Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(basic)/basic/conditional-rendering': {
-      id: '/(hidden_folder)/(basic)/basic/conditional-rendering'
-      path: '/basic/conditional-rendering'
-      fullPath: '/basic/conditional-rendering'
-      preLoaderRoute: typeof hiddenfolderbasicBasicConditionalRenderingImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(basic)/basic/list-of-data': {
-      id: '/(hidden_folder)/(basic)/basic/list-of-data'
-      path: '/basic/list-of-data'
-      fullPath: '/basic/list-of-data'
-      preLoaderRoute: typeof hiddenfolderbasicBasicListOfDataImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(basic)/basic/portal': {
-      id: '/(hidden_folder)/(basic)/basic/portal'
-      path: '/basic/portal'
-      fullPath: '/basic/portal'
-      preLoaderRoute: typeof hiddenfolderbasicBasicPortalImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(basic)/basic/props-children': {
-      id: '/(hidden_folder)/(basic)/basic/props-children'
-      path: '/basic/props-children'
-      fullPath: '/basic/props-children'
-      preLoaderRoute: typeof hiddenfolderbasicBasicPropsChildrenImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': {
-      id: '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
-      path: '/data-fetching/own-handle'
-      fullPath: '/data-fetching/own-handle'
-      preLoaderRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(data_fetching)/data-fetching/react-query': {
-      id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
-      path: '/data-fetching/react-query'
-      fullPath: '/data-fetching/react-query'
-      preLoaderRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/before-usecallback': {
-      id: '/(hidden_folder)/(hooks)/hooks/before-usecallback'
-      path: '/hooks/before-usecallback'
-      fullPath: '/hooks/before-usecallback'
-      preLoaderRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/interval-problem-1': {
-      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
-      path: '/hooks/interval-problem-1'
-      fullPath: '/hooks/interval-problem-1'
-      preLoaderRoute: typeof hiddenfolderhooksHooksIntervalProblem1Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/interval-problem-2': {
-      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
-      path: '/hooks/interval-problem-2'
-      fullPath: '/hooks/interval-problem-2'
-      preLoaderRoute: typeof hiddenfolderhooksHooksIntervalProblem2Import
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usecallback': {
-      id: '/(hidden_folder)/(hooks)/hooks/usecallback'
-      path: '/hooks/usecallback'
-      fullPath: '/hooks/usecallback'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsecallbackImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usecontext': {
-      id: '/(hidden_folder)/(hooks)/hooks/usecontext'
-      path: '/hooks/usecontext'
-      fullPath: '/hooks/usecontext'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsecontextImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usedebounce': {
-      id: '/(hidden_folder)/(hooks)/hooks/usedebounce'
-      path: '/hooks/usedebounce'
-      fullPath: '/hooks/usedebounce'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsedebounceImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': {
-      id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
-      path: '/hooks/usedeferredvalue'
-      fullPath: '/hooks/usedeferredvalue'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsedeferredvalueImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useeffect': {
-      id: '/(hidden_folder)/(hooks)/hooks/useeffect'
-      path: '/hooks/useeffect'
-      fullPath: '/hooks/useeffect'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUseeffectImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useid': {
-      id: '/(hidden_folder)/(hooks)/hooks/useid'
-      path: '/hooks/useid'
-      fullPath: '/hooks/useid'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUseidImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useimperativehandle': {
-      id: '/(hidden_folder)/(hooks)/hooks/useimperativehandle'
-      path: '/hooks/useimperativehandle'
-      fullPath: '/hooks/useimperativehandle'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUseimperativehandleImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': {
-      id: '/(hidden_folder)/(hooks)/hooks/useinsertioneffect'
-      path: '/hooks/useinsertioneffect'
-      fullPath: '/hooks/useinsertioneffect'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUseinsertioneffectImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useinterval': {
-      id: '/(hidden_folder)/(hooks)/hooks/useinterval'
-      path: '/hooks/useinterval'
-      fullPath: '/hooks/useinterval'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUseintervalImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/uselayouteffect': {
-      id: '/(hidden_folder)/(hooks)/hooks/uselayouteffect'
-      path: '/hooks/uselayouteffect'
-      fullPath: '/hooks/uselayouteffect'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUselayouteffectImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usememo': {
-      id: '/(hidden_folder)/(hooks)/hooks/usememo'
-      path: '/hooks/usememo'
-      fullPath: '/hooks/usememo'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsememoImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usereducer': {
-      id: '/(hidden_folder)/(hooks)/hooks/usereducer'
-      path: '/hooks/usereducer'
-      fullPath: '/hooks/usereducer'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsereducerImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/useref': {
-      id: '/(hidden_folder)/(hooks)/hooks/useref'
-      path: '/hooks/useref'
-      fullPath: '/hooks/useref'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUserefImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usestate': {
-      id: '/(hidden_folder)/(hooks)/hooks/usestate'
-      path: '/hooks/usestate'
-      fullPath: '/hooks/usestate'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsestateImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': {
-      id: '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore'
-      path: '/hooks/usesyncexternalstore'
-      fullPath: '/hooks/usesyncexternalstore'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usethrottle': {
-      id: '/(hidden_folder)/(hooks)/hooks/usethrottle'
-      path: '/hooks/usethrottle'
-      fullPath: '/hooks/usethrottle'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsethrottleImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/usetransition': {
-      id: '/(hidden_folder)/(hooks)/hooks/usetransition'
-      path: '/hooks/usetransition'
-      fullPath: '/hooks/usetransition'
-      preLoaderRoute: typeof hiddenfolderhooksHooksUsetransitionImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': {
-      id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore'
-      path: '/hooks/withoutusesyncexternalstore'
-      fullPath: '/hooks/withoutusesyncexternalstore'
-      preLoaderRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(libraries)/libs/cva-twmerge': {
-      id: '/(hidden_folder)/(libraries)/libs/cva-twmerge'
-      path: '/libs/cva-twmerge'
-      fullPath: '/libs/cva-twmerge'
-      preLoaderRoute: typeof hiddenfolderlibrariesLibsCvaTwmergeImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(libraries)/libs/dnd': {
-      id: '/(hidden_folder)/(libraries)/libs/dnd'
-      path: '/libs/dnd'
-      fullPath: '/libs/dnd'
-      preLoaderRoute: typeof hiddenfolderlibrariesLibsDndImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(libraries)/libs/zustand': {
-      id: '/(hidden_folder)/(libraries)/libs/zustand'
-      path: '/libs/zustand'
-      fullPath: '/libs/zustand'
-      preLoaderRoute: typeof hiddenfolderlibrariesLibsZustandImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(toys)/toys/clock': {
-      id: '/(hidden_folder)/(toys)/toys/clock'
-      path: '/toys/clock'
-      fullPath: '/toys/clock'
-      preLoaderRoute: typeof hiddenfoldertoysToysClockImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(toys)/toys/color-picker': {
-      id: '/(hidden_folder)/(toys)/toys/color-picker'
-      path: '/toys/color-picker'
-      fullPath: '/toys/color-picker'
-      preLoaderRoute: typeof hiddenfoldertoysToysColorPickerImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(toys)/toys/stopwatch': {
-      id: '/(hidden_folder)/(toys)/toys/stopwatch'
-      path: '/toys/stopwatch'
-      fullPath: '/toys/stopwatch'
-      preLoaderRoute: typeof hiddenfoldertoysToysStopwatchImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(toys)/toys/todo-app': {
-      id: '/(hidden_folder)/(toys)/toys/todo-app'
-      path: '/toys/todo-app'
-      fullPath: '/toys/todo-app'
-      preLoaderRoute: typeof hiddenfoldertoysToysTodoAppImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(markdown)/demos/markdown': {
-      id: '/(hidden_folder)/(demos)/(markdown)/demos/markdown'
-      path: '/demos/markdown'
-      fullPath: '/demos/markdown'
-      preLoaderRoute: typeof hiddenfolderdemosmarkdownDemosMarkdownImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(toast)/demos/toast': {
-      id: '/(hidden_folder)/(demos)/(toast)/demos/toast'
-      path: '/demos/toast'
-      fullPath: '/demos/toast'
-      preLoaderRoute: typeof hiddenfolderdemostoastDemosToastImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': {
-      id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
-      path: '/demos/result-page'
-      fullPath: '/demos/result-page'
-      preLoaderRoute: typeof hiddenfolderdemosverifyemailDemosResultPageImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': {
-      id: '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page'
-      path: '/demos/verify-page'
-      fullPath: '/demos/verify-page'
-      preLoaderRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageImport
-      parentRoute: typeof rootRoute
-    }
-    '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': {
-      id: '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render'
-      path: '/demos/copywriting/render'
-      fullPath: '/demos/copywriting/render'
-      preLoaderRoute: typeof hiddenfolderdemoscopywritingDemosCopywritingRenderImport
-      parentRoute: typeof rootRoute
-    }
-  }
-}
-
-// Create and export the route tree
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
-  '/m/01': typeof hiddenfolderanimationM01Route
-  '/mg/01': typeof hiddenfolderanimationMg01Route
-  '/mh/01': typeof hiddenfolderanimationMh01Route
-  '/mh/02': typeof hiddenfolderanimationMh02Route
-  '/mt/01': typeof hiddenfolderanimationMt01Route
-  '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
-  '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
-  '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
-  '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
-  '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
-  '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
-  '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
-  '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
-  '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
-  '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
-  '/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
-  '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
-  '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
-  '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
-  '/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
-  '/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
-  '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
-  '/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
-  '/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
-  '/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
-  '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
-  '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
-  '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
-  '/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
-  '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
-  '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
-  '/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
-  '/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
-  '/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
-  '/toys/clock': typeof hiddenfoldertoysToysClockRoute
-  '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
-  '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
-  '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
-  '/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
-  '/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
-  '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
-  '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
-  '/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
+  '/m/01': typeof hidden_folderanimationM01Route
+  '/mg/01': typeof hidden_folderanimationMg01Route
+  '/mh/01': typeof hidden_folderanimationMh01Route
+  '/mh/02': typeof hidden_folderanimationMh02Route
+  '/mt/01': typeof hidden_folderanimationMt01Route
+  '/basic/conditional-rendering': typeof hidden_folderbasicBasicConditionalRenderingRoute
+  '/basic/list-of-data': typeof hidden_folderbasicBasicListOfDataRoute
+  '/basic/portal': typeof hidden_folderbasicBasicPortalRoute
+  '/basic/props-children': typeof hidden_folderbasicBasicPropsChildrenRoute
+  '/data-fetching/own-handle': typeof hidden_folderdata_fetchingDataFetchingOwnHandleRoute
+  '/data-fetching/react-query': typeof hidden_folderdata_fetchingDataFetchingReactQueryRoute
+  '/hooks/before-usecallback': typeof hidden_folderhooksHooksBeforeUsecallbackRoute
+  '/hooks/interval-problem-1': typeof hidden_folderhooksHooksIntervalProblem1Route
+  '/hooks/interval-problem-2': typeof hidden_folderhooksHooksIntervalProblem2Route
+  '/hooks/usecallback': typeof hidden_folderhooksHooksUsecallbackRoute
+  '/hooks/usecontext': typeof hidden_folderhooksHooksUsecontextRoute
+  '/hooks/usedebounce': typeof hidden_folderhooksHooksUsedebounceRoute
+  '/hooks/usedeferredvalue': typeof hidden_folderhooksHooksUsedeferredvalueRoute
+  '/hooks/useeffect': typeof hidden_folderhooksHooksUseeffectRoute
+  '/hooks/useid': typeof hidden_folderhooksHooksUseidRoute
+  '/hooks/useimperativehandle': typeof hidden_folderhooksHooksUseimperativehandleRoute
+  '/hooks/useinsertioneffect': typeof hidden_folderhooksHooksUseinsertioneffectRoute
+  '/hooks/useinterval': typeof hidden_folderhooksHooksUseintervalRoute
+  '/hooks/uselayouteffect': typeof hidden_folderhooksHooksUselayouteffectRoute
+  '/hooks/usememo': typeof hidden_folderhooksHooksUsememoRoute
+  '/hooks/usereducer': typeof hidden_folderhooksHooksUsereducerRoute
+  '/hooks/useref': typeof hidden_folderhooksHooksUserefRoute
+  '/hooks/usestate': typeof hidden_folderhooksHooksUsestateRoute
+  '/hooks/usesyncexternalstore': typeof hidden_folderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usethrottle': typeof hidden_folderhooksHooksUsethrottleRoute
+  '/hooks/usetransition': typeof hidden_folderhooksHooksUsetransitionRoute
+  '/hooks/withoutusesyncexternalstore': typeof hidden_folderhooksHooksWithoutusesyncexternalstoreRoute
+  '/libs/cva-twmerge': typeof hidden_folderlibrariesLibsCvaTwmergeRoute
+  '/libs/dnd': typeof hidden_folderlibrariesLibsDndRoute
+  '/libs/zustand': typeof hidden_folderlibrariesLibsZustandRoute
+  '/toys/clock': typeof hidden_foldertoysToysClockRoute
+  '/toys/color-picker': typeof hidden_foldertoysToysColorPickerRoute
+  '/toys/stopwatch': typeof hidden_foldertoysToysStopwatchRoute
+  '/toys/todo-app': typeof hidden_foldertoysToysTodoAppRoute
+  '/demos/markdown': typeof hidden_folderdemosmarkdownDemosMarkdownRoute
+  '/demos/toast': typeof hidden_folderdemostoastDemosToastRoute
+  '/demos/result-page': typeof hidden_folderdemosverify_emailDemosResultPageRoute
+  '/demos/verify-page': typeof hidden_folderdemosverify_emailDemosVerifyPageRoute
+  '/demos/copywriting/render': typeof hidden_folderdemoscopywritingDemosCopywritingRenderRoute
 }
-
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
-  '/m/01': typeof hiddenfolderanimationM01Route
-  '/mg/01': typeof hiddenfolderanimationMg01Route
-  '/mh/01': typeof hiddenfolderanimationMh01Route
-  '/mh/02': typeof hiddenfolderanimationMh02Route
-  '/mt/01': typeof hiddenfolderanimationMt01Route
-  '/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
-  '/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
-  '/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
-  '/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
-  '/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
-  '/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
-  '/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
-  '/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
-  '/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
-  '/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
-  '/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
-  '/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
-  '/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
-  '/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
-  '/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
-  '/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
-  '/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
-  '/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
-  '/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
-  '/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
-  '/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
-  '/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
-  '/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
-  '/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
-  '/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
-  '/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
-  '/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
-  '/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
-  '/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
-  '/toys/clock': typeof hiddenfoldertoysToysClockRoute
-  '/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
-  '/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
-  '/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
-  '/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
-  '/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
-  '/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
-  '/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
-  '/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
+  '/m/01': typeof hidden_folderanimationM01Route
+  '/mg/01': typeof hidden_folderanimationMg01Route
+  '/mh/01': typeof hidden_folderanimationMh01Route
+  '/mh/02': typeof hidden_folderanimationMh02Route
+  '/mt/01': typeof hidden_folderanimationMt01Route
+  '/basic/conditional-rendering': typeof hidden_folderbasicBasicConditionalRenderingRoute
+  '/basic/list-of-data': typeof hidden_folderbasicBasicListOfDataRoute
+  '/basic/portal': typeof hidden_folderbasicBasicPortalRoute
+  '/basic/props-children': typeof hidden_folderbasicBasicPropsChildrenRoute
+  '/data-fetching/own-handle': typeof hidden_folderdata_fetchingDataFetchingOwnHandleRoute
+  '/data-fetching/react-query': typeof hidden_folderdata_fetchingDataFetchingReactQueryRoute
+  '/hooks/before-usecallback': typeof hidden_folderhooksHooksBeforeUsecallbackRoute
+  '/hooks/interval-problem-1': typeof hidden_folderhooksHooksIntervalProblem1Route
+  '/hooks/interval-problem-2': typeof hidden_folderhooksHooksIntervalProblem2Route
+  '/hooks/usecallback': typeof hidden_folderhooksHooksUsecallbackRoute
+  '/hooks/usecontext': typeof hidden_folderhooksHooksUsecontextRoute
+  '/hooks/usedebounce': typeof hidden_folderhooksHooksUsedebounceRoute
+  '/hooks/usedeferredvalue': typeof hidden_folderhooksHooksUsedeferredvalueRoute
+  '/hooks/useeffect': typeof hidden_folderhooksHooksUseeffectRoute
+  '/hooks/useid': typeof hidden_folderhooksHooksUseidRoute
+  '/hooks/useimperativehandle': typeof hidden_folderhooksHooksUseimperativehandleRoute
+  '/hooks/useinsertioneffect': typeof hidden_folderhooksHooksUseinsertioneffectRoute
+  '/hooks/useinterval': typeof hidden_folderhooksHooksUseintervalRoute
+  '/hooks/uselayouteffect': typeof hidden_folderhooksHooksUselayouteffectRoute
+  '/hooks/usememo': typeof hidden_folderhooksHooksUsememoRoute
+  '/hooks/usereducer': typeof hidden_folderhooksHooksUsereducerRoute
+  '/hooks/useref': typeof hidden_folderhooksHooksUserefRoute
+  '/hooks/usestate': typeof hidden_folderhooksHooksUsestateRoute
+  '/hooks/usesyncexternalstore': typeof hidden_folderhooksHooksUsesyncexternalstoreRoute
+  '/hooks/usethrottle': typeof hidden_folderhooksHooksUsethrottleRoute
+  '/hooks/usetransition': typeof hidden_folderhooksHooksUsetransitionRoute
+  '/hooks/withoutusesyncexternalstore': typeof hidden_folderhooksHooksWithoutusesyncexternalstoreRoute
+  '/libs/cva-twmerge': typeof hidden_folderlibrariesLibsCvaTwmergeRoute
+  '/libs/dnd': typeof hidden_folderlibrariesLibsDndRoute
+  '/libs/zustand': typeof hidden_folderlibrariesLibsZustandRoute
+  '/toys/clock': typeof hidden_foldertoysToysClockRoute
+  '/toys/color-picker': typeof hidden_foldertoysToysColorPickerRoute
+  '/toys/stopwatch': typeof hidden_foldertoysToysStopwatchRoute
+  '/toys/todo-app': typeof hidden_foldertoysToysTodoAppRoute
+  '/demos/markdown': typeof hidden_folderdemosmarkdownDemosMarkdownRoute
+  '/demos/toast': typeof hidden_folderdemostoastDemosToastRoute
+  '/demos/result-page': typeof hidden_folderdemosverify_emailDemosResultPageRoute
+  '/demos/verify-page': typeof hidden_folderdemosverify_emailDemosVerifyPageRoute
+  '/demos/copywriting/render': typeof hidden_folderdemoscopywritingDemosCopywritingRenderRoute
 }
-
 export interface FileRoutesById {
-  __root__: typeof rootRoute
+  __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
-  '/(hidden_folder)/(animation)/m/01': typeof hiddenfolderanimationM01Route
-  '/(hidden_folder)/(animation)/mg/01': typeof hiddenfolderanimationMg01Route
-  '/(hidden_folder)/(animation)/mh/01': typeof hiddenfolderanimationMh01Route
-  '/(hidden_folder)/(animation)/mh/02': typeof hiddenfolderanimationMh02Route
-  '/(hidden_folder)/(animation)/mt/01': typeof hiddenfolderanimationMt01Route
-  '/(hidden_folder)/(basic)/basic/conditional-rendering': typeof hiddenfolderbasicBasicConditionalRenderingRoute
-  '/(hidden_folder)/(basic)/basic/list-of-data': typeof hiddenfolderbasicBasicListOfDataRoute
-  '/(hidden_folder)/(basic)/basic/portal': typeof hiddenfolderbasicBasicPortalRoute
-  '/(hidden_folder)/(basic)/basic/props-children': typeof hiddenfolderbasicBasicPropsChildrenRoute
-  '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
-  '/(hidden_folder)/(data_fetching)/data-fetching/react-query': typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  '/(hidden_folder)/(hooks)/hooks/before-usecallback': typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
-  '/(hidden_folder)/(hooks)/hooks/interval-problem-1': typeof hiddenfolderhooksHooksIntervalProblem1Route
-  '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hiddenfolderhooksHooksIntervalProblem2Route
-  '/(hidden_folder)/(hooks)/hooks/usecallback': typeof hiddenfolderhooksHooksUsecallbackRoute
-  '/(hidden_folder)/(hooks)/hooks/usecontext': typeof hiddenfolderhooksHooksUsecontextRoute
-  '/(hidden_folder)/(hooks)/hooks/usedebounce': typeof hiddenfolderhooksHooksUsedebounceRoute
-  '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': typeof hiddenfolderhooksHooksUsedeferredvalueRoute
-  '/(hidden_folder)/(hooks)/hooks/useeffect': typeof hiddenfolderhooksHooksUseeffectRoute
-  '/(hidden_folder)/(hooks)/hooks/useid': typeof hiddenfolderhooksHooksUseidRoute
-  '/(hidden_folder)/(hooks)/hooks/useimperativehandle': typeof hiddenfolderhooksHooksUseimperativehandleRoute
-  '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': typeof hiddenfolderhooksHooksUseinsertioneffectRoute
-  '/(hidden_folder)/(hooks)/hooks/useinterval': typeof hiddenfolderhooksHooksUseintervalRoute
-  '/(hidden_folder)/(hooks)/hooks/uselayouteffect': typeof hiddenfolderhooksHooksUselayouteffectRoute
-  '/(hidden_folder)/(hooks)/hooks/usememo': typeof hiddenfolderhooksHooksUsememoRoute
-  '/(hidden_folder)/(hooks)/hooks/usereducer': typeof hiddenfolderhooksHooksUsereducerRoute
-  '/(hidden_folder)/(hooks)/hooks/useref': typeof hiddenfolderhooksHooksUserefRoute
-  '/(hidden_folder)/(hooks)/hooks/usestate': typeof hiddenfolderhooksHooksUsestateRoute
-  '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
-  '/(hidden_folder)/(hooks)/hooks/usethrottle': typeof hiddenfolderhooksHooksUsethrottleRoute
-  '/(hidden_folder)/(hooks)/hooks/usetransition': typeof hiddenfolderhooksHooksUsetransitionRoute
-  '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
-  '/(hidden_folder)/(libraries)/libs/cva-twmerge': typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
-  '/(hidden_folder)/(libraries)/libs/dnd': typeof hiddenfolderlibrariesLibsDndRoute
-  '/(hidden_folder)/(libraries)/libs/zustand': typeof hiddenfolderlibrariesLibsZustandRoute
-  '/(hidden_folder)/(toys)/toys/clock': typeof hiddenfoldertoysToysClockRoute
-  '/(hidden_folder)/(toys)/toys/color-picker': typeof hiddenfoldertoysToysColorPickerRoute
-  '/(hidden_folder)/(toys)/toys/stopwatch': typeof hiddenfoldertoysToysStopwatchRoute
-  '/(hidden_folder)/(toys)/toys/todo-app': typeof hiddenfoldertoysToysTodoAppRoute
-  '/(hidden_folder)/(demos)/(markdown)/demos/markdown': typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
-  '/(hidden_folder)/(demos)/(toast)/demos/toast': typeof hiddenfolderdemostoastDemosToastRoute
-  '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': typeof hiddenfolderdemosverifyemailDemosResultPageRoute
-  '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
-  '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
+  '/(hidden_folder)/(animation)/m/01': typeof hidden_folderanimationM01Route
+  '/(hidden_folder)/(animation)/mg/01': typeof hidden_folderanimationMg01Route
+  '/(hidden_folder)/(animation)/mh/01': typeof hidden_folderanimationMh01Route
+  '/(hidden_folder)/(animation)/mh/02': typeof hidden_folderanimationMh02Route
+  '/(hidden_folder)/(animation)/mt/01': typeof hidden_folderanimationMt01Route
+  '/(hidden_folder)/(basic)/basic/conditional-rendering': typeof hidden_folderbasicBasicConditionalRenderingRoute
+  '/(hidden_folder)/(basic)/basic/list-of-data': typeof hidden_folderbasicBasicListOfDataRoute
+  '/(hidden_folder)/(basic)/basic/portal': typeof hidden_folderbasicBasicPortalRoute
+  '/(hidden_folder)/(basic)/basic/props-children': typeof hidden_folderbasicBasicPropsChildrenRoute
+  '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': typeof hidden_folderdata_fetchingDataFetchingOwnHandleRoute
+  '/(hidden_folder)/(data_fetching)/data-fetching/react-query': typeof hidden_folderdata_fetchingDataFetchingReactQueryRoute
+  '/(hidden_folder)/(hooks)/hooks/before-usecallback': typeof hidden_folderhooksHooksBeforeUsecallbackRoute
+  '/(hidden_folder)/(hooks)/hooks/interval-problem-1': typeof hidden_folderhooksHooksIntervalProblem1Route
+  '/(hidden_folder)/(hooks)/hooks/interval-problem-2': typeof hidden_folderhooksHooksIntervalProblem2Route
+  '/(hidden_folder)/(hooks)/hooks/usecallback': typeof hidden_folderhooksHooksUsecallbackRoute
+  '/(hidden_folder)/(hooks)/hooks/usecontext': typeof hidden_folderhooksHooksUsecontextRoute
+  '/(hidden_folder)/(hooks)/hooks/usedebounce': typeof hidden_folderhooksHooksUsedebounceRoute
+  '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': typeof hidden_folderhooksHooksUsedeferredvalueRoute
+  '/(hidden_folder)/(hooks)/hooks/useeffect': typeof hidden_folderhooksHooksUseeffectRoute
+  '/(hidden_folder)/(hooks)/hooks/useid': typeof hidden_folderhooksHooksUseidRoute
+  '/(hidden_folder)/(hooks)/hooks/useimperativehandle': typeof hidden_folderhooksHooksUseimperativehandleRoute
+  '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': typeof hidden_folderhooksHooksUseinsertioneffectRoute
+  '/(hidden_folder)/(hooks)/hooks/useinterval': typeof hidden_folderhooksHooksUseintervalRoute
+  '/(hidden_folder)/(hooks)/hooks/uselayouteffect': typeof hidden_folderhooksHooksUselayouteffectRoute
+  '/(hidden_folder)/(hooks)/hooks/usememo': typeof hidden_folderhooksHooksUsememoRoute
+  '/(hidden_folder)/(hooks)/hooks/usereducer': typeof hidden_folderhooksHooksUsereducerRoute
+  '/(hidden_folder)/(hooks)/hooks/useref': typeof hidden_folderhooksHooksUserefRoute
+  '/(hidden_folder)/(hooks)/hooks/usestate': typeof hidden_folderhooksHooksUsestateRoute
+  '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': typeof hidden_folderhooksHooksUsesyncexternalstoreRoute
+  '/(hidden_folder)/(hooks)/hooks/usethrottle': typeof hidden_folderhooksHooksUsethrottleRoute
+  '/(hidden_folder)/(hooks)/hooks/usetransition': typeof hidden_folderhooksHooksUsetransitionRoute
+  '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': typeof hidden_folderhooksHooksWithoutusesyncexternalstoreRoute
+  '/(hidden_folder)/(libraries)/libs/cva-twmerge': typeof hidden_folderlibrariesLibsCvaTwmergeRoute
+  '/(hidden_folder)/(libraries)/libs/dnd': typeof hidden_folderlibrariesLibsDndRoute
+  '/(hidden_folder)/(libraries)/libs/zustand': typeof hidden_folderlibrariesLibsZustandRoute
+  '/(hidden_folder)/(toys)/toys/clock': typeof hidden_foldertoysToysClockRoute
+  '/(hidden_folder)/(toys)/toys/color-picker': typeof hidden_foldertoysToysColorPickerRoute
+  '/(hidden_folder)/(toys)/toys/stopwatch': typeof hidden_foldertoysToysStopwatchRoute
+  '/(hidden_folder)/(toys)/toys/todo-app': typeof hidden_foldertoysToysTodoAppRoute
+  '/(hidden_folder)/(demos)/(markdown)/demos/markdown': typeof hidden_folderdemosmarkdownDemosMarkdownRoute
+  '/(hidden_folder)/(demos)/(toast)/demos/toast': typeof hidden_folderdemostoastDemosToastRoute
+  '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': typeof hidden_folderdemosverify_emailDemosResultPageRoute
+  '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': typeof hidden_folderdemosverify_emailDemosVerifyPageRoute
+  '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': typeof hidden_folderdemoscopywritingDemosCopywritingRenderRoute
 }
-
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
@@ -985,318 +614,449 @@ export interface FileRouteTypes {
     | '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render'
   fileRoutesById: FileRoutesById
 }
-
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
-  hiddenfolderanimationM01Route: typeof hiddenfolderanimationM01Route
-  hiddenfolderanimationMg01Route: typeof hiddenfolderanimationMg01Route
-  hiddenfolderanimationMh01Route: typeof hiddenfolderanimationMh01Route
-  hiddenfolderanimationMh02Route: typeof hiddenfolderanimationMh02Route
-  hiddenfolderanimationMt01Route: typeof hiddenfolderanimationMt01Route
-  hiddenfolderbasicBasicConditionalRenderingRoute: typeof hiddenfolderbasicBasicConditionalRenderingRoute
-  hiddenfolderbasicBasicListOfDataRoute: typeof hiddenfolderbasicBasicListOfDataRoute
-  hiddenfolderbasicBasicPortalRoute: typeof hiddenfolderbasicBasicPortalRoute
-  hiddenfolderbasicBasicPropsChildrenRoute: typeof hiddenfolderbasicBasicPropsChildrenRoute
-  hiddenfolderdatafetchingDataFetchingOwnHandleRoute: typeof hiddenfolderdatafetchingDataFetchingOwnHandleRoute
-  hiddenfolderdatafetchingDataFetchingReactQueryRoute: typeof hiddenfolderdatafetchingDataFetchingReactQueryRoute
-  hiddenfolderhooksHooksBeforeUsecallbackRoute: typeof hiddenfolderhooksHooksBeforeUsecallbackRoute
-  hiddenfolderhooksHooksIntervalProblem1Route: typeof hiddenfolderhooksHooksIntervalProblem1Route
-  hiddenfolderhooksHooksIntervalProblem2Route: typeof hiddenfolderhooksHooksIntervalProblem2Route
-  hiddenfolderhooksHooksUsecallbackRoute: typeof hiddenfolderhooksHooksUsecallbackRoute
-  hiddenfolderhooksHooksUsecontextRoute: typeof hiddenfolderhooksHooksUsecontextRoute
-  hiddenfolderhooksHooksUsedebounceRoute: typeof hiddenfolderhooksHooksUsedebounceRoute
-  hiddenfolderhooksHooksUsedeferredvalueRoute: typeof hiddenfolderhooksHooksUsedeferredvalueRoute
-  hiddenfolderhooksHooksUseeffectRoute: typeof hiddenfolderhooksHooksUseeffectRoute
-  hiddenfolderhooksHooksUseidRoute: typeof hiddenfolderhooksHooksUseidRoute
-  hiddenfolderhooksHooksUseimperativehandleRoute: typeof hiddenfolderhooksHooksUseimperativehandleRoute
-  hiddenfolderhooksHooksUseinsertioneffectRoute: typeof hiddenfolderhooksHooksUseinsertioneffectRoute
-  hiddenfolderhooksHooksUseintervalRoute: typeof hiddenfolderhooksHooksUseintervalRoute
-  hiddenfolderhooksHooksUselayouteffectRoute: typeof hiddenfolderhooksHooksUselayouteffectRoute
-  hiddenfolderhooksHooksUsememoRoute: typeof hiddenfolderhooksHooksUsememoRoute
-  hiddenfolderhooksHooksUsereducerRoute: typeof hiddenfolderhooksHooksUsereducerRoute
-  hiddenfolderhooksHooksUserefRoute: typeof hiddenfolderhooksHooksUserefRoute
-  hiddenfolderhooksHooksUsestateRoute: typeof hiddenfolderhooksHooksUsestateRoute
-  hiddenfolderhooksHooksUsesyncexternalstoreRoute: typeof hiddenfolderhooksHooksUsesyncexternalstoreRoute
-  hiddenfolderhooksHooksUsethrottleRoute: typeof hiddenfolderhooksHooksUsethrottleRoute
-  hiddenfolderhooksHooksUsetransitionRoute: typeof hiddenfolderhooksHooksUsetransitionRoute
-  hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute: typeof hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute
-  hiddenfolderlibrariesLibsCvaTwmergeRoute: typeof hiddenfolderlibrariesLibsCvaTwmergeRoute
-  hiddenfolderlibrariesLibsDndRoute: typeof hiddenfolderlibrariesLibsDndRoute
-  hiddenfolderlibrariesLibsZustandRoute: typeof hiddenfolderlibrariesLibsZustandRoute
-  hiddenfoldertoysToysClockRoute: typeof hiddenfoldertoysToysClockRoute
-  hiddenfoldertoysToysColorPickerRoute: typeof hiddenfoldertoysToysColorPickerRoute
-  hiddenfoldertoysToysStopwatchRoute: typeof hiddenfoldertoysToysStopwatchRoute
-  hiddenfoldertoysToysTodoAppRoute: typeof hiddenfoldertoysToysTodoAppRoute
-  hiddenfolderdemosmarkdownDemosMarkdownRoute: typeof hiddenfolderdemosmarkdownDemosMarkdownRoute
-  hiddenfolderdemostoastDemosToastRoute: typeof hiddenfolderdemostoastDemosToastRoute
-  hiddenfolderdemosverifyemailDemosResultPageRoute: typeof hiddenfolderdemosverifyemailDemosResultPageRoute
-  hiddenfolderdemosverifyemailDemosVerifyPageRoute: typeof hiddenfolderdemosverifyemailDemosVerifyPageRoute
-  hiddenfolderdemoscopywritingDemosCopywritingRenderRoute: typeof hiddenfolderdemoscopywritingDemosCopywritingRenderRoute
+  hidden_folderanimationM01Route: typeof hidden_folderanimationM01Route
+  hidden_folderanimationMg01Route: typeof hidden_folderanimationMg01Route
+  hidden_folderanimationMh01Route: typeof hidden_folderanimationMh01Route
+  hidden_folderanimationMh02Route: typeof hidden_folderanimationMh02Route
+  hidden_folderanimationMt01Route: typeof hidden_folderanimationMt01Route
+  hidden_folderbasicBasicConditionalRenderingRoute: typeof hidden_folderbasicBasicConditionalRenderingRoute
+  hidden_folderbasicBasicListOfDataRoute: typeof hidden_folderbasicBasicListOfDataRoute
+  hidden_folderbasicBasicPortalRoute: typeof hidden_folderbasicBasicPortalRoute
+  hidden_folderbasicBasicPropsChildrenRoute: typeof hidden_folderbasicBasicPropsChildrenRoute
+  hidden_folderdata_fetchingDataFetchingOwnHandleRoute: typeof hidden_folderdata_fetchingDataFetchingOwnHandleRoute
+  hidden_folderdata_fetchingDataFetchingReactQueryRoute: typeof hidden_folderdata_fetchingDataFetchingReactQueryRoute
+  hidden_folderhooksHooksBeforeUsecallbackRoute: typeof hidden_folderhooksHooksBeforeUsecallbackRoute
+  hidden_folderhooksHooksIntervalProblem1Route: typeof hidden_folderhooksHooksIntervalProblem1Route
+  hidden_folderhooksHooksIntervalProblem2Route: typeof hidden_folderhooksHooksIntervalProblem2Route
+  hidden_folderhooksHooksUsecallbackRoute: typeof hidden_folderhooksHooksUsecallbackRoute
+  hidden_folderhooksHooksUsecontextRoute: typeof hidden_folderhooksHooksUsecontextRoute
+  hidden_folderhooksHooksUsedebounceRoute: typeof hidden_folderhooksHooksUsedebounceRoute
+  hidden_folderhooksHooksUsedeferredvalueRoute: typeof hidden_folderhooksHooksUsedeferredvalueRoute
+  hidden_folderhooksHooksUseeffectRoute: typeof hidden_folderhooksHooksUseeffectRoute
+  hidden_folderhooksHooksUseidRoute: typeof hidden_folderhooksHooksUseidRoute
+  hidden_folderhooksHooksUseimperativehandleRoute: typeof hidden_folderhooksHooksUseimperativehandleRoute
+  hidden_folderhooksHooksUseinsertioneffectRoute: typeof hidden_folderhooksHooksUseinsertioneffectRoute
+  hidden_folderhooksHooksUseintervalRoute: typeof hidden_folderhooksHooksUseintervalRoute
+  hidden_folderhooksHooksUselayouteffectRoute: typeof hidden_folderhooksHooksUselayouteffectRoute
+  hidden_folderhooksHooksUsememoRoute: typeof hidden_folderhooksHooksUsememoRoute
+  hidden_folderhooksHooksUsereducerRoute: typeof hidden_folderhooksHooksUsereducerRoute
+  hidden_folderhooksHooksUserefRoute: typeof hidden_folderhooksHooksUserefRoute
+  hidden_folderhooksHooksUsestateRoute: typeof hidden_folderhooksHooksUsestateRoute
+  hidden_folderhooksHooksUsesyncexternalstoreRoute: typeof hidden_folderhooksHooksUsesyncexternalstoreRoute
+  hidden_folderhooksHooksUsethrottleRoute: typeof hidden_folderhooksHooksUsethrottleRoute
+  hidden_folderhooksHooksUsetransitionRoute: typeof hidden_folderhooksHooksUsetransitionRoute
+  hidden_folderhooksHooksWithoutusesyncexternalstoreRoute: typeof hidden_folderhooksHooksWithoutusesyncexternalstoreRoute
+  hidden_folderlibrariesLibsCvaTwmergeRoute: typeof hidden_folderlibrariesLibsCvaTwmergeRoute
+  hidden_folderlibrariesLibsDndRoute: typeof hidden_folderlibrariesLibsDndRoute
+  hidden_folderlibrariesLibsZustandRoute: typeof hidden_folderlibrariesLibsZustandRoute
+  hidden_foldertoysToysClockRoute: typeof hidden_foldertoysToysClockRoute
+  hidden_foldertoysToysColorPickerRoute: typeof hidden_foldertoysToysColorPickerRoute
+  hidden_foldertoysToysStopwatchRoute: typeof hidden_foldertoysToysStopwatchRoute
+  hidden_foldertoysToysTodoAppRoute: typeof hidden_foldertoysToysTodoAppRoute
+  hidden_folderdemosmarkdownDemosMarkdownRoute: typeof hidden_folderdemosmarkdownDemosMarkdownRoute
+  hidden_folderdemostoastDemosToastRoute: typeof hidden_folderdemostoastDemosToastRoute
+  hidden_folderdemosverify_emailDemosResultPageRoute: typeof hidden_folderdemosverify_emailDemosResultPageRoute
+  hidden_folderdemosverify_emailDemosVerifyPageRoute: typeof hidden_folderdemosverify_emailDemosVerifyPageRoute
+  hidden_folderdemoscopywritingDemosCopywritingRenderRoute: typeof hidden_folderdemoscopywritingDemosCopywritingRenderRoute
+}
+
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(toys)/toys/todo-app': {
+      id: '/(hidden_folder)/(toys)/toys/todo-app'
+      path: '/toys/todo-app'
+      fullPath: '/toys/todo-app'
+      preLoaderRoute: typeof hidden_foldertoysToysTodoAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(toys)/toys/stopwatch': {
+      id: '/(hidden_folder)/(toys)/toys/stopwatch'
+      path: '/toys/stopwatch'
+      fullPath: '/toys/stopwatch'
+      preLoaderRoute: typeof hidden_foldertoysToysStopwatchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(toys)/toys/color-picker': {
+      id: '/(hidden_folder)/(toys)/toys/color-picker'
+      path: '/toys/color-picker'
+      fullPath: '/toys/color-picker'
+      preLoaderRoute: typeof hidden_foldertoysToysColorPickerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(toys)/toys/clock': {
+      id: '/(hidden_folder)/(toys)/toys/clock'
+      path: '/toys/clock'
+      fullPath: '/toys/clock'
+      preLoaderRoute: typeof hidden_foldertoysToysClockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(libraries)/libs/zustand': {
+      id: '/(hidden_folder)/(libraries)/libs/zustand'
+      path: '/libs/zustand'
+      fullPath: '/libs/zustand'
+      preLoaderRoute: typeof hidden_folderlibrariesLibsZustandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(libraries)/libs/dnd': {
+      id: '/(hidden_folder)/(libraries)/libs/dnd'
+      path: '/libs/dnd'
+      fullPath: '/libs/dnd'
+      preLoaderRoute: typeof hidden_folderlibrariesLibsDndRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(libraries)/libs/cva-twmerge': {
+      id: '/(hidden_folder)/(libraries)/libs/cva-twmerge'
+      path: '/libs/cva-twmerge'
+      fullPath: '/libs/cva-twmerge'
+      preLoaderRoute: typeof hidden_folderlibrariesLibsCvaTwmergeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore': {
+      id: '/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore'
+      path: '/hooks/withoutusesyncexternalstore'
+      fullPath: '/hooks/withoutusesyncexternalstore'
+      preLoaderRoute: typeof hidden_folderhooksHooksWithoutusesyncexternalstoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usetransition': {
+      id: '/(hidden_folder)/(hooks)/hooks/usetransition'
+      path: '/hooks/usetransition'
+      fullPath: '/hooks/usetransition'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsetransitionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usethrottle': {
+      id: '/(hidden_folder)/(hooks)/hooks/usethrottle'
+      path: '/hooks/usethrottle'
+      fullPath: '/hooks/usethrottle'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsethrottleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore': {
+      id: '/(hidden_folder)/(hooks)/hooks/usesyncexternalstore'
+      path: '/hooks/usesyncexternalstore'
+      fullPath: '/hooks/usesyncexternalstore'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsesyncexternalstoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usestate': {
+      id: '/(hidden_folder)/(hooks)/hooks/usestate'
+      path: '/hooks/usestate'
+      fullPath: '/hooks/usestate'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsestateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useref': {
+      id: '/(hidden_folder)/(hooks)/hooks/useref'
+      path: '/hooks/useref'
+      fullPath: '/hooks/useref'
+      preLoaderRoute: typeof hidden_folderhooksHooksUserefRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usereducer': {
+      id: '/(hidden_folder)/(hooks)/hooks/usereducer'
+      path: '/hooks/usereducer'
+      fullPath: '/hooks/usereducer'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsereducerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usememo': {
+      id: '/(hidden_folder)/(hooks)/hooks/usememo'
+      path: '/hooks/usememo'
+      fullPath: '/hooks/usememo'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsememoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/uselayouteffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/uselayouteffect'
+      path: '/hooks/uselayouteffect'
+      fullPath: '/hooks/uselayouteffect'
+      preLoaderRoute: typeof hidden_folderhooksHooksUselayouteffectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useinterval': {
+      id: '/(hidden_folder)/(hooks)/hooks/useinterval'
+      path: '/hooks/useinterval'
+      fullPath: '/hooks/useinterval'
+      preLoaderRoute: typeof hidden_folderhooksHooksUseintervalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useinsertioneffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/useinsertioneffect'
+      path: '/hooks/useinsertioneffect'
+      fullPath: '/hooks/useinsertioneffect'
+      preLoaderRoute: typeof hidden_folderhooksHooksUseinsertioneffectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useimperativehandle': {
+      id: '/(hidden_folder)/(hooks)/hooks/useimperativehandle'
+      path: '/hooks/useimperativehandle'
+      fullPath: '/hooks/useimperativehandle'
+      preLoaderRoute: typeof hidden_folderhooksHooksUseimperativehandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useid': {
+      id: '/(hidden_folder)/(hooks)/hooks/useid'
+      path: '/hooks/useid'
+      fullPath: '/hooks/useid'
+      preLoaderRoute: typeof hidden_folderhooksHooksUseidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/useeffect': {
+      id: '/(hidden_folder)/(hooks)/hooks/useeffect'
+      path: '/hooks/useeffect'
+      fullPath: '/hooks/useeffect'
+      preLoaderRoute: typeof hidden_folderhooksHooksUseeffectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usedeferredvalue': {
+      id: '/(hidden_folder)/(hooks)/hooks/usedeferredvalue'
+      path: '/hooks/usedeferredvalue'
+      fullPath: '/hooks/usedeferredvalue'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsedeferredvalueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usedebounce': {
+      id: '/(hidden_folder)/(hooks)/hooks/usedebounce'
+      path: '/hooks/usedebounce'
+      fullPath: '/hooks/usedebounce'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsedebounceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usecontext': {
+      id: '/(hidden_folder)/(hooks)/hooks/usecontext'
+      path: '/hooks/usecontext'
+      fullPath: '/hooks/usecontext'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsecontextRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/usecallback': {
+      id: '/(hidden_folder)/(hooks)/hooks/usecallback'
+      path: '/hooks/usecallback'
+      fullPath: '/hooks/usecallback'
+      preLoaderRoute: typeof hidden_folderhooksHooksUsecallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/interval-problem-2': {
+      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-2'
+      path: '/hooks/interval-problem-2'
+      fullPath: '/hooks/interval-problem-2'
+      preLoaderRoute: typeof hidden_folderhooksHooksIntervalProblem2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/interval-problem-1': {
+      id: '/(hidden_folder)/(hooks)/hooks/interval-problem-1'
+      path: '/hooks/interval-problem-1'
+      fullPath: '/hooks/interval-problem-1'
+      preLoaderRoute: typeof hidden_folderhooksHooksIntervalProblem1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(hooks)/hooks/before-usecallback': {
+      id: '/(hidden_folder)/(hooks)/hooks/before-usecallback'
+      path: '/hooks/before-usecallback'
+      fullPath: '/hooks/before-usecallback'
+      preLoaderRoute: typeof hidden_folderhooksHooksBeforeUsecallbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(data_fetching)/data-fetching/react-query': {
+      id: '/(hidden_folder)/(data_fetching)/data-fetching/react-query'
+      path: '/data-fetching/react-query'
+      fullPath: '/data-fetching/react-query'
+      preLoaderRoute: typeof hidden_folderdata_fetchingDataFetchingReactQueryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(data_fetching)/data-fetching/own-handle': {
+      id: '/(hidden_folder)/(data_fetching)/data-fetching/own-handle'
+      path: '/data-fetching/own-handle'
+      fullPath: '/data-fetching/own-handle'
+      preLoaderRoute: typeof hidden_folderdata_fetchingDataFetchingOwnHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(basic)/basic/props-children': {
+      id: '/(hidden_folder)/(basic)/basic/props-children'
+      path: '/basic/props-children'
+      fullPath: '/basic/props-children'
+      preLoaderRoute: typeof hidden_folderbasicBasicPropsChildrenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(basic)/basic/portal': {
+      id: '/(hidden_folder)/(basic)/basic/portal'
+      path: '/basic/portal'
+      fullPath: '/basic/portal'
+      preLoaderRoute: typeof hidden_folderbasicBasicPortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(basic)/basic/list-of-data': {
+      id: '/(hidden_folder)/(basic)/basic/list-of-data'
+      path: '/basic/list-of-data'
+      fullPath: '/basic/list-of-data'
+      preLoaderRoute: typeof hidden_folderbasicBasicListOfDataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(basic)/basic/conditional-rendering': {
+      id: '/(hidden_folder)/(basic)/basic/conditional-rendering'
+      path: '/basic/conditional-rendering'
+      fullPath: '/basic/conditional-rendering'
+      preLoaderRoute: typeof hidden_folderbasicBasicConditionalRenderingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(animation)/mt/01': {
+      id: '/(hidden_folder)/(animation)/mt/01'
+      path: '/mt/01'
+      fullPath: '/mt/01'
+      preLoaderRoute: typeof hidden_folderanimationMt01RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(animation)/mh/02': {
+      id: '/(hidden_folder)/(animation)/mh/02'
+      path: '/mh/02'
+      fullPath: '/mh/02'
+      preLoaderRoute: typeof hidden_folderanimationMh02RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(animation)/mh/01': {
+      id: '/(hidden_folder)/(animation)/mh/01'
+      path: '/mh/01'
+      fullPath: '/mh/01'
+      preLoaderRoute: typeof hidden_folderanimationMh01RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(animation)/mg/01': {
+      id: '/(hidden_folder)/(animation)/mg/01'
+      path: '/mg/01'
+      fullPath: '/mg/01'
+      preLoaderRoute: typeof hidden_folderanimationMg01RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(animation)/m/01': {
+      id: '/(hidden_folder)/(animation)/m/01'
+      path: '/m/01'
+      fullPath: '/m/01'
+      preLoaderRoute: typeof hidden_folderanimationM01RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page': {
+      id: '/(hidden_folder)/(demos)/(verify_email)/demos/verify-page'
+      path: '/demos/verify-page'
+      fullPath: '/demos/verify-page'
+      preLoaderRoute: typeof hidden_folderdemosverify_emailDemosVerifyPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(demos)/(verify_email)/demos/result-page': {
+      id: '/(hidden_folder)/(demos)/(verify_email)/demos/result-page'
+      path: '/demos/result-page'
+      fullPath: '/demos/result-page'
+      preLoaderRoute: typeof hidden_folderdemosverify_emailDemosResultPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(demos)/(toast)/demos/toast': {
+      id: '/(hidden_folder)/(demos)/(toast)/demos/toast'
+      path: '/demos/toast'
+      fullPath: '/demos/toast'
+      preLoaderRoute: typeof hidden_folderdemostoastDemosToastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(demos)/(markdown)/demos/markdown': {
+      id: '/(hidden_folder)/(demos)/(markdown)/demos/markdown'
+      path: '/demos/markdown'
+      fullPath: '/demos/markdown'
+      preLoaderRoute: typeof hidden_folderdemosmarkdownDemosMarkdownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render': {
+      id: '/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render'
+      path: '/demos/copywriting/render'
+      fullPath: '/demos/copywriting/render'
+      preLoaderRoute: typeof hidden_folderdemoscopywritingDemosCopywritingRenderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
-  hiddenfolderanimationM01Route: hiddenfolderanimationM01Route,
-  hiddenfolderanimationMg01Route: hiddenfolderanimationMg01Route,
-  hiddenfolderanimationMh01Route: hiddenfolderanimationMh01Route,
-  hiddenfolderanimationMh02Route: hiddenfolderanimationMh02Route,
-  hiddenfolderanimationMt01Route: hiddenfolderanimationMt01Route,
-  hiddenfolderbasicBasicConditionalRenderingRoute:
-    hiddenfolderbasicBasicConditionalRenderingRoute,
-  hiddenfolderbasicBasicListOfDataRoute: hiddenfolderbasicBasicListOfDataRoute,
-  hiddenfolderbasicBasicPortalRoute: hiddenfolderbasicBasicPortalRoute,
-  hiddenfolderbasicBasicPropsChildrenRoute:
-    hiddenfolderbasicBasicPropsChildrenRoute,
-  hiddenfolderdatafetchingDataFetchingOwnHandleRoute:
-    hiddenfolderdatafetchingDataFetchingOwnHandleRoute,
-  hiddenfolderdatafetchingDataFetchingReactQueryRoute:
-    hiddenfolderdatafetchingDataFetchingReactQueryRoute,
-  hiddenfolderhooksHooksBeforeUsecallbackRoute:
-    hiddenfolderhooksHooksBeforeUsecallbackRoute,
-  hiddenfolderhooksHooksIntervalProblem1Route:
-    hiddenfolderhooksHooksIntervalProblem1Route,
-  hiddenfolderhooksHooksIntervalProblem2Route:
-    hiddenfolderhooksHooksIntervalProblem2Route,
-  hiddenfolderhooksHooksUsecallbackRoute:
-    hiddenfolderhooksHooksUsecallbackRoute,
-  hiddenfolderhooksHooksUsecontextRoute: hiddenfolderhooksHooksUsecontextRoute,
-  hiddenfolderhooksHooksUsedebounceRoute:
-    hiddenfolderhooksHooksUsedebounceRoute,
-  hiddenfolderhooksHooksUsedeferredvalueRoute:
-    hiddenfolderhooksHooksUsedeferredvalueRoute,
-  hiddenfolderhooksHooksUseeffectRoute: hiddenfolderhooksHooksUseeffectRoute,
-  hiddenfolderhooksHooksUseidRoute: hiddenfolderhooksHooksUseidRoute,
-  hiddenfolderhooksHooksUseimperativehandleRoute:
-    hiddenfolderhooksHooksUseimperativehandleRoute,
-  hiddenfolderhooksHooksUseinsertioneffectRoute:
-    hiddenfolderhooksHooksUseinsertioneffectRoute,
-  hiddenfolderhooksHooksUseintervalRoute:
-    hiddenfolderhooksHooksUseintervalRoute,
-  hiddenfolderhooksHooksUselayouteffectRoute:
-    hiddenfolderhooksHooksUselayouteffectRoute,
-  hiddenfolderhooksHooksUsememoRoute: hiddenfolderhooksHooksUsememoRoute,
-  hiddenfolderhooksHooksUsereducerRoute: hiddenfolderhooksHooksUsereducerRoute,
-  hiddenfolderhooksHooksUserefRoute: hiddenfolderhooksHooksUserefRoute,
-  hiddenfolderhooksHooksUsestateRoute: hiddenfolderhooksHooksUsestateRoute,
-  hiddenfolderhooksHooksUsesyncexternalstoreRoute:
-    hiddenfolderhooksHooksUsesyncexternalstoreRoute,
-  hiddenfolderhooksHooksUsethrottleRoute:
-    hiddenfolderhooksHooksUsethrottleRoute,
-  hiddenfolderhooksHooksUsetransitionRoute:
-    hiddenfolderhooksHooksUsetransitionRoute,
-  hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute:
-    hiddenfolderhooksHooksWithoutusesyncexternalstoreRoute,
-  hiddenfolderlibrariesLibsCvaTwmergeRoute:
-    hiddenfolderlibrariesLibsCvaTwmergeRoute,
-  hiddenfolderlibrariesLibsDndRoute: hiddenfolderlibrariesLibsDndRoute,
-  hiddenfolderlibrariesLibsZustandRoute: hiddenfolderlibrariesLibsZustandRoute,
-  hiddenfoldertoysToysClockRoute: hiddenfoldertoysToysClockRoute,
-  hiddenfoldertoysToysColorPickerRoute: hiddenfoldertoysToysColorPickerRoute,
-  hiddenfoldertoysToysStopwatchRoute: hiddenfoldertoysToysStopwatchRoute,
-  hiddenfoldertoysToysTodoAppRoute: hiddenfoldertoysToysTodoAppRoute,
-  hiddenfolderdemosmarkdownDemosMarkdownRoute:
-    hiddenfolderdemosmarkdownDemosMarkdownRoute,
-  hiddenfolderdemostoastDemosToastRoute: hiddenfolderdemostoastDemosToastRoute,
-  hiddenfolderdemosverifyemailDemosResultPageRoute:
-    hiddenfolderdemosverifyemailDemosResultPageRoute,
-  hiddenfolderdemosverifyemailDemosVerifyPageRoute:
-    hiddenfolderdemosverifyemailDemosVerifyPageRoute,
-  hiddenfolderdemoscopywritingDemosCopywritingRenderRoute:
-    hiddenfolderdemoscopywritingDemosCopywritingRenderRoute,
+  hidden_folderanimationM01Route: hidden_folderanimationM01Route,
+  hidden_folderanimationMg01Route: hidden_folderanimationMg01Route,
+  hidden_folderanimationMh01Route: hidden_folderanimationMh01Route,
+  hidden_folderanimationMh02Route: hidden_folderanimationMh02Route,
+  hidden_folderanimationMt01Route: hidden_folderanimationMt01Route,
+  hidden_folderbasicBasicConditionalRenderingRoute:
+    hidden_folderbasicBasicConditionalRenderingRoute,
+  hidden_folderbasicBasicListOfDataRoute:
+    hidden_folderbasicBasicListOfDataRoute,
+  hidden_folderbasicBasicPortalRoute: hidden_folderbasicBasicPortalRoute,
+  hidden_folderbasicBasicPropsChildrenRoute:
+    hidden_folderbasicBasicPropsChildrenRoute,
+  hidden_folderdata_fetchingDataFetchingOwnHandleRoute:
+    hidden_folderdata_fetchingDataFetchingOwnHandleRoute,
+  hidden_folderdata_fetchingDataFetchingReactQueryRoute:
+    hidden_folderdata_fetchingDataFetchingReactQueryRoute,
+  hidden_folderhooksHooksBeforeUsecallbackRoute:
+    hidden_folderhooksHooksBeforeUsecallbackRoute,
+  hidden_folderhooksHooksIntervalProblem1Route:
+    hidden_folderhooksHooksIntervalProblem1Route,
+  hidden_folderhooksHooksIntervalProblem2Route:
+    hidden_folderhooksHooksIntervalProblem2Route,
+  hidden_folderhooksHooksUsecallbackRoute:
+    hidden_folderhooksHooksUsecallbackRoute,
+  hidden_folderhooksHooksUsecontextRoute:
+    hidden_folderhooksHooksUsecontextRoute,
+  hidden_folderhooksHooksUsedebounceRoute:
+    hidden_folderhooksHooksUsedebounceRoute,
+  hidden_folderhooksHooksUsedeferredvalueRoute:
+    hidden_folderhooksHooksUsedeferredvalueRoute,
+  hidden_folderhooksHooksUseeffectRoute: hidden_folderhooksHooksUseeffectRoute,
+  hidden_folderhooksHooksUseidRoute: hidden_folderhooksHooksUseidRoute,
+  hidden_folderhooksHooksUseimperativehandleRoute:
+    hidden_folderhooksHooksUseimperativehandleRoute,
+  hidden_folderhooksHooksUseinsertioneffectRoute:
+    hidden_folderhooksHooksUseinsertioneffectRoute,
+  hidden_folderhooksHooksUseintervalRoute:
+    hidden_folderhooksHooksUseintervalRoute,
+  hidden_folderhooksHooksUselayouteffectRoute:
+    hidden_folderhooksHooksUselayouteffectRoute,
+  hidden_folderhooksHooksUsememoRoute: hidden_folderhooksHooksUsememoRoute,
+  hidden_folderhooksHooksUsereducerRoute:
+    hidden_folderhooksHooksUsereducerRoute,
+  hidden_folderhooksHooksUserefRoute: hidden_folderhooksHooksUserefRoute,
+  hidden_folderhooksHooksUsestateRoute: hidden_folderhooksHooksUsestateRoute,
+  hidden_folderhooksHooksUsesyncexternalstoreRoute:
+    hidden_folderhooksHooksUsesyncexternalstoreRoute,
+  hidden_folderhooksHooksUsethrottleRoute:
+    hidden_folderhooksHooksUsethrottleRoute,
+  hidden_folderhooksHooksUsetransitionRoute:
+    hidden_folderhooksHooksUsetransitionRoute,
+  hidden_folderhooksHooksWithoutusesyncexternalstoreRoute:
+    hidden_folderhooksHooksWithoutusesyncexternalstoreRoute,
+  hidden_folderlibrariesLibsCvaTwmergeRoute:
+    hidden_folderlibrariesLibsCvaTwmergeRoute,
+  hidden_folderlibrariesLibsDndRoute: hidden_folderlibrariesLibsDndRoute,
+  hidden_folderlibrariesLibsZustandRoute:
+    hidden_folderlibrariesLibsZustandRoute,
+  hidden_foldertoysToysClockRoute: hidden_foldertoysToysClockRoute,
+  hidden_foldertoysToysColorPickerRoute: hidden_foldertoysToysColorPickerRoute,
+  hidden_foldertoysToysStopwatchRoute: hidden_foldertoysToysStopwatchRoute,
+  hidden_foldertoysToysTodoAppRoute: hidden_foldertoysToysTodoAppRoute,
+  hidden_folderdemosmarkdownDemosMarkdownRoute:
+    hidden_folderdemosmarkdownDemosMarkdownRoute,
+  hidden_folderdemostoastDemosToastRoute:
+    hidden_folderdemostoastDemosToastRoute,
+  hidden_folderdemosverify_emailDemosResultPageRoute:
+    hidden_folderdemosverify_emailDemosResultPageRoute,
+  hidden_folderdemosverify_emailDemosVerifyPageRoute:
+    hidden_folderdemosverify_emailDemosVerifyPageRoute,
+  hidden_folderdemoscopywritingDemosCopywritingRenderRoute:
+    hidden_folderdemoscopywritingDemosCopywritingRenderRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/",
-        "/(hidden_folder)/(animation)/m/01",
-        "/(hidden_folder)/(animation)/mg/01",
-        "/(hidden_folder)/(animation)/mh/01",
-        "/(hidden_folder)/(animation)/mh/02",
-        "/(hidden_folder)/(animation)/mt/01",
-        "/(hidden_folder)/(basic)/basic/conditional-rendering",
-        "/(hidden_folder)/(basic)/basic/list-of-data",
-        "/(hidden_folder)/(basic)/basic/portal",
-        "/(hidden_folder)/(basic)/basic/props-children",
-        "/(hidden_folder)/(data_fetching)/data-fetching/own-handle",
-        "/(hidden_folder)/(data_fetching)/data-fetching/react-query",
-        "/(hidden_folder)/(hooks)/hooks/before-usecallback",
-        "/(hidden_folder)/(hooks)/hooks/interval-problem-1",
-        "/(hidden_folder)/(hooks)/hooks/interval-problem-2",
-        "/(hidden_folder)/(hooks)/hooks/usecallback",
-        "/(hidden_folder)/(hooks)/hooks/usecontext",
-        "/(hidden_folder)/(hooks)/hooks/usedebounce",
-        "/(hidden_folder)/(hooks)/hooks/usedeferredvalue",
-        "/(hidden_folder)/(hooks)/hooks/useeffect",
-        "/(hidden_folder)/(hooks)/hooks/useid",
-        "/(hidden_folder)/(hooks)/hooks/useimperativehandle",
-        "/(hidden_folder)/(hooks)/hooks/useinsertioneffect",
-        "/(hidden_folder)/(hooks)/hooks/useinterval",
-        "/(hidden_folder)/(hooks)/hooks/uselayouteffect",
-        "/(hidden_folder)/(hooks)/hooks/usememo",
-        "/(hidden_folder)/(hooks)/hooks/usereducer",
-        "/(hidden_folder)/(hooks)/hooks/useref",
-        "/(hidden_folder)/(hooks)/hooks/usestate",
-        "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore",
-        "/(hidden_folder)/(hooks)/hooks/usethrottle",
-        "/(hidden_folder)/(hooks)/hooks/usetransition",
-        "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore",
-        "/(hidden_folder)/(libraries)/libs/cva-twmerge",
-        "/(hidden_folder)/(libraries)/libs/dnd",
-        "/(hidden_folder)/(libraries)/libs/zustand",
-        "/(hidden_folder)/(toys)/toys/clock",
-        "/(hidden_folder)/(toys)/toys/color-picker",
-        "/(hidden_folder)/(toys)/toys/stopwatch",
-        "/(hidden_folder)/(toys)/toys/todo-app",
-        "/(hidden_folder)/(demos)/(markdown)/demos/markdown",
-        "/(hidden_folder)/(demos)/(toast)/demos/toast",
-        "/(hidden_folder)/(demos)/(verify_email)/demos/result-page",
-        "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page",
-        "/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render"
-      ]
-    },
-    "/": {
-      "filePath": "index.lazy.tsx"
-    },
-    "/(hidden_folder)/(animation)/m/01": {
-      "filePath": "(hidden_folder)/(animation)/m.01.tsx"
-    },
-    "/(hidden_folder)/(animation)/mg/01": {
-      "filePath": "(hidden_folder)/(animation)/mg.01.tsx"
-    },
-    "/(hidden_folder)/(animation)/mh/01": {
-      "filePath": "(hidden_folder)/(animation)/mh.01.tsx"
-    },
-    "/(hidden_folder)/(animation)/mh/02": {
-      "filePath": "(hidden_folder)/(animation)/mh.02.tsx"
-    },
-    "/(hidden_folder)/(animation)/mt/01": {
-      "filePath": "(hidden_folder)/(animation)/mt.01.tsx"
-    },
-    "/(hidden_folder)/(basic)/basic/conditional-rendering": {
-      "filePath": "(hidden_folder)/(basic)/basic.conditional-rendering.tsx"
-    },
-    "/(hidden_folder)/(basic)/basic/list-of-data": {
-      "filePath": "(hidden_folder)/(basic)/basic.list-of-data.tsx"
-    },
-    "/(hidden_folder)/(basic)/basic/portal": {
-      "filePath": "(hidden_folder)/(basic)/basic.portal.tsx"
-    },
-    "/(hidden_folder)/(basic)/basic/props-children": {
-      "filePath": "(hidden_folder)/(basic)/basic.props-children.tsx"
-    },
-    "/(hidden_folder)/(data_fetching)/data-fetching/own-handle": {
-      "filePath": "(hidden_folder)/(data_fetching)/data-fetching.own-handle.tsx"
-    },
-    "/(hidden_folder)/(data_fetching)/data-fetching/react-query": {
-      "filePath": "(hidden_folder)/(data_fetching)/data-fetching.react-query.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/before-usecallback": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.before-usecallback.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/interval-problem-1": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.interval-problem-1.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/interval-problem-2": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.interval-problem-2.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usecallback": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usecallback.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usecontext": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usecontext.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usedebounce": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usedebounce.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usedeferredvalue": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usedeferredvalue.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useeffect": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useeffect.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useid": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useid.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useimperativehandle": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useimperativehandle.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useinsertioneffect": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useinsertioneffect.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useinterval": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useinterval.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/uselayouteffect": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.uselayouteffect.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usememo": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usememo.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usereducer": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usereducer.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/useref": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.useref.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usestate": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usestate.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usesyncexternalstore": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usesyncexternalstore.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usethrottle": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usethrottle.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/usetransition": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.usetransition.tsx"
-    },
-    "/(hidden_folder)/(hooks)/hooks/withoutusesyncexternalstore": {
-      "filePath": "(hidden_folder)/(hooks)/hooks.withoutusesyncexternalstore.tsx"
-    },
-    "/(hidden_folder)/(libraries)/libs/cva-twmerge": {
-      "filePath": "(hidden_folder)/(libraries)/libs.cva-twmerge.tsx"
-    },
-    "/(hidden_folder)/(libraries)/libs/dnd": {
-      "filePath": "(hidden_folder)/(libraries)/libs.dnd.tsx"
-    },
-    "/(hidden_folder)/(libraries)/libs/zustand": {
-      "filePath": "(hidden_folder)/(libraries)/libs.zustand.tsx"
-    },
-    "/(hidden_folder)/(toys)/toys/clock": {
-      "filePath": "(hidden_folder)/(toys)/toys.clock.tsx"
-    },
-    "/(hidden_folder)/(toys)/toys/color-picker": {
-      "filePath": "(hidden_folder)/(toys)/toys.color-picker.tsx"
-    },
-    "/(hidden_folder)/(toys)/toys/stopwatch": {
-      "filePath": "(hidden_folder)/(toys)/toys.stopwatch.tsx"
-    },
-    "/(hidden_folder)/(toys)/toys/todo-app": {
-      "filePath": "(hidden_folder)/(toys)/toys.todo-app.tsx"
-    },
-    "/(hidden_folder)/(demos)/(markdown)/demos/markdown": {
-      "filePath": "(hidden_folder)/(demos)/(markdown)/demos.markdown.tsx"
-    },
-    "/(hidden_folder)/(demos)/(toast)/demos/toast": {
-      "filePath": "(hidden_folder)/(demos)/(toast)/demos.toast.tsx"
-    },
-    "/(hidden_folder)/(demos)/(verify_email)/demos/result-page": {
-      "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.result-page.tsx"
-    },
-    "/(hidden_folder)/(demos)/(verify_email)/demos/verify-page": {
-      "filePath": "(hidden_folder)/(demos)/(verify_email)/demos.verify-page.tsx"
-    },
-    "/(hidden_folder)/(demos)/(copywriting)/demos/copywriting/render": {
-      "filePath": "(hidden_folder)/(demos)/(copywriting)/demos.copywriting.render.tsx"
-    }
-  }
-}
-ROUTE_MANIFEST_END */
