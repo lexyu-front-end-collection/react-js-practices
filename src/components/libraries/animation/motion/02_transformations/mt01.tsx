@@ -16,7 +16,8 @@ function MT01() {
                     x: 100,
                     y: 50,
                     rotate: 90,
-                    skew: 30,
+                    skewX: 30,
+                    skewY: 30,
                 }}
             />
         </div>

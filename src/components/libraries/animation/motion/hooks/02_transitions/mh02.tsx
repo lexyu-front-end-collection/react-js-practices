@@ -15,14 +15,16 @@ function FM03() {
             x: 50,
             y: 50,
             rotate: 0,
-            skew: 0,
+            skewX: 0,
+            skewY: 0,
         })
 
         await controls.start({
             x: 250,
             y: 800,
             rotate: 90,
-            skew: 15,
+            skewX: 15,
+            skewY: 15,
             transition: {
                 duration: 1,
                 ease: "easeInOut",
@@ -34,7 +36,7 @@ function FM03() {
     return (
         <div>
             <button onClick={resetAndPlay}
-                className="p-2 m-2 bg-blue-500 text-white rounded"
+                className="p-2 m-2 text-white bg-blue-500 rounded"
             >
                 Reset and Play
             </button>
